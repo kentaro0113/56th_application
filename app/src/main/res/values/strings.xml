@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">56th千葉大祭</string>
+    <string name="main_strings">起動処理中</string>
+    <string name="firstrun_take">初回起動</string>
+    <string name="goto_mainmenu">メインメニューへ</string>
+    <string name="mainmenu_thisname">メインメニュー</string>
+</resources>
