@@ -1,5 +1,5 @@
 package chibafes.com.a56thchibafes;
 
 public class Statics {
-    public static final int NONE    = 3;
+    public static final int NONE    = -1;
 }
