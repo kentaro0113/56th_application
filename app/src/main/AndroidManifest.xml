@@ -18,10 +18,6 @@
         </activity>
         <activity android:name=".MainMenuActivity"></activity>
         <activity android:name=".FirstRunActivity"></activity>
-        <activity
-            android:name=".MapActivity"
-            android:label="@string/title_activity_map"
-            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
