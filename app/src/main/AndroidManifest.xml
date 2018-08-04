@@ -3,7 +3,6 @@
     package="chibafes.com.a56thchibafes">
 
     <application
-        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -16,9 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenuActivity"></activity>
-        <activity android:name=".FirstRunActivity"></activity>
-        <activity android:name=".HappiActivity"></activity>
+        <activity android:name=".MainMenuActivity" />
+        <activity android:name=".FirstRunActivity" />
+        <activity android:name=".HappiActivity" />
     </application>
 
 </manifest>
