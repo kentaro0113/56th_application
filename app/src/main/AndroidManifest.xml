@@ -19,9 +19,7 @@
         <activity android:name=".MainMenuActivity" />
         <activity android:name=".FirstRunActivity" />
         <activity android:name=".HappiActivity" />
-        <activity android:name=".MainMenuActivity"></activity>
-        <activity android:name=".FirstRunActivity"></activity>
-        <activity android:name=".KikakuSearchActivity"></activity>
+        <activity android:name=".KikakuSearchActivity" />
     </application>
 
 </manifest>

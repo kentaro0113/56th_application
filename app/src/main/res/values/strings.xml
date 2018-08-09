@@ -5,4 +5,102 @@
     <string name="goto_mainmenu">メインメニューへ</string>
     <string name="mainmenu_thisname">メインメニュー</string>
     <string name="button">Button</string>
+    <string name="mainTITLE">TITLE</string>
+    <string name="app_fullname">第56回千葉大祭アプリ→祭前線←</string>
+
+    <string name="ConfirmFinish">アプリを終了します。</string>
+    <string name="ButtonCancel">キャンセル</string>
+    <string name="ButtonOk">OK</string>
+
+    <string name="EnqueteTitle">アンケートにご協力ください</string>
+    <string name="EnqueteFinishTitle">ありがとうございます</string>
+    <string name="EnqueteFinish">アンケートの回答を送信しました！はっぴポイント%dptをゲット！</string>
+    <string name="EnqueteErrorTItle">通信エラー</string>
+    <string name="EnqueteError">通信に失敗しました。通信環境の良い場所で再度お試しください。</string>
+    <string name="ConnectionError2">通信エラーが発生しました。しばらく時間を空けて再度お試しください。</string>
+
+    <string name="TitleInfo">お知らせ・新着情報</string>
+    <string name="TitleSearch">企画検索</string>
+    <string name="TitleTimeTable">タイムテーブル</string>
+    <string name="TitleMap">千葉大祭マップ</string>
+    <string name="TitleHappi">はっぴの部屋</string>
+    <string name="TitleHappiProfile">はっぴプロフィール</string>
+    <string name="TitleHappiGacha">はっぴガチャ</string>
+    <string name="TitleHappiCollection">はっぴコレクション</string>
+    <string name="TitleSetting">設定</string>
+
+    <string name="GetLoginBonus">ログインボーナス！はっぴポイント%dptをゲット！</string>
+    <string name="GetLoginBonus2">大祭当日スペシャルログインボーナス！はっぴポイント%dptをゲット！</string>
+
+    <string name="GachaMessage1">貯めたポイントではっぴガチャ！目指せコンプリート！</string>
+    <string name="GachaMessage2">が当たったよ！</string>
+    <string name="GachaMessage3">はっぴpt</string>
+    <string name="GachaMessage4">はっぴポイントが足りません</string>
+
+
+    <string name="InfoKikakuTitle">実行委員会企画からのお知らせ</string>
+    <string name="InfoNewsTitle">最新情報</string>
+
+    <string name="collection_noget">？？？</string>
+
+    <string name="SearchTabSearch">検索</string>
+    <string name="SearchTabFavorite">お気に入り</string>
+    <string name="SearchButton">企画を絞り込む</string>
+    <string name="SearchSettingTitle">検索条件設定</string>
+    <string name="SearchCaptionDay">日程</string>
+    <string name="SearchCaptionGenre">ジャンル</string>
+    <string name="SearchCaptionType">企画形態</string>
+    <string name="SearchCaptionFreeWord">フリーワード</string>
+    <string name="SearchExec">検索</string>
+    <string name="SearchNoFavorite">お気に入りに登録した企画が表示されます。</string>
+    <string name="SearchFreewordMessage">検索したい文字を入れてください。</string>
+
+    <string name="TimeTableTabDay1">1日目</string>
+    <string name="TimeTableTabDay2">2日目</string>
+    <string name="TimeTableTabDay3">3日目</string>
+    <string name="TimeTableTabDay4">4日目</string>
+    <string name="TimeTableTabCheck">★</string>
+    <string name="TimeTableNoCheck">チェックした企画が表示されます。\nまた、チェックしたステージ・ストリートパフォーマンスは、開始の１５分前に通知されます。</string>
+
+    <string name="SettingBelong">所属の再設定</string>
+    <string name="SettingText">テキスト設定</string>
+    <string name="SettingAbout">このアプリについて</string>
+    <string name="SettingWeb">千葉大祭ホームページはこちら</string>
+
+    <string name="AboutCopyright">第55回千葉大祭アプリ〜for you〜 v1.0.0\nCopyright © 第55回千葉大祭実行委員会事務局</string>
+
+    <string name="KikakuInfo1_1">千葉大祭であなたのコスプレを披露してみませんか！？1位の方には豪華景品あり！\n\n出場者PR：\n11/3(金) 12:00〜12:30\n＠ストリートパフォーマンス会場\n\n表彰式：\n11/5(日) 14:30〜15:00\n＠ストリートパフォーマンス会場\nエンディング企画内で表彰\n\n詳しい情報は千葉大祭Twitterをチェック！\n※コスプレをしたままの来場・退場はお控えください。</string>
+    <string name="KikakuInfoButton1">エントリーフォームへ</string>
+    <string name="KikakuInfoButton2">千葉大祭Twitterを見る</string>
+    <string name="KikakuInfo2_1">今年の千葉大祭では部屋・テント企画グランプリを開催します！\nあなたの１票でグランプリが決まります！気に入った企画に投票して、千葉大祭を盛り上げてください！\n\n投票期間：\n11/2(木)〜11/4(土) 9:00〜18:00\n11/5(日) 9:00〜12:00\n\nグランプリの表彰式は、11/5(日)14:30〜ストリートパフォーマンス会場で行われる「大祭エンディング企画」内で行われます。</string>
+    <string name="KikakuInfoButton3">投票する！</string>
+    <string name="KikakuInfo3_1">今年度も、千葉大祭のマスコットキャラクターである「はっぴ」のグッズを作りました！\n千葉大祭当日、セミナー会場前と南門前にて販売します。千葉大祭の記念にぜひどうぞ！</string>
+    <string name="KikakuInfo3_2">また、今年度は缶バッジのガチャガチャ機を設置します！\n5種類の缶バッジのうち、どれが当たるかは運次第。トレードするのも楽しいかも？</string>
+    <string name="KikakuInfo3_3">はっぴのLINEスタンプも販売中です！\nかわいい「はっぴ」がお祭りを飛び出して、あなたの日常をはっぴーに！ぜひダウンロードしてみてくださいね！\n（※はっぴのスタンプは有料となります。）</string>
+    <string name="KikakuInfoButton4">はっぴのLINEスタンプはこちら！</string>
+    <string name="KikakuInfo4_1">本年度の千葉大祭では、コスプレ、グランプリ企画以外にもたくさんの企画を用意しています！</string>
+    <string name="KikakuInfo4_2">OP・ED</string>
+    <string name="KikakuInfo4_3">オープニングでは、各団体が熱いパフォーマンスを繰り広げる団体PRが開催！\n開催日時：11/2(木) 12:15〜12:45\n開催場所：特設ステージ\n\nエンディングでは、ミニゲームやグランプリ・コスプレコンテンスト表彰式が行われます！\n開催日時：11/5(木) 14:30〜15:00\n開催場所：ストリートパフォーマンス会場</string>
+    <string name="KikakuInfo4_4">縁日</string>
+    <string name="KikakuInfo4_5">昨年に引き続き今年も縁日を開催！いろんなミニゲームで遊んで豪華景品を当てちゃおう！\n\n開催日時：\n11/2(木)〜11/4(土) 9:00〜17:00\n11/5(日) 9:00〜14:00\n開催場所：\n総合校舎4号館と6号館の間の中庭</string>
+    <string name="KikakuInfo4_6">花火</string>
+    <string name="KikakuInfo4_7">今年で3年目の打ち上げ花火！\n今年は55周年を記念して盛大に打ち上げます。間近で花火を見られるチャンス、ぜひ見に来てください！\n※雨天の場合は中止になります。\n\n開催日時：11/4(土) 17:45〜\n開催場所：陸上競技場</string>
+    <string name="KikakuInfo4_8">セミナー</string>
+    <string name="KikakuInfo4_9">毎年恒例！今年も工作セミナーを行うよ！無料で楽しい工作ができるよ！今年は3種類の中から選べるぞ！是非参加してね！\n\n1. ビー玉万華鏡\n2. ペットボトルビーズ万華鏡\n3. 新聞紙ロケット\n\n開催日時：\n11/2(木) 15:00〜17:00\n11/3・4(金・土) 10:00〜17:00\n11/5(日) 10:00〜15:00\n開催場所：教育学部棟1号館と2号館の間</string>
+    <string name="KikakuInfo4_10">ラリー</string>
+    <string name="KikakuInfo4_11">今年のラリーは3種類！\n・全年齢向けのスタンプラリー\n・小学生以下向けのストーリーラリー\n・中高生以上向けの謎解きラリー\n\nラリー本部でラリー用紙を受け取ってスタート！参加賞・特別賞もあるよ！\n\n開催日時：\n11/2(木)〜11/4(土) 9:00〜17:00\n11/5(日) 9:00〜14:00\n受付場所：ラリー本部（総合校舎1号館前）</string>
+    <string name="KikakuInfo4_12">はっぴを探せ</string>
+    <string name="KikakuInfo4_13">今年度は千葉大祭が55周年！ということで、はっぴを55体隠しちゃいました！\n隠れはっぴの写真に #はっぴを探せ をつけてTwitterでつぶやくと抽選で景品があたるかも？！\n詳しくははっぴのTwitterを見てね！</string>
+    <string name="KikakuInfoButton5">はっぴのTwitterを見る</string>
+    <string name="KikakuInfoButton6">Twitterでつぶやく！</string>
+    <string name="KikakuInfo4_14">ビンゴ</string>
+    <string name="KikakuInfo4_15">今年度の新企画！早くビンゴできた方には豪華景品をご用意しています！\n千葉大祭でしか体験できない、普段とは一味違うビンゴ大会への参加、お待ちしております！\n\n開催日時：11/4(土) 12:15〜12:45\n開催場所：特設ステージ</string>
+    <string name="KikakuInfo4_16">はり絵</string>
+    <string name="KikakuInfo4_17">今年のはり絵企画は大祭テーマ「for you〜いチバんを、あなたに。」にちなんで、『千葉大祭のおすすめや楽しみ』についてボードいっぱいにはり絵をしよう！\nはり絵企画会場でお待ちしています！\n\n開催日時：千葉大祭期間中\n開催場所：総合校舎1号館前</string>
+    <string name="KikakuInfo4_18">フォトコン</string>
+    <string name="KikakuInfo4_19">千葉大祭で撮った写真に #千葉大祭フォトコン をつけてツイートしよう！\n入賞作品には豪華景品も！？詳しくは千葉大祭Twitterまで！</string>
+    <string name="KikakuInfo4_20">ゲスト企画</string>
+    <string name="KikakuInfoButton7">詳細はこちら！</string>
+    <string name="KikakuInfo4_21">今年度のゲスト企画は盛りだくさん！どの企画も要チェックですよ！\n\n11/2(木) 13:00〜\n「マック赤坂が教える成功する方法」\n開催場所：文・法政経学部棟106講義室\n\n11/3(金) 開場16:30 開演17:00\n「夜の本気ダンス Special Live〜千葉大で、 踊れる 準備は できてますか？〜」\n開催場所：特設ステージ</string>
+    <string name="KikakuInfo4_22">11/4(金) 15:45〜\n「ハコイリムスメ特別講演〜第55回千葉大祭〜」\n開催場所：ストリートパフォーマンス会場</string>
 </resources>

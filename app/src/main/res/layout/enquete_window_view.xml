@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/viewCollectionBase"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="24dp"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="#EBEBF1"
+            android:gravity="center_vertical|center"
+            android:text="@string/EnqueteTitle"
+            android:textColor="@android:color/black"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/textQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:text="TextView"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/spinnerSelect"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_margin="8dp" />
+
+        <EditText
+            android:id="@+id/editComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="120dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:onClick="onClickCancel"
+                android:text="後で回答する" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="120dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:layout_weight="1"
+                android:onClick="onClickSend"
+                android:text="回答を送信する" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
