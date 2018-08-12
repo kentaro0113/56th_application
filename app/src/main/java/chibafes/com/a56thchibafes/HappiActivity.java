@@ -45,29 +45,28 @@ public class HappiActivity extends AppCompatActivity {
     }
 }
 
-
-                    imageHappi.startAnimation(animationSet);private void doGachaAnimation() {
+imageHappi.startAnimation(animationSet);private void doGachaAnimation() {
         ImageView imageHappi = (ImageView) findViewById(R.id.imageHappi);
         ImageView imageBox = (ImageView) findViewById(R.id.imageBox);
         PointF posImageBox = Commons.getImageSize(imageBox);
 
         Animation.AnimationListener animationListener = new Animation.AnimationListener() {
-@Override
-public void onAnimationStart(Animation animation) {
+            @Override
+            public void onAnimationStart(Animation animation) {
         }
-@Override
-public void onAnimationEnd(Animation animation) {
-        if(nStep == 10) {
-        endGachaAnimation();
-        }
+          @Override
+           public void onAnimationEnd(Animation animation) {
+            if(nStep == 10) {
+            endGachaAnimation();
+            }
 
         else {
-        nStep++;
-        doGachaAnimation();
+           nStep++;
+           doGachaAnimation();
         }
         }
 @Override
-public void onAnimationRepeat(Animation animation) {
+     public void onAnimationRepeat(Animation animation) {
         }
         };
 
@@ -125,8 +124,8 @@ public void onAnimationRepeat(Animation animation) {
                     }
                 }.sendEmptyMessageDelayed(0, 300);
                 */
-        }
-        break;
+     }
+     break;
         case 7: {
         ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f, 0.5f, 1.0f, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         animationSet.addAnimation(scaleAnimation);
@@ -216,59 +215,7 @@ public void onClickGacha(View view) {
         nGetItem = -1;
         while(nGetItem == -1) {
         int nRate = 0;
-        for(int i = 0; i < array.size(); ++i) {
-        nRate += getRate(i, array);
-        }
-        nRate = Commons.getRandom(nRate);
-        for(int i = 0; i < array.size(); ++i) {
-        nRate -= getRate(i, array);
-        if(nRate < 0) {
-        nGetItem = i;
-        break;
-        }
-        }
-        }
-
-        // プレ箱イメージ変更
-        Dict dic = (Dict) array.get(nGetItem);
-        int nBuf = dic.getConfigurationInteger("rate").getValue();
-        ImageView imageBox = (ImageView) findViewById(R.id.imageBox);
-        if(nBuf < 10) {
-        imageBox.setImageResource(R.drawable.image_presentbox3);
-        }
-        else if(nBuf <= 20) {
-        imageBox.setImageResource(R.drawable.image_presentbox2);
-        }
-        else {
-        imageBox.setImageResource(R.drawable.image_presentbox);
-        }
-        imageBox.setVisibility(View.VISIBLE);
-
-        int nItemCount = Commons.readInt(this, "getItem" + nGetItem);
-        if(nItemCount < 0) {
-        nItemCount = 0;
-        }
-        Commons.writeInt(this, "getItem" + nGetItem, nItemCount + 1);
-        String sStatus = "はっぴガチャで「" + ((Dict)array.get(nGetItem)).getConfiguration("name").getValue() + "」が当たったよ！";
-        String sUrl = "http://chibafes.com/appli.html";
-        sTwitterUrl = "http://twitter.com/share?url=" + sUrl + "&text=" + sStatus + "&hashtags=千葉大祭";
-
-        ImageView imageHappi = (ImageView) findViewById(R.id.imageHappi);
-        String sGetItem = ((Dict) array.get(nGetItem)).getConfiguration("image").getValue();
-        System.out.println(sGetItem);
-        int nImageId = getResources().getIdentifier(sGetItem, "drawable", getPackageName());
-        imageHappi.setImageResource(nImageId);
-        TextView textMessage = (TextView) findViewById(R.id.textMessage);
-        textMessage.setText("「" + ((Dict)array.get(nGetItem)).getConfiguration("name").getValue() + "」" + getResources().getString(R.string.GachaMessage2));
-
-        Commons.writeInt(this, "happi_point", Commons.readInt(this, "happi_point") - HAPPI_GACHA_POINT);
-
-        // ガチャ演出を開始する
-        nStep = 0;
-        doGachaAnimation();
-        }
-        }
-
+        for(int i = 0; i < array£
     /*
 
 
@@ -283,22 +230,7 @@ public void onClickGacha(View view) {
             }
      */
 
-private int getRate(int i, Array array) {
-        int nBuf = ((Dict)array.get(i)).getConfigurationInteger("rate").getValue();
-        int nGotCount = Commons.readInt(this, "getItem" + i);
-        if(nGotCount > 0) {
-        if(nGotCount > 5) {
-        nGotCount = 5;
-        }
-        nBuf /= (nGotCount + 1);
-        if(nBuf <= 0) {
-        nBuf = 1;
-        }
-        }
-
-        return nBuf;
-        }
-
+£££
 public void onClickSkip(View view) {
         endGachaAnimation();
         }
@@ -313,16 +245,4 @@ public void onClickButtonBack(View view) {
         finish();
         }
 
-@Override
-public boolean dispatchKeyEvent(KeyEvent event) {
-        if (event.getAction() == KeyEvent.ACTION_DOWN) {
-        switch (event.getKeyCode()) {
-        case KeyEvent.KEYCODE_BACK:
-        // バックキー押下時の処理
-        return true;
-        }
-        }
-        return super.dispatchKeyEvent(event);
-        }
-        }
 
