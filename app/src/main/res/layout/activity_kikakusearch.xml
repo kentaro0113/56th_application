@@ -19,9 +19,9 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="16dp"
             android:layout_weight="1"
-            android:background="@drawable/tab_search"
+
             android:text="@string/SearchTabSearch"
-            android:textColor="?attr/colorPrimary"
+            android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
 
         <Button
@@ -30,9 +30,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_weight="1"
-            android:background="@drawable/tab_favorite"
+
             android:text="@string/SearchTabFavorite"
-            android:textColor="?attr/colorPrimary"
+            android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
     </LinearLayout>
 
@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:background="@drawable/button_search_back"
+
                 android:text="@string/SearchButton"
                 android:textColor="@android:color/white"
                 android:textSize="28sp" />

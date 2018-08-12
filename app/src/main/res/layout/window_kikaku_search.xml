@@ -34,7 +34,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/button_reset" />
+                 />
 
             <ImageButton
                 android:id="@+id/buttonSettingRandom"
@@ -44,7 +44,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/button_recommend" />
+                 />
         </LinearLayout>
 
         <TextView
@@ -76,7 +76,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_day1" />
+                 />
 
             <ImageButton
                 android:id="@+id/buttonSearchSetting2"
@@ -89,7 +89,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_day2" />
+                 />
 
             <ImageButton
                 android:id="@+id/buttonSearchSetting3"
@@ -102,7 +102,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_day3" />
+                 />
 
             <ImageButton
                 android:id="@+id/buttonSearchSetting4"
@@ -115,7 +115,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_day4" />
+                 />
 
         </LinearLayout>
 
@@ -148,7 +148,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_genre1" />
+                 />
 
             <ImageButton
                 android:id="@+id/buttonSearchSetting6"
@@ -161,7 +161,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_genre2" />
+                 />
 
             <ImageButton
                 android:id="@+id/buttonSearchSetting7"
@@ -174,7 +174,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_genre3" />
+                 />
 
             <ImageButton
                 android:id="@+id/buttonSearchSetting8"
@@ -187,7 +187,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_genre4" />
+                 />
         </LinearLayout>
 
         <LinearLayout
@@ -207,7 +207,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_genre5" />
+                 />
 
             <ImageButton
                 android:id="@+id/buttonSearchSetting10"
@@ -220,7 +220,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_genre6" />
+                 />
 
             <ImageButton
                 android:id="@+id/buttonSearchSetting11"
@@ -233,7 +233,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_genre7" />
+                 />
 
             <ImageButton
                 android:id="@+id/buttonSearchSetting12"
@@ -246,7 +246,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_genre8" />
+                 />
         </LinearLayout>
 
         <TextView
@@ -277,7 +277,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_tent" />
+                 />
 
             <ImageButton
                 android:id="@+id/buttonSearchSetting14"
@@ -290,7 +290,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_room" />
+                 />
 
             <ImageButton
                 android:id="@+id/buttonSearchSetting15"
@@ -303,7 +303,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_stage" />
+                />
 
             <ImageButton
                 android:id="@+id/buttonSearchSetting16"
@@ -316,7 +316,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_streetperformance" />
+                 />
         </LinearLayout>
 
         <LinearLayout
@@ -327,7 +327,7 @@
 
             <ImageButton
                 android:id="@+id/buttonSearchSetting17"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginLeft="8dp"
@@ -336,7 +336,7 @@
                 android:layout_weight="1"
                 android:background="@null"
                 android:scaleType="fitCenter"
-                android:src="@drawable/icon_free" />
+                 />
 
         </LinearLayout>
 

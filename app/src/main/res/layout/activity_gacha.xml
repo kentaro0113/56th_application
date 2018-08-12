@@ -20,7 +20,7 @@
             android:onClick="onClickButtonBack"
             android:padding="4dp"
             android:scaleType="fitStart"
-            android:src="@drawable/icon_back" />
+             />
 
         <TextView
             android:id="@+id/Title"
@@ -52,7 +52,7 @@
             android:id="@+id/imageView5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/back_repeat" />
+             />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -72,7 +72,7 @@
                 android:layout_margin="27dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-                android:src="@drawable/image_presentbox"
+
                 android:visibility="invisible" />
 
             <LinearLayout
@@ -117,7 +117,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:contentDescription=""
-                android:src="@drawable/happi1"
+
                 android:visibility="invisible" />
 
             <FrameLayout
@@ -199,7 +199,7 @@
                     android:background="@null"
                     android:onClick="onClickTwitter"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/twitter"
+
                     android:visibility="invisible" />
 
             </FrameLayout>
@@ -214,7 +214,7 @@
             android:background="@color/colorButton"
             android:onClick="onClickSkip"
             android:scaleType="fitCenter"
-            android:src="@drawable/icon_skip"
+
             android:visibility="invisible" />
 
         <Button
@@ -223,7 +223,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="16dp"
-            android:textColor="?attr/colorPrimary"
+
             android:background="@color/colorButton"
             android:onClick="onClickGacha" />
 

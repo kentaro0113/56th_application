@@ -1,4 +1,4 @@
-package chibafes.com.a56thchibafes;
+package chibafes.com.chibafes56;
 
 import org.junit.Test;
 

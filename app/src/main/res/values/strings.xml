@@ -103,4 +103,6 @@
     <string name="KikakuInfoButton7">詳細はこちら！</string>
     <string name="KikakuInfo4_21">今年度のゲスト企画は盛りだくさん！どの企画も要チェックですよ！\n\n11/2(木) 13:00〜\n「マック赤坂が教える成功する方法」\n開催場所：文・法政経学部棟106講義室\n\n11/3(金) 開場16:30 開演17:00\n「夜の本気ダンス Special Live〜千葉大で、 踊れる 準備は できてますか？〜」\n開催場所：特設ステージ</string>
     <string name="KikakuInfo4_22">11/4(金) 15:45〜\n「ハコイリムスメ特別講演〜第55回千葉大祭〜」\n開催場所：ストリートパフォーマンス会場</string>
+    <string name="stage">ステージ</string>
+    <string name="streetperformance">ストリートパフォーマンス</string>
 </resources>

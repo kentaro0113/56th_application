@@ -47,7 +47,7 @@
                     android:background="@null"
                     android:padding="4dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_favo" />
+                     />
             </LinearLayout>
 
             <ImageView
@@ -76,7 +76,7 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_genre1" />
+                     />
 
                 <ImageView
                     android:id="@+id/imageGenre2"
@@ -85,7 +85,7 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_genre1" />
+                     />
             </LinearLayout>
 
             <TextView
