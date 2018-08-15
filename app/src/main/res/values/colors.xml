@@ -17,4 +17,8 @@
     <color name="colorTabDay3">#C6F9D1</color>
     <color name="colorTabDay4">#E9C6FC</color>
     <color name="colorTabCheck">#FBFCC7</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorRed">#ff0000</color>
+    <color name="colorSearchCaption">#ff00ff</color>
+    <color name="colorSearchTytle">#fff000</color>
 </resources>
