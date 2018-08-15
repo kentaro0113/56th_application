@@ -9,10 +9,6 @@ import android.view.KeyEvent;
 import android.view.Window;
 import android.widget.TextView;
 
-import com.chibafes.a56thchibafes.R;
-import com.chibafes.chibafes56.Commons;
-import com.chibafes.chibafes56.HttpPostAsync;
-
 /**
  * Main Activity
  * Created by llrk on 2017/08/04.
@@ -20,7 +16,6 @@ import com.chibafes.chibafes56.HttpPostAsync;
  */
 
 public class MainActivity extends Activity implements HttpPostAsync.AsyncTaskCallback {
-    private TextView textProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,14 +34,14 @@ public class MainActivity extends Activity implements HttpPostAsync.AsyncTaskCal
             paramString = "lastdate=" + buf;
         }
         long nUserId = Commons.readLong(this, "UserID");
-        if(nUserId == chibafes.com.chibafes56.Statics.NONE) {
+        if(nUserId == Statics.NONE) {
             paramString = paramString + "&user_id=0";
         }
         else {
             paramString = paramString + "&user_id=" + nUserId;
         }
 
-        textProgress = (TextView) findViewById(R.id.textProgress);
+        TextView textProgress = (TextView) findViewById(R.id.textProgress);
         textProgress.setText("通信中\n");
 
         // アンケートや情報などをネットワーク更新する処理を開始する

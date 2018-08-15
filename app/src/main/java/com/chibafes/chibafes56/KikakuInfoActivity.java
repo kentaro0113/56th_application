@@ -9,8 +9,6 @@ import android.view.View;
 import android.view.Window;
 import android.widget.LinearLayout;
 
-import com.chibafes.a56thchibafes.R;
-
 /**
  * Created by llrk on 2017/10/30.
  */

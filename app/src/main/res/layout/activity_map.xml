@@ -11,6 +11,15 @@
         android:background="@android:color/black"
         android:orientation="horizontal"
         android:padding="1dp">
+
+        <!--android:visibility="gone"-->
+        <!--
+            <com.qozix.tileview.TileView
+                android:id="@+id/imageMap"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"/>
+                -->
     </LinearLayout>
 
     <ListView

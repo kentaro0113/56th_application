@@ -18,9 +18,9 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
-
+            android:background="@drawable/tab_timetable_day1"
             android:text="@string/TimeTableTabDay1"
-            android:textColor="@color/colorPrimary"
+            android:textColor="?attr/colorPrimary"
             android:textSize="16sp" />
         <Button
             android:id="@+id/buttonTabDay2"
@@ -29,9 +29,9 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
-
+            android:background="@drawable/tab_timetable_day2"
             android:text="@string/TimeTableTabDay2"
-            android:textColor="@color/colorPrimary"
+            android:textColor="?attr/colorPrimary"
             android:textSize="16sp" />
         <Button
             android:id="@+id/buttonTabDay3"
@@ -40,9 +40,9 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
-
+            android:background="@drawable/tab_timetable_day3"
             android:text="@string/TimeTableTabDay3"
-            android:textColor="@color/colorPrimary"
+            android:textColor="?attr/colorPrimary"
             android:textSize="16sp" />
         <Button
             android:id="@+id/buttonTabDay4"
@@ -51,9 +51,9 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
-
+            android:background="@drawable/tab_timetable_day4"
             android:text="@string/TimeTableTabDay4"
-            android:textColor="@color/colorPrimary"
+            android:textColor="?attr/colorPrimary"
             android:textSize="16sp" />
         <Button
             android:id="@+id/buttonTabCheck"
@@ -62,9 +62,9 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
-
+            android:background="@drawable/tab_timetable_check"
             android:text="@string/TimeTableTabCheck"
-            android:textColor="@color/colorPrimary"
+            android:textColor="?attr/colorPrimary"
             android:textSize="16sp" />
     </LinearLayout>
 
@@ -87,10 +87,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="12dp"
-                    android:text="@string/stage"
+                    android:text="ステージ"
                     android:textSize="18sp" />
 
-                <com.chibafes.chibafes55.MeasureListView
+                <com.chibafes.chibafes56.MeasureListView
                     android:id="@+id/list_timetable"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -100,10 +100,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="12dp"
-                    android:text="@string/streetperformance"
+                    android:text="ストリートパフォーマンス"
                     android:textSize="18sp" />
 
-                <com.chibafes.chibafes55.MeasureListView
+                <com.chibafes.chibafes56.MeasureListView
                     android:id="@+id/list_timetable2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -116,7 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorTabCheck"
-            android:textSize="17sp"
+            android:textSize="17dp"
             android:padding="16dp"
             android:gravity="center"
             android:text="@string/TimeTableNoCheck" />

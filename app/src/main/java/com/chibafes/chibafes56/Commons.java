@@ -56,7 +56,7 @@ public class Commons {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor e = pref.edit();
         e.putString(key, value);
-        e.commit();
+        e.apply();
     }
     // int型整数を保存する
     public static void writeInt(Context context, String key, int value) {
@@ -242,3 +242,4 @@ public class Commons {
         return null;
     }
 }
+

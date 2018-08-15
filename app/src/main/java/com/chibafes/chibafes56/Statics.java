@@ -1,5 +1,11 @@
 package com.chibafes.chibafes56;
 
+/**
+ * Statics
+ * Created by llrk on 2017/08/05.
+ * 定数を記述するファイル
+ */
+
 public class Statics {
     public static final String URL_UPDATE       = "http://demo.chibafes.com/appli/php/55th/update.php";
     public static final String URL_ENQUETE      = "http://demo.chibafes.com/appli/php/55th/enquete_answer.php";

@@ -15,8 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.chibafes.a56thchibafes.R;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,7 +25,6 @@ import org.json.JSONObject;
 
 // 0903_kimura:ActivityからFragmentへ変更、それに伴う調整
 public class InfoActivity extends Fragment {
-    private ListView tableNewsList;
     private AlertDialog alertInfo = null;
     private LinearLayout viewInfo = null;
 
@@ -39,7 +36,7 @@ public class InfoActivity extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.activity_info, container, false);
 
-        tableNewsList = (ListView) view.findViewById(R.id.tableNewsList);
+        ListView tableNewsList = (ListView) view.findViewById(R.id.tableNewsList);
 
         String sNews = Commons.readString(getContext(), "data_news");
         arrayInfoItem = null;
@@ -135,7 +132,7 @@ public class InfoActivity extends Fragment {
 class InfoItem {
     private JSONObject data;
 
-    public InfoItem(){
+    InfoItem(){
         data = null;
     }
 
@@ -186,13 +183,11 @@ class InfoItem {
 
 // 新着情報リスト用アダプタ
 class InfoListAdapter extends ArrayAdapter<InfoItem> {
-    private Context context;
     private LayoutInflater layoutInflater;
 
-    public InfoListAdapter(Context context, int textViewResourceId, InfoItem[] objects) {
+    InfoListAdapter(Context context, int textViewResourceId, InfoItem[] objects) {
         super(context, textViewResourceId, objects);
 
-        this.context = context;
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -207,8 +202,12 @@ class InfoListAdapter extends ArrayAdapter<InfoItem> {
 
         TextView textTitle = (TextView) convertView.findViewById(R.id.textTitle);
         TextView textTime = (TextView) convertView.findViewById(R.id.textTime);
-        textTitle.setText(item.getTitle());
-        textTime.setText(item.getTime());
+        if (item != null) {
+            textTitle.setText(item.getTitle());
+        }
+        if (item != null) {
+            textTime.setText(item.getTime());
+        }
 
         return convertView;
     }

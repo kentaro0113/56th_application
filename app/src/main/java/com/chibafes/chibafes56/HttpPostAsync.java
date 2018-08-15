@@ -11,11 +11,17 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * HttpPostAsync
+ * Created by llrk on 2017/03/09.
+ * 非同期通信処理を管理するクラス
+ */
+
 public class HttpPostAsync extends AsyncTask<String, Integer, String> {
     private AsyncTaskCallback callback = null;
     private boolean bError;
 
-    public HttpPostAsync(AsyncTaskCallback _callback) {
+    HttpPostAsync(AsyncTaskCallback _callback) {
         super();
         this.callback = _callback;
         bError = false;

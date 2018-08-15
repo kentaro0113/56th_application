@@ -9,8 +9,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 
-import com.chibafes.a56thchibafes.R;
-
 /**
  * Created by aki09 on 2017/09/01.
  */
@@ -33,10 +31,10 @@ public class SettingActivity extends Activity {
 
     public void onClickButtonAbout(View view){
         new AlertDialog.Builder(this)
-                .setTitle(null)
-                .setMessage(getResources().getString(R.string.AboutCopyright))
-                .setPositiveButton(getResources().getString(R.string.ButtonOk),null)
-                .show();
+                    .setTitle(null)
+                    .setMessage(getResources().getString(R.string.AboutCopyright))
+                    .setPositiveButton(getResources().getString(R.string.ButtonOk),null)
+                    .show();
     }
     public void onClickButtonToWeb(View view) {
         // Webサイトへ遷移する

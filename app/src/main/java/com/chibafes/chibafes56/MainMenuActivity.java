@@ -18,12 +18,8 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.chibafes.a56thchibafes.R;
-import com.chibafes.chibafes56.HttpPostAsync;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 
 /**
  * MainMenu Activity
@@ -204,7 +200,6 @@ public class MainMenuActivity extends FragmentActivity implements HttpPostAsync.
                 }
             }
             bAppeared = true;
-            return;
         }
     }
 
@@ -320,3 +315,4 @@ public class MainMenuActivity extends FragmentActivity implements HttpPostAsync.
 
 
 }
+

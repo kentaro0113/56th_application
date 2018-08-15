@@ -8,8 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
-import com.chibafes.a56thchibafes.R;
-
 public class NotificationReceiver extends BroadcastReceiver {
 
     @Override
@@ -33,7 +31,9 @@ public class NotificationReceiver extends BroadcastReceiver {
                 .build();
 
         NotificationManager manager = (NotificationManager)context.getSystemService(Context.NOTIFICATION_SERVICE);
-        manager.notify(0, noti);
+        if (manager != null) {
+            manager.notify(0, noti);
+        }
     }
 
 }

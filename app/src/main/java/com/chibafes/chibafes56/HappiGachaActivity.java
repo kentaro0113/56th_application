@@ -24,7 +24,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.chibafes.a56thchibafes.R;
 import com.longevitysoft.android.xml.plist.domain.Array;
 import com.longevitysoft.android.xml.plist.domain.Dict;
 import com.longevitysoft.android.xml.plist.domain.PList;
@@ -104,7 +103,7 @@ public class HappiGachaActivity extends Activity {
                 animationSet.setAnimationListener(animationListener);
                 imageBox.startAnimation(animationSet);
             }
-            break;
+                break;
             case 1:
             case 3: {
                 RotateAnimation rotateAnimation = new RotateAnimation(35, -35, posImageBox.x / 2, posImageBox.y / 2);
@@ -114,7 +113,7 @@ public class HappiGachaActivity extends Activity {
                 animationSet.setAnimationListener(animationListener);
                 imageBox.startAnimation(animationSet);
             }
-            break;
+                break;
             case 2:
             case 4: {
                 RotateAnimation rotateAnimation = new RotateAnimation(-35, 35, posImageBox.x / 2, posImageBox.y / 2);
@@ -124,7 +123,7 @@ public class HappiGachaActivity extends Activity {
                 animationSet.setAnimationListener(animationListener);
                 imageBox.startAnimation(animationSet);
             }
-            break;
+                break;
             case 5: {
                 RotateAnimation rotateAnimation = new RotateAnimation(35, 0, posImageBox.x / 2, posImageBox.y / 2);
                 animationSet.addAnimation(rotateAnimation);
@@ -133,7 +132,7 @@ public class HappiGachaActivity extends Activity {
                 animationSet.setAnimationListener(animationListener);
                 imageBox.startAnimation(animationSet);
             }
-            break;
+                break;
             case 6: {
                 AlphaAnimation alphaAnimation = new AlphaAnimation(1.0f, 0.999f);
                 alphaAnimation.setInterpolator(new DecelerateInterpolator());
@@ -149,7 +148,7 @@ public class HappiGachaActivity extends Activity {
                 }.sendEmptyMessageDelayed(0, 300);
                 */
             }
-            break;
+                break;
             case 7: {
                 ScaleAnimation scaleAnimation = new ScaleAnimation(1.0f, 0.5f, 1.0f, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
                 animationSet.addAnimation(scaleAnimation);
@@ -160,7 +159,7 @@ public class HappiGachaActivity extends Activity {
                 animationSet.setAnimationListener(animationListener);
                 imageBox.startAnimation(animationSet);
             }
-            break;
+                break;
             case 8: {
                 ScaleAnimation scaleAnimation = new ScaleAnimation(0.5f, 1.0f, 0.5f, 1.0f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
                 animationSet.addAnimation(scaleAnimation);
@@ -171,7 +170,7 @@ public class HappiGachaActivity extends Activity {
                 animationSet.setAnimationListener(animationListener);
                 imageBox.startAnimation(animationSet);
             }
-            break;
+                break;
             case 9: {
                 imageHappi.setVisibility(View.VISIBLE);
                 ScaleAnimation scaleAnimation = new ScaleAnimation(0.2f, 0.4f, 0.2f, 0.4f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
@@ -201,7 +200,7 @@ public class HappiGachaActivity extends Activity {
 
                 imageBox.setVisibility(View.INVISIBLE);
             }
-            break;
+                break;
         }
     }
 
@@ -257,13 +256,13 @@ public class HappiGachaActivity extends Activity {
             int nBuf = dic.getConfigurationInteger("rate").getValue();
             ImageView imageBox = (ImageView) findViewById(R.id.imageBox);
             if(nBuf < 10) {
-                //imageBox.setImageResource(R.drawable.image_presentbox3);
+                imageBox.setImageResource(R.drawable.image_presentbox3);
             }
             else if(nBuf <= 20) {
-                //imageBox.setImageResource(R.drawable.image_presentbox2);
+                imageBox.setImageResource(R.drawable.image_presentbox2);
             }
             else {
-                //imageBox.setImageResource(R.drawable.image_presentbox);
+                imageBox.setImageResource(R.drawable.image_presentbox);
             }
             imageBox.setVisibility(View.VISIBLE);
 
@@ -291,6 +290,20 @@ public class HappiGachaActivity extends Activity {
             doGachaAnimation();
         }
     }
+
+    /*
+
+
+                NSString* sBuf = @"https://itunes.apple.com/us/app/%E7%AC%AC55%E5%9B%9E%E5%8D%83%E8%91%89%E5%A4%A7%E7%A5%AD%E3%82%A2%E3%83%97%E3%83%AA-for-you/id1299542669?l=ja&ls=1&mt=8";
+                NSString *sEscapedUrl = [sBuf stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
+                sBuf = [NSString stringWithFormat:@"はっぴガチャで「%@」が当たったよ！", [[array objectAtIndex:nGetItem] objectForKey:@"name"]];
+                //NSString *sEscapedStatus = [sBuf stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                sTwitterUrl = [NSString stringWithFormat:@"http://twitter.com/share?url=%@&text=%@&hashtags=千葉大祭", sEscapedUrl, sBuf];
+                // ガチャ演出を開始する
+                nStep = 0;
+
+            }
+     */
 
     private int getRate(int i, Array array) {
         int nBuf = ((Dict)array.get(i)).getConfigurationInteger("rate").getValue();

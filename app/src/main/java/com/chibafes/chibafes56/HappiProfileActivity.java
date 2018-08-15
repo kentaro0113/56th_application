@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
-import com.chibafes.a56thchibafes.R;
-
 /**
  * Created by llrk on 2017/03/26.
  */
@@ -17,7 +15,7 @@ public class HappiProfileActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_happiprofile);
+        setContentView(R.layout.activity_happi_profile);
     }
 
     public void onClickButtonBack(View view) {

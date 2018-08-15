@@ -11,7 +11,6 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.chibafes.a56thchibafes.R;
 import com.longevitysoft.android.xml.plist.domain.Array;
 import com.longevitysoft.android.xml.plist.domain.Dict;
 import com.longevitysoft.android.xml.plist.domain.PList;
@@ -81,7 +80,7 @@ public class HappiActivity extends Fragment {
 
         Dict dic;
 
-        switch (nType) {
+        switch(nType) {
             /*
             case Statics.HAPPI_SERIF_FIRST:
                 // 起動後最初のセリフは専用セリフのみとする
@@ -120,9 +119,10 @@ public class HappiActivity extends Fragment {
 
     private void setSerif(ArrayList<String> arraySerif, Dict dic) {
         Array list = dic.getConfigurationArray("serif");
-        for (int i = 0; i < list.size(); ++i) {
-            arraySerif.add(((com.longevitysoft.android.xml.plist.domain.String) list.get(i)).getValue());
+        for(int i = 0; i < list.size(); ++i) {
+            arraySerif.add(((com.longevitysoft.android.xml.plist.domain.String)list.get(i)).getValue());
         }
     }
 
 }
+

@@ -14,7 +14,6 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.chibafes.a56thchibafes.R;
 import com.longevitysoft.android.xml.plist.domain.Array;
 import com.longevitysoft.android.xml.plist.domain.Dict;
 import com.longevitysoft.android.xml.plist.domain.PList;
@@ -54,7 +53,7 @@ public class HappiCollectionActivity extends Activity {
                 if (Commons.readInt(HappiCollectionActivity.this, "getItem" + position) > 0) {
                     Dict dic = (Dict) arrayCollectionList.get(position);
 
-                    ScrollView viewInfo = (ScrollView) getLayoutInflater().inflate(R.layout.collection_infoview, null);
+                    ScrollView viewInfo = (ScrollView) getLayoutInflater().inflate(R.layout.collection_info_view, null);
                     TextView textName = (TextView) viewInfo.findViewById(R.id.textName);
                     textName.setText(dic.getConfiguration("name").getValue());
                     TextView textInfo = (TextView) viewInfo.findViewById(R.id.textInfo);
@@ -108,8 +107,8 @@ class HappiCollectionAdapter extends ArrayAdapter<Dict> {
             image.setImageResource(nImageId);
             label.setText(item.getConfiguration("name").getValue());
         } else {
-            /*image.setImageResource(R.drawable.icon_noget);
-            label.setText(context.getResources().getString(R.string.collection_noget));*/
+            image.setImageResource(R.drawable.icon_noget);
+            label.setText(context.getResources().getString(R.string.collection_noget));
         }
 
         return convertView;

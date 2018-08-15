@@ -21,8 +21,6 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.chibafes.a56thchibafes.R;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -41,7 +39,6 @@ public class KikakuAllActivity extends Fragment {
     private FrameLayout viewFavorite;
     private Button buttonTabSearch;
     private Button buttonTabFavorite;
-    private Button buttonSearch;
     private ListView tableSearch;
     private ListView tableFavorite;
     private TextView viewNoFavorite;
@@ -53,16 +50,6 @@ public class KikakuAllActivity extends Fragment {
     private static int BUTTON_KIKAKU_TAB_SEARCH = 0;
     private static int BUTTON_KIKAKU_TAB_FAVORITE = 1;
 
-    private static int BUTTON_SEARCH_DAY1 = 0;
-    private static int BUTTON_SEARCH_DAY2 = 1;
-    private static int BUTTON_SEARCH_DAY3 = 2;
-    private static int BUTTON_SEARCH_DAY4 = 3;
-
-    private static int BUTTON_SEARCH_GENRE1 = 4;
-    private static int MAX_GENRE = 8;
-
-    private static int BUTTON_SEARCH_TYPE1 = 12;
-    private static int MAX_TYPE = 5;
     private static int MAX_OPTION = 17;
 
     private ArrayList<KikakuItem> arraySearchData;
@@ -78,7 +65,7 @@ public class KikakuAllActivity extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.activity_kikakusearch, container, false);
+        View view = inflater.inflate(R.layout.activity_kikakuall, container, false);
 
         viewSearch = (LinearLayout) view.findViewById(R.id.viewSearch);
         viewFavorite = (FrameLayout) view.findViewById(R.id.viewFavorite);
@@ -96,7 +83,7 @@ public class KikakuAllActivity extends Fragment {
                 setSearchTab(BUTTON_KIKAKU_TAB_FAVORITE);
             }
         });
-        buttonSearch = (Button) view.findViewById(R.id.buttonSearch);
+        Button buttonSearch = (Button) view.findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -145,7 +132,7 @@ public class KikakuAllActivity extends Fragment {
         setSearchTab(BUTTON_KIKAKU_TAB_SEARCH);
 
         // 検索ダイアログの生成
-        scrollSearch = (ScrollView) getActivity().getLayoutInflater().inflate(R.layout.window_kikaku_search, null);
+        scrollSearch = (ScrollView) getActivity().getLayoutInflater().inflate(R.layout.window_kikakusearch, null);
 
         editFreeWord = (EditText) scrollSearch.findViewById(R.id.editFreeWord);
         editFreeWord.setText(sSearchWord);
@@ -215,7 +202,7 @@ public class KikakuAllActivity extends Fragment {
         KikakuListAdapter arrayAdapterKikaku = new KikakuListAdapter(getActivity(), 0, arraySearchData);
         tableSearch.setAdapter(arrayAdapterKikaku);
 
-        final LinearLayout viewDetail = (LinearLayout) getActivity().getLayoutInflater().inflate(R.layout.window_kikaku_detail, null);
+        final LinearLayout viewDetail = (LinearLayout) getActivity().getLayoutInflater().inflate(R.layout.window_kikakudetail, null);
         tableSearch.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -254,11 +241,11 @@ public class KikakuAllActivity extends Fragment {
             public void onClick(View v) {
                 bFavorite = !bFavorite;
                 if(bFavorite) {
-                    //buttonFavorite.setImageResource(R.drawable.icon_favo_on);
+                    buttonFavorite.setImageResource(R.drawable.icon_favo_on);
                     arrayFavorite.add(item.getIntValue("id"));
                 }
                 else {
-                    //buttonFavorite.setImageResource(R.drawable.icon_favo);
+                    buttonFavorite.setImageResource(R.drawable.icon_favo);
                     arrayFavorite.remove((Object)item.getIntValue("id"));
                 }
                 saveFavorite(arrayFavorite);
@@ -268,10 +255,10 @@ public class KikakuAllActivity extends Fragment {
             }
         });
         if(bFavorite) {
-            //buttonFavorite.setImageResource(R.drawable.icon_favo_on);
+            buttonFavorite.setImageResource(R.drawable.icon_favo_on);
         }
         else {
-            //buttonFavorite.setImageResource(R.drawable.icon_favo);
+            buttonFavorite.setImageResource(R.drawable.icon_favo);
         }
         TextView textName = (TextView) viewDetail.findViewById(R.id.textName);
         textName.setText(item.getStringValue("name"));
@@ -283,7 +270,7 @@ public class KikakuAllActivity extends Fragment {
         textLocation.setText(item.getStringValue("place_name"));
         ImageView imagePRcut = (ImageView) viewDetail.findViewById(R.id.imagePRCut);
         if(item.getStringValue("image") == null || item.getStringValue("image").length() <= 0) {
-            //imagePRcut.setImageResource(R.drawable.no_image);
+            imagePRcut.setImageResource(R.drawable.no_image);
         }
         else {
             imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".png"));
@@ -383,6 +370,10 @@ public class KikakuAllActivity extends Fragment {
         arraySearchData = new ArrayList<>();
         for (KikakuItem item : arrayKikakuData) {
             // 日付：チェックしている日付のうちいずれかが出店日であるかのチェック
+            int BUTTON_SEARCH_DAY1 = 0;
+            int BUTTON_SEARCH_DAY2 = 1;
+            int BUTTON_SEARCH_DAY3 = 2;
+            int BUTTON_SEARCH_DAY4 = 3;
             if (!((array[BUTTON_SEARCH_DAY1] && item.getIntValue("day1") == 1) ||
                     (array[BUTTON_SEARCH_DAY2] && item.getIntValue("day2") == 1) ||
                     (array[BUTTON_SEARCH_DAY3] && item.getIntValue("day3") == 1) ||
@@ -391,7 +382,9 @@ public class KikakuAllActivity extends Fragment {
             }
             // ジャンル：チェックしているいずれかのジャンルであるかのチェック
             int h;
+            int MAX_GENRE = 8;
             for (h = 0; h < MAX_GENRE; ++h) {
+                int BUTTON_SEARCH_GENRE1 = 4;
                 if (!array[BUTTON_SEARCH_GENRE1 + h]) {
                     continue;
                 }
@@ -406,7 +399,9 @@ public class KikakuAllActivity extends Fragment {
                 continue;
             }
             // 形態：チェックしているいずれかの形態であるかのチェック
+            int MAX_TYPE = 5;
             for (h = 0; h < MAX_TYPE; ++h) {
+                int BUTTON_SEARCH_TYPE1 = 12;
                 if (!array[BUTTON_SEARCH_TYPE1 + h]) {
                     continue;
                 }
@@ -443,7 +438,7 @@ public class KikakuAllActivity extends Fragment {
         for (String anArrStr : arrStr) {
             try {
                 arrayList.add(Integer.parseInt(anArrStr));
-            } catch (Exception ignored) {
+            } catch (Exception e) {
 
             }
         }
@@ -452,12 +447,12 @@ public class KikakuAllActivity extends Fragment {
     }
 
     public void saveFavorite(ArrayList<Integer> arrayList) {
-        StringBuilder result = new StringBuilder();
+        StringBuffer result = new StringBuffer();
         for(int i = 0; i < arrayList.size() - 1; ++i) {
-            result.append(arrayList.get(i)).append(",");
+            result.append(arrayList.get(i) + ",");
         }
         if(arrayList.size() > 0) {
-            result.append(arrayList.get(arrayList.size() - 1));
+            result.append(arrayList.get(arrayList.size() - 1) + "");
         }
         Commons.writeString(getContext(), "kikaku_favorite", result.toString());
     }
@@ -521,15 +516,22 @@ class KikakuListAdapter extends ArrayAdapter<KikakuItem> {
             convertView.setBackgroundColor(Color.argb(0, 255, 255, 255));
         }
         ImageView imagePRcut = (ImageView) convertView.findViewById(R.id.imagePRCut);
-        if (item.getStringValue("image") == null || item.getStringValue("image").length() <= 0) {
-            //imagePRcut.setImageResource(R.drawable.no_image);
-        } else {
-            imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".png"));
+        if (item != null) {
+            if(item.getStringValue("image") == null || item.getStringValue("image").length() <= 0) {
+                imagePRcut.setImageResource(R.drawable.no_image);
+            }
+            else {
+                imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".png"));
+            }
         }
         TextView textName = (TextView) convertView.findViewById(R.id.textGroupName);
-        textName.setText(item.getStringValue("name"));
+        if (item != null) {
+            textName.setText(item.getStringValue("name"));
+        }
         TextView textSummary = (TextView) convertView.findViewById(R.id.textGroupSummary);
-        textSummary.setText(item.getStringValue("summary"));
+        if (item != null) {
+            textSummary.setText(item.getStringValue("summary"));
+        }
 
         return convertView;
     }

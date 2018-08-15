@@ -20,7 +20,7 @@
             android:onClick="onClickButtonBack"
             android:padding="4dp"
             android:scaleType="fitStart"
-             />
+            android:src="@drawable/icon_back" />
 
         <TextView
             android:id="@+id/Title"
@@ -52,18 +52,18 @@
             android:id="@+id/imageView5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-             />
+            android:background="@drawable/back_repeat" />
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="vertical"></LinearLayout>
+            android:layout_weight="2"
+            android:orientation="vertical"></LinearLayout>
 
             <ImageView
                 android:id="@+id/imageBox"
@@ -72,139 +72,139 @@
                 android:layout_margin="27dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
-
+                android:src="@drawable/image_presentbox"
                 android:visibility="invisible" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:orientation="vertical"></LinearLayout>
-        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:weightSum="10">
+            android:layout_weight="2"
+            android:orientation="vertical"></LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="10">
+
+        <LinearLayout
+            android:id="@+id/viewMessage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="4"
+            android:background="#B3B2B3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textMessage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:padding="8dp"
+                android:text="@string/GachaMessage1"
+                android:textColor="@android:color/white"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageHappi"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:contentDescription=""
+            android:src="@drawable/happi1"
+            android:visibility="invisible" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:orientation="horizontal">
+
 
             <LinearLayout
-                android:id="@+id/viewMessage"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_weight="4"
-                android:background="#B3B2B3"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textMessage"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="4dp"
-                    android:padding="8dp"
-                    android:text="@string/GachaMessage1"
-                    android:textColor="@android:color/white"
-                    android:textSize="17sp" />
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/imageHappi"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:contentDescription=""
-
-                android:visibility="invisible" />
-
-            <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:gravity="center"
                 android:orientation="horizontal">
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="4"
-                    android:orientation="horizontal">
+                    android:layout_weight="2"
+                    android:orientation="vertical"></LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/viewHappiPoint"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/textView10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorButton"
+                        android:padding="16dp"
+                        android:text="@string/GachaMessage3" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:orientation="vertical"></LinearLayout>
-
-                    <FrameLayout
-                        android:id="@+id/viewHappiPoint"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1">
-
-                        <TextView
-                            android:id="@+id/textView10"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@color/colorButton"
-                            android:padding="16dp"
-                            android:text="@string/GachaMessage3" />
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="4dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical"></LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textHappiPoint"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:padding="4dp">
+                            android:layout_gravity="right"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:background="@android:color/white"
+                            android:gravity="right"
+                            android:padding="12dp"
+                            android:text="TextView" />
+                    </LinearLayout>
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:orientation="vertical"></LinearLayout>
+                </FrameLayout>
 
-                            <TextView
-                                android:id="@+id/textHappiPoint"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="right"
-                                android:layout_margin="4dp"
-                                android:layout_weight="1"
-                                android:background="@android:color/white"
-                                android:gravity="right"
-                                android:padding="12dp"
-                                android:text="TextView" />
-                        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="vertical"></LinearLayout>
 
-                    </FrameLayout>
+            </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:orientation="vertical"></LinearLayout>
+            <ImageButton
+                android:id="@+id/buttonTwitter"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="24dp"
+                android:layout_weight="0"
+                android:background="@null"
+                android:onClick="onClickTwitter"
+                android:scaleType="fitCenter"
+                android:src="@drawable/twitter"
+                android:visibility="invisible" />
 
-                </LinearLayout>
+        </FrameLayout>
 
-                <ImageButton
-                    android:id="@+id/buttonTwitter"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="24dp"
-                    android:layout_weight="0"
-                    android:background="@null"
-                    android:onClick="onClickTwitter"
-                    android:scaleType="fitCenter"
-
-                    android:visibility="invisible" />
-
-            </FrameLayout>
-
-        </LinearLayout>
+    </LinearLayout>
 
         <ImageButton
             android:id="@+id/buttonSkip"
@@ -214,7 +214,7 @@
             android:background="@color/colorButton"
             android:onClick="onClickSkip"
             android:scaleType="fitCenter"
-
+            android:src="@drawable/icon_skip"
             android:visibility="invisible" />
 
         <Button
@@ -223,7 +223,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="16dp"
-
+            android:textColor="?attr/colorPrimary"
             android:background="@color/colorButton"
             android:onClick="onClickGacha" />
 

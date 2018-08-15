@@ -19,7 +19,6 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import com.chibafes.a56thchibafes.R;
 import com.longevitysoft.android.xml.plist.domain.Array;
 import com.longevitysoft.android.xml.plist.domain.Dict;
 import com.longevitysoft.android.xml.plist.domain.PList;
@@ -310,10 +309,10 @@ public class TimeTableActivity extends Fragment {
             public void onClick(View v) {
                 bCheck = !bCheck;
                 if(bCheck) {
-                    //buttonFavorite.setImageResource(R.drawable.icon_favo_on);
+                    buttonFavorite.setImageResource(R.drawable.icon_favo_on);
                 }
                 else {
-                    //buttonFavorite.setImageResource(R.drawable.icon_favo);
+                    buttonFavorite.setImageResource(R.drawable.icon_favo);
                 }
 
                 int nTime = itemTimeTable.getIndex() * 10000 + itemTimeTable.getTime();
@@ -391,7 +390,7 @@ public class TimeTableActivity extends Fragment {
                         Commons.writeArrayInt(getContext(), "timetable_check", arrayCheck);
                     }
                 }
-                // 通知の作成
+                    // 通知の作成
                     /*
                     UIUserNotificationType types = UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
                     UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
@@ -426,10 +425,16 @@ public class TimeTableActivity extends Fragment {
                     }
                 }
                 */
-
-
-
-
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 if (nCurrentList == BUTTON_TIMETABLE_TAB_CHECK) {
                     setList(BUTTON_TIMETABLE_TAB_CHECK);
                 }
@@ -454,12 +459,12 @@ public class TimeTableActivity extends Fragment {
                 }
             }
         }
-
+        
         if(bCheck) {
-            //buttonFavorite.setImageResource(R.drawable.icon_favo_on);
+            buttonFavorite.setImageResource(R.drawable.icon_favo_on);
         }
         else {
-            //buttonFavorite.setImageResource(R.drawable.icon_favo);
+            buttonFavorite.setImageResource(R.drawable.icon_favo);
         }
         TextView textName = (TextView) viewDetail.findViewById(R.id.textName);
         textName.setText(item.getStringValue("name"));
@@ -471,10 +476,10 @@ public class TimeTableActivity extends Fragment {
         textTime.setText(itemTimeTable.getTimeString());
         ImageView imagePRcut = (ImageView) viewDetail.findViewById(R.id.imagePRCut);
         if(item.getStringValue("image") == null || item.getStringValue("image").length() <= 0) {
-            //imagePRcut.setImageResource(R.drawable.no_image);
+            imagePRcut.setImageResource(R.drawable.no_image);
         }
         else {
-            //imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".png"));
+            imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".png"));
         }
         ImageView imageGenre1 = (ImageView) viewDetail.findViewById(R.id.imageGenre1);
         imageGenre1.setImageResource(getResources().getIdentifier("icon_genre" + item.getIntValue("genre1"), "drawable", getContext().getPackageName()));
@@ -487,7 +492,7 @@ public class TimeTableActivity extends Fragment {
             imageGenre2.setImageResource(getResources().getIdentifier("icon_genre" + item.getIntValue("genre2"), "drawable", getContext().getPackageName()));
         }
     }
-
+    
     class TimeTableItem {
         private int nIndex;
         private int nId;
@@ -549,7 +554,10 @@ public class TimeTableActivity extends Fragment {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             TimeTableItem itemTime = getItem(position);
-            KikakuItem itemKikaku = itemTime.getKikakuItem();
+            KikakuItem itemKikaku = null;
+            if (itemTime != null) {
+                itemKikaku = itemTime.getKikakuItem();
+            }
 
             if (null == convertView) {
                 convertView = layoutInflater.inflate(R.layout.listitem_timetable, null);
@@ -557,10 +565,10 @@ public class TimeTableActivity extends Fragment {
             if(itemKikaku == null) {
                 return convertView;
             }
-
+            
             ImageView imagePRcut = (ImageView) convertView.findViewById(R.id.imagePRCut);
             if(itemKikaku.getStringValue("image") == null || itemKikaku.getStringValue("image").length() <= 0) {
-                //imagePRcut.setImageResource(R.drawable.no_image);
+                imagePRcut.setImageResource(R.drawable.no_image);
             }
             else {
                 imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), itemKikaku.getStringValue("image") + ".png"));

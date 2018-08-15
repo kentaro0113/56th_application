@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
-import com.chibafes.a56thchibafes.R;
 import com.qozix.tileview.TileView;
 
 import org.json.JSONArray;
@@ -45,7 +44,7 @@ public class MapActivity extends Fragment {
         int imageWidth = 0;
         int imageHeight = 0;
 
-        LinearLayout viewMapBase = view.findViewById(R.id.viewMapBase);
+        LinearLayout viewMapBase = (LinearLayout) view.findViewById(R.id.viewMapBase);
         if(imageMap != null) {
             viewMapBase.removeView(imageMap);
             imageMap.destroy();
@@ -86,9 +85,14 @@ public class MapActivity extends Fragment {
             }
         }
 
-        String[] data = new String[arraySpotList.length];
-        for(int i = 0;i < arraySpotList.length; ++i) {
-            data[i] = arraySpotList[i].getStringValue("name");
+        String[] data = new String[0];
+        if (arraySpotList != null) {
+            data = new String[arraySpotList.length];
+        }
+        if (arraySpotList != null) {
+            for(int i = 0;i < arraySpotList.length; ++i) {
+                data[i] = arraySpotList[i].getStringValue("name");
+            }
         }
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getContext(), android.R.layout.simple_list_item_1, data);
         ListView listSpot = (ListView) view.findViewById(R.id.listSpot);

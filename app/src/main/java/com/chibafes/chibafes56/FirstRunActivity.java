@@ -16,8 +16,6 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
 
-import com.chibafes.a56thchibafes.R;
-
 
 /**
  * FirstRunActivity
@@ -26,7 +24,7 @@ import com.chibafes.a56thchibafes.R;
  */
 
 
-// FirstRunActivityからFragmentへ変更、それに伴う調整
+    // FirstRunActivityからFragmentへ変更、それに伴う調整
 public class FirstRunActivity extends FragmentActivity implements ViewPager.OnPageChangeListener {
     private static final String[] arrFileName = {"tutorial1", "tutorial2", "tutorial3", "tutorial4", ""};
 
@@ -92,7 +90,7 @@ public class FirstRunActivity extends FragmentActivity implements ViewPager.OnPa
 
     @Override
     public void onPageSelected(int position) {
-        if (position >= arrFileName.length - 1) {
+        if(position >= arrFileName.length - 1) {
             // 最後のページを開いたら次の画面へ移動する
             // 現在のミリ秒を保存してユーザIDとして用いる(※重複可能性あり)
             long currentTimeMillis = System.currentTimeMillis();
@@ -141,6 +139,7 @@ public class FirstRunActivity extends FragmentActivity implements ViewPager.OnPa
 
             if (!sFileName.equals("")) {
                 Resources resource = getContext().getResources();
+                imageTutorial.setImageBitmap(Commons.getResizeBitmapFromId(resource, resource.getIdentifier(sFileName, "drawable", getContext().getPackageName()), Commons.getDisplaySize(getContext())));
             }
             return view;
         }
@@ -157,3 +156,5 @@ public class FirstRunActivity extends FragmentActivity implements ViewPager.OnPa
     }
 
 }
+
+

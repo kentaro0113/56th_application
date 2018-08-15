@@ -9,13 +9,13 @@
         android:id="@+id/textView18"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="第56回千葉大祭公式キャラクター" />
+        android:text="第55回千葉大祭公式キャラクター" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="100dp"
         android:layout_height="100dp"
-         />
+        app:srcCompat="@drawable/happi2" />
 
     <LinearLayout
         android:layout_width="match_parent"

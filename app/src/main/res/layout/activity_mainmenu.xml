@@ -12,11 +12,11 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/button_back"
+            android:id="@+id/imageButton10"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:background="@color/red"
+            android:background="@null"
             android:padding="4dp"
             android:scaleType="fitStart" />
 
@@ -26,7 +26,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical|center_horizontal"
-            android:text="@string/mainTITLE"
+            android:text="TITLE"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
@@ -35,13 +35,13 @@
             android:id="@+id/buttonMenuSetting"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="end"
+            android:layout_gravity="right"
             android:layout_weight="3"
-            android:background="@color/settingColor"
+            android:background="@null"
             android:onClick="onClickButtonSetting"
             android:padding="4dp"
             android:scaleType="fitEnd"
-             />
+            android:src="@drawable/icon_setting" />
     </LinearLayout>
 
     <LinearLayout
@@ -54,50 +54,50 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/infoColor"
+            android:background="@null"
             android:onClick="onClickButtonInfo"
             android:scaleType="fitCenter"
-             />
+            android:src="@drawable/icon_info" />
 
         <ImageButton
             android:id="@+id/buttonMenuSearch"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/searchColor"
+            android:background="@null"
             android:onClick="onClickButtonSearch"
             android:scaleType="fitCenter"
-             />
+            android:src="@drawable/icon_search" />
 
         <ImageButton
             android:id="@+id/buttonMenuTimeTable"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/timetableColor"
+            android:background="@null"
             android:onClick="onClickButtonTimeTable"
             android:scaleType="fitCenter"
-             />
+            android:src="@drawable/icon_timetable" />
 
         <ImageButton
             android:id="@+id/buttonMenuMap"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/mapColor"
+            android:background="@null"
             android:onClick="onClickButtonMap"
             android:scaleType="fitCenter"
-             />
+            android:src="@drawable/icon_map" />
 
         <ImageButton
             android:id="@+id/buttonMenuHappi"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/happiColor"
+            android:background="@null"
             android:onClick="onClickButtonHappi"
             android:scaleType="fitCenter"
-             />
+            android:src="@drawable/icon_happi" />
     </LinearLayout>
 
     <FrameLayout
