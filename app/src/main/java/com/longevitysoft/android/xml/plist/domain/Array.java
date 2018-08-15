@@ -66,7 +66,7 @@ public class Array extends PListObject implements java.util.List<PListObject> {
 	 */
 	@Override
 	public void add(int arg0, PListObject arg1) {
-		data.add(arg0, (PListObject) arg1);
+		data.add(arg0, arg1);
 	}
 
 	/*
@@ -76,7 +76,7 @@ public class Array extends PListObject implements java.util.List<PListObject> {
 	 */
 	@Override
 	public boolean add(PListObject arg0) {
-		return data.add((PListObject) arg0);
+		return data.add(arg0);
 	}
 
 	/*

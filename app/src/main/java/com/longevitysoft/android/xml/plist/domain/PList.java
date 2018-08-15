@@ -12,12 +12,12 @@
  */
 package com.longevitysoft.android.xml.plist.domain;
 
-import java.util.Stack;
-
 import android.util.Log;
 
 import com.longevitysoft.android.util.Stringer;
 import com.longevitysoft.android.xml.plist.Constants;
+
+import java.util.Stack;
 
 /**
  * A PList class contains the objects and methods used to build and access a

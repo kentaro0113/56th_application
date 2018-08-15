@@ -12,15 +12,15 @@
  */
 package com.longevitysoft.android.xml.plist;
 
-import org.xml.sax.Attributes;
-import org.xml.sax.SAXException;
-import org.xml.sax.ext.DefaultHandler2;
-
 import android.util.Log;
 
 import com.longevitysoft.android.util.Stringer;
 import com.longevitysoft.android.xml.plist.domain.PList;
 import com.longevitysoft.android.xml.plist.domain.PListObject;
+
+import org.xml.sax.Attributes;
+import org.xml.sax.SAXException;
+import org.xml.sax.ext.DefaultHandler2;
 
 /**
  * <p>
@@ -45,7 +45,7 @@ public class PListXMLHandler extends DefaultHandler2 {
 	 */
 	public enum ParseMode {
 		START_TAG, END_TAG
-	};
+	}
 
 	/**
 	 * Implementors can listen for events defined by {@link ParseMode}.
@@ -53,8 +53,8 @@ public class PListXMLHandler extends DefaultHandler2 {
 	 * @author fbeachler
 	 * 
 	 */
-	public static interface PListParserListener {
-		public void onPListParseDone(PList pList, ParseMode mode);
+	public interface PListParserListener {
+		void onPListParseDone(PList pList, ParseMode mode);
 	}
 
 	/**
@@ -194,8 +194,7 @@ public class PListXMLHandler extends DefaultHandler2 {
 	 * @see org.xml.sax.helpers.DefaultHandler#characters(char[], int, int)
 	 */
 	@Override
-	public void characters(char[] ch, int start, int length)
-			throws SAXException {
+	public void characters(char[] ch, int start, int length) {
 		Log.v(stringer.newBuilder().append(TAG).append("#characters")
 				.toString(),
 				stringer.newBuilder().append(ch).append(Constants.PIPE)

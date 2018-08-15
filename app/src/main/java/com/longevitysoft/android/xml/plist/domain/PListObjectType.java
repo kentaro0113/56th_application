@@ -26,7 +26,7 @@ public enum PListObjectType {
 
 	private int type;
 
-	private PListObjectType(int type) {
+	PListObjectType(int type) {
 		this.type = type;
 	}
 

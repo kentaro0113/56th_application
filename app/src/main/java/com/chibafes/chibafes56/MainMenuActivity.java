@@ -70,7 +70,7 @@ public class MainMenuActivity extends FragmentActivity implements HttpPostAsync.
         changeFragment(0, fragment, R.string.TitleInfo);
     }
     public void onClickButtonSearch(View view) {
-        Fragment fragment = new KikakuAllActivity();
+        Fragment fragment = new KikakuSearchActivity();
         changeFragment(1, fragment, R.string.TitleSearch);
     }
     public void onClickButtonTimeTable(View view) {

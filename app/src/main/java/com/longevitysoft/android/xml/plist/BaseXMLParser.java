@@ -12,6 +12,14 @@
  */
 package com.longevitysoft.android.xml.plist;
 
+import android.util.Log;
+
+import com.longevitysoft.android.util.Stringer;
+
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
+import org.xml.sax.helpers.DefaultHandler;
+
 import java.io.IOException;
 import java.io.StringReader;
 
@@ -19,14 +27,6 @@ import javax.xml.parsers.FactoryConfigurationError;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
-
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-import org.xml.sax.helpers.DefaultHandler;
-
-import android.util.Log;
-
-import com.longevitysoft.android.util.Stringer;
 
 /**
  * Base class for implementing SAX parsers. Provides base implementation for
@@ -71,7 +71,7 @@ public abstract class BaseXMLParser {
 	 * @return the handler
 	 */
 	public DefaultHandler getHandler() {
-		return (DefaultHandler) handler;
+		return handler;
 	}
 
 	/**

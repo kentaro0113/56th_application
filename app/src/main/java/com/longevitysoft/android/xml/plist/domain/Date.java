@@ -12,11 +12,11 @@
  */
 package com.longevitysoft.android.xml.plist.domain;
 
+import android.util.Log;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
-
-import android.util.Log;
 
 /**
  * Represents a simple plist date elements.
@@ -54,7 +54,7 @@ public class Date extends PListObject implements
 	 */
 	@Override
 	public java.util.Date getValue() {
-		return (java.util.Date) date;
+		return date;
 	}
 
 	/*

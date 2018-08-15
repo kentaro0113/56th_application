@@ -20,7 +20,7 @@ public class NotificationReceiver extends BroadcastReceiver {
 
         //通知オブジェクトの生成
         Notification noti = new NotificationCompat.Builder(context)
-                .setContentTitle("第55回千葉大祭")
+                .setContentTitle("第56回千葉大祭")
                 .setTicker(ticker)
                 .setContentText(message)
                 .setSmallIcon(R.mipmap.ic_launcher)

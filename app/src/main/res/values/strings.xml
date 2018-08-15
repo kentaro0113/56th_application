@@ -101,7 +101,6 @@
     <string name="firstrun_take">初回起動</string>
     <string name="goto_mainmenu">メインメニューへ</string>
     <string name="mainmenu_thisname">メインメニュー</string>
-    <string name="SearchSettingTitle">検索条件設定</string>
-    <string name="SearchCaptionDay">日程</string>
+
 
 </resources>

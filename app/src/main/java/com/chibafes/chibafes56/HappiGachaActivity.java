@@ -175,7 +175,7 @@ public class HappiGachaActivity extends Activity {
                 imageHappi.setVisibility(View.VISIBLE);
                 ScaleAnimation scaleAnimation = new ScaleAnimation(0.2f, 0.4f, 0.2f, 0.4f, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
                 animationSet.addAnimation(scaleAnimation);
-                TranslateAnimation translateAnimation = new TranslateAnimation(0, 0, 0, -(int)(Commons.getDisplaySize(this).y * 2 / 4));
+                TranslateAnimation translateAnimation = new TranslateAnimation(0, 0, 0, -(Commons.getDisplaySize(this).y * 2 / 4));
                 animationSet.addAnimation(translateAnimation);
                 animationSet.setInterpolator(new DecelerateInterpolator());
                 animationSet.setDuration(1000);

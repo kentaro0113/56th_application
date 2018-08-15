@@ -15,9 +15,9 @@
  */
 package com.longevitysoft.android.xml.plist.domain;
 
-import net.sf.migbase64.Base64;
-
 import com.longevitysoft.android.util.Stringer;
+
+import net.sf.migbase64.Base64;
 
 /**
  * Represents a simple PList data element. The value is stored as a raw string.

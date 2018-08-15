@@ -165,6 +165,8 @@ public class TimeTableActivity extends Fragment {
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
 

@@ -23,19 +23,19 @@ public interface IPListSimpleObject<E extends Object> {
 	 * 
 	 * @return
 	 */
-	public E getValue();
+    E getValue();
 
 	/**
 	 * Set the value of the PList object.
 	 * 
 	 * @param val
 	 */
-	public void setValue(E val);
+    void setValue(E val);
 
 	/**
 	 * Set the value of the PList object from a string.
 	 * 
 	 * @param val
 	 */
-	public void setValue(java.lang.String val);
+    void setValue(java.lang.String val);
 }

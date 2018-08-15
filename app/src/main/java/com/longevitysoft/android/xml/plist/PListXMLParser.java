@@ -12,10 +12,10 @@
  */
 package com.longevitysoft.android.xml.plist;
 
+import com.longevitysoft.android.util.Stringer;
+
 import java.io.IOException;
 import java.io.InputStream;
-
-import com.longevitysoft.android.util.Stringer;
 
 /**
  * @author fbeachler

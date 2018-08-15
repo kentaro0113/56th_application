@@ -27,14 +27,12 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-;
-
-/**
+/**-
  * Created by steee on 2017/09/01.
  */
 
 // 0903_kimura:ActivityからFragmentへ変更、それに伴う調整
-public class KikakuAllActivity extends Fragment {
+public class KikakuSearchActivity extends Fragment {
     private LinearLayout viewSearch;
     private FrameLayout viewFavorite;
     private Button buttonTabSearch;
@@ -65,7 +63,7 @@ public class KikakuAllActivity extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.activity_kikakuall, container, false);
+        View view = inflater.inflate(R.layout.activity_kikakusearch, container, false);
 
         viewSearch = (LinearLayout) view.findViewById(R.id.viewSearch);
         viewFavorite = (FrameLayout) view.findViewById(R.id.viewFavorite);
@@ -73,14 +71,22 @@ public class KikakuAllActivity extends Fragment {
         buttonTabSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setSearchTab(BUTTON_KIKAKU_TAB_SEARCH);
+                try {
+                    setSearchTab(BUTTON_KIKAKU_TAB_SEARCH);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
         buttonTabFavorite = (Button) view.findViewById(R.id.buttonTabFavorite);
         buttonTabFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setSearchTab(BUTTON_KIKAKU_TAB_FAVORITE);
+                try {
+                    setSearchTab(BUTTON_KIKAKU_TAB_FAVORITE);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
         Button buttonSearch = (Button) view.findViewById(R.id.buttonSearch);
@@ -126,10 +132,16 @@ public class KikakuAllActivity extends Fragment {
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
         arrayFavorite = getFavorite();
-        setSearchTab(BUTTON_KIKAKU_TAB_SEARCH);
+        try {
+            setSearchTab(BUTTON_KIKAKU_TAB_SEARCH);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         // 検索ダイアログの生成
         scrollSearch = (ScrollView) getActivity().getLayoutInflater().inflate(R.layout.window_kikakusearch, null);
@@ -250,7 +262,11 @@ public class KikakuAllActivity extends Fragment {
                 }
                 saveFavorite(arrayFavorite);
                 if (viewFavorite.isShown()) {
-                    setSearchTab(BUTTON_KIKAKU_TAB_FAVORITE);
+                    try {
+                        setSearchTab(BUTTON_KIKAKU_TAB_FAVORITE);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -307,7 +323,7 @@ public class KikakuAllActivity extends Fragment {
         }
     }
 
-    private void setSearchTab(int nTarget) {
+    private void setSearchTab(int nTarget) throws Exception {
         if (nTarget == BUTTON_KIKAKU_TAB_SEARCH) {
             buttonTabSearch.setAlpha((float) 1.0);
             buttonTabFavorite.setAlpha((float) 0.3);
@@ -436,23 +452,19 @@ public class KikakuAllActivity extends Fragment {
         }
         String[] arrStr = str.split(",");
         for (String anArrStr : arrStr) {
-            try {
-                arrayList.add(Integer.parseInt(anArrStr));
-            } catch (Exception e) {
-
-            }
+            arrayList.add(Integer.parseInt(anArrStr));
         }
 
         return arrayList;
     }
 
     public void saveFavorite(ArrayList<Integer> arrayList) {
-        StringBuffer result = new StringBuffer();
+        StringBuilder result = new StringBuilder();
         for(int i = 0; i < arrayList.size() - 1; ++i) {
-            result.append(arrayList.get(i) + ",");
+            result.append(arrayList.get(i)).append(",");
         }
         if(arrayList.size() > 0) {
-            result.append(arrayList.get(arrayList.size() - 1) + "");
+            result.append(arrayList.get(arrayList.size() - 1));
         }
         Commons.writeString(getContext(), "kikaku_favorite", result.toString());
     }
@@ -465,13 +477,8 @@ class KikakuItem {
         data = null;
     }
 
-    public boolean setData(JSONObject data) {
-        try {
-            this.data = data;
-        } catch (Exception e) {
-            return false;
-        }
-        return true;
+    public void setData(JSONObject data) throws Exception {
+        this.data = data;
     }
 
     public String getStringValue(String key) {
