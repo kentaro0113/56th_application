@@ -230,7 +230,7 @@ public void onClickGacha(View view) {
             }
      */
 
-£££
+
 public void onClickSkip(View view) {
         endGachaAnimation();
         }
