@@ -60,10 +60,10 @@ imageHappi.startAnimation(animationSet);private void doGachaAnimation() {
             endGachaAnimation();
             }
 
-        else {
+         else {
            nStep++;
            doGachaAnimation();
-        }
+         }
         }
 @Override
      public void onAnimationRepeat(Animation animation) {
