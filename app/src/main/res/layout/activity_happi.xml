@@ -1,134 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3">
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="351dp"
+        android:layout_height="460dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:src="@drawable/room_kodomobeya" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="503dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="503dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="6"
-                    android:orientation="horizontal"></LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textSerif"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="24dp"
-                        android:layout_weight="2"
-                        android:background="@android:color/white"
-                        android:gravity="center_vertical|center"
-                        android:padding="16dp"
-                        android:text="TextView"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="4"
-                android:orientation="horizontal">
-
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/happi1" />
-
-                    <Button
-                        android:id="@+id/buttonHappi"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@null" />
-                </FrameLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"></LinearLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </FrameLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="6"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:id="@+id/buttonHappiProfile"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@null"
-            android:padding="8dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/happi_uchiwa1" />
-
-        <ImageButton
-            android:id="@+id/buttonHappiGacha"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@null"
-            android:padding="8dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/happi_uchiwa2" />
-
-        <ImageButton
-            android:id="@+id/buttonHappiCollection"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@null"
-            android:padding="8dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/happi_uchiwa3" />
-
-    </LinearLayout>
-
-</LinearLayout>
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="280dp"
+        tools:layout_editor_absoluteY="503dp" />
+</android.support.constraint.ConstraintLayout>
