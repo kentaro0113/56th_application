@@ -33,7 +33,7 @@ public class HappiActivity extends Fragment {
 
         setHappiSerif(view, Statics.HAPPI_SERIF_NORMAL);
 
-        Button buttonHappi = (Button) view.findViewById(R.id.buttonHappi);
+        Button buttonHappi = (Button) view.findViewById(R.id.button2);
         buttonHappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +41,7 @@ public class HappiActivity extends Fragment {
             }
         });
 
-        ImageButton buttonProfile = (ImageButton) view.findViewById(R.id.buttonHappiProfile);
+        ImageButton buttonProfile = (ImageButton) view.findViewById(R.id.button);
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +49,7 @@ public class HappiActivity extends Fragment {
                 startActivity(intent);
             }
         });
-        ImageButton buttonGacha = (ImageButton) view.findViewById(R.id.buttonHappiGacha);
+        ImageButton buttonGacha = (ImageButton) view.findViewById(R.id.button3);
         buttonGacha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +57,7 @@ public class HappiActivity extends Fragment {
                 startActivity(intent);
             }
         });
-        ImageButton buttonCollection = (ImageButton) view.findViewById(R.id.buttonHappiCollection);
+        ImageButton buttonCollection = (ImageButton) view.findViewById(R.id.button4);
         buttonCollection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,15 +106,6 @@ public class HappiActivity extends Fragment {
         TextView textSerif = (TextView) view.findViewById(R.id.textSerif);
         textSerif.setText(arraySerif.get(Commons.getRandom(arraySerif.size())));
 
-        // 画像の変更
-        /*
-        if(nCourse == Statics.OTHER_COURSE) {
-            nCourse = 0;
-        }
-        ImageView imageHappi = (ImageView) findViewById(R.id.imageHappi);
-        int nImageId = getResources().getIdentifier("Happi" + nCourse + "_" + (Commons.getRandom(2) + 1), "drawable", getPackageName());
-        imageHappi.setImageResource(nImageId);
-        */
     }
 
     private void setSerif(ArrayList<String> arraySerif, Dict dic) {

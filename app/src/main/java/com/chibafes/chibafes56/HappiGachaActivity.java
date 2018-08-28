@@ -291,19 +291,6 @@ public class HappiGachaActivity extends Activity {
         }
     }
 
-    /*
-
-
-                NSString* sBuf = @"https://itunes.apple.com/us/app/%E7%AC%AC55%E5%9B%9E%E5%8D%83%E8%91%89%E5%A4%A7%E7%A5%AD%E3%82%A2%E3%83%97%E3%83%AA-for-you/id1299542669?l=ja&ls=1&mt=8";
-                NSString *sEscapedUrl = [sBuf stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet alphanumericCharacterSet]];
-                sBuf = [NSString stringWithFormat:@"はっぴガチャで「%@」が当たったよ！", [[array objectAtIndex:nGetItem] objectForKey:@"name"]];
-                //NSString *sEscapedStatus = [sBuf stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-                sTwitterUrl = [NSString stringWithFormat:@"http://twitter.com/share?url=%@&text=%@&hashtags=千葉大祭", sEscapedUrl, sBuf];
-                // ガチャ演出を開始する
-                nStep = 0;
-
-            }
-     */
 
     private int getRate(int i, Array array) {
         int nBuf = ((Dict)array.get(i)).getConfigurationInteger("rate").getValue();

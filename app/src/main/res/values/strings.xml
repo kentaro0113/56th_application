@@ -101,6 +101,8 @@
     <string name="firstrun_take">初回起動</string>
     <string name="goto_mainmenu">メインメニューへ</string>
     <string name="mainmenu_thisname">メインメニュー</string>
+    <string name="button">Button</string>
+    <string name="todo">TODO</string>
 
 
 </resources>
