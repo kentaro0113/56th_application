@@ -88,10 +88,6 @@ public class KikakuInfoActivity extends Activity {
                 startActivity(intent);
                 break;
             case R.id.buttonKikakuInfo6:
-            case R.id.buttonKikakuInfo11:
-                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_KIKAKU_OTHER2));
-                startActivity(intent);
-                break;
             case R.id.buttonKikakuInfo8:
                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_KIKAKU_OTHER4));
                 startActivity(intent);

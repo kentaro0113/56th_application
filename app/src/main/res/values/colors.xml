@@ -2,7 +2,6 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
     <color name="colorTitleBar">#ffaa66</color>
     <color name="colorInfoTitleBar">#E8E579</color>
     <color name="colorSearchTitle">#8EC331</color>
@@ -20,4 +19,10 @@
     <color name="colorRed">#ff0000</color>
     <color name="colorSearchCaption">#ff00ff</color>
     <color name="colorSearchTytle">#fff000</color>
+    <color name="colorStatusBar">#FF4081</color>
+    <color name="colorMainMenuTitle">#32cd32</color>
+
+    <color name="colorBase">#a52a2a</color>
+    <color name="colorSub">#800080</color>
+    <color name="colorAccent">#a1dda1</color>
 </resources>
