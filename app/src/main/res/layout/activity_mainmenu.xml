@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginBottom="8dp"
-        android:background="@android:color/holo_orange_light"
+        android:background="@android:color/white"
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton_ex"
+            android:id="@+id/imageButton10"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:background="@color/colorBlack"
+            android:background="@null"
             android:padding="4dp"
             android:scaleType="fitStart" />
 
@@ -25,10 +26,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center_vertical|center_horizontal"
-            android:text="@string/mainmenu_thisname"
+            android:text="TITLE"
             android:textAlignment="center"
-            android:textColor="@color/colorPrimary"
-            android:textSize="20sp" />
+            android:textColor="@color/colorMainmenuTitle"
+            android:textSize="18sp" />
 
         <ImageButton
             android:id="@+id/buttonMenuSetting"
@@ -39,7 +40,8 @@
             android:background="@null"
             android:onClick="onClickButtonSetting"
             android:padding="4dp"
-            android:scaleType="fitEnd"></ImageButton>
+            android:scaleType="fitEnd"
+            android:src="@drawable/icon_setting" />
     </LinearLayout>
 
     <LinearLayout
@@ -54,7 +56,8 @@
             android:layout_weight="1"
             android:background="@null"
             android:onClick="onClickButtonInfo"
-            android:scaleType="fitCenter"></ImageButton>
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_info" />
 
         <ImageButton
             android:id="@+id/buttonMenuSearch"
@@ -63,7 +66,8 @@
             android:layout_weight="1"
             android:background="@null"
             android:onClick="onClickButtonSearch"
-            android:scaleType="fitCenter"></ImageButton>
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_search" />
 
         <ImageButton
             android:id="@+id/buttonMenuTimeTable"
@@ -72,7 +76,8 @@
             android:layout_weight="1"
             android:background="@null"
             android:onClick="onClickButtonTimeTable"
-            android:scaleType="fitCenter"></ImageButton>
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_timetable" />
 
         <ImageButton
             android:id="@+id/buttonMenuMap"
@@ -81,7 +86,8 @@
             android:layout_weight="1"
             android:background="@null"
             android:onClick="onClickButtonMap"
-            android:scaleType="fitCenter"></ImageButton>
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_map" />
 
         <ImageButton
             android:id="@+id/buttonMenuHappi"
@@ -90,7 +96,8 @@
             android:layout_weight="1"
             android:background="@null"
             android:onClick="onClickButtonHappi"
-            android:scaleType="fitCenter"></ImageButton>
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_happi" />
     </LinearLayout>
 
     <FrameLayout

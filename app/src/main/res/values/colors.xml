@@ -2,7 +2,27 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorTitleBar">#ffaa66</color>
+    <color name="colorInfoTitleBar">#E8E579</color>
+    <color name="colorSearchTitle">#8EC331</color>
+    <color name="colorSearchButton">#E8E579</color>
+    <color name="colorTabSearch">#F2F4BB</color>
+    <color name="colorTabFavorite">#B5CCF4</color>
+    <color name="colorButton">#F19837</color>
+    <color name="colorButtonLINE">#5ABA2B</color>
+    <color name="colorTabDay1">#F4B9B9</color>
+    <color name="colorTabDay2">#C7CFFC</color>
+    <color name="colorTabDay3">#C6F9D1</color>
+    <color name="colorTabDay4">#E9C6FC</color>
+    <color name="colorTabCheck">#FBFCC7</color>
     <color name="colorBlack">#000000</color>
     <color name="colorRed">#ff0000</color>
+    <color name="colorSearchCaption">#ff00ff</color>
+    <color name="colorSearchTytle">#fff000</color>
+    <color name="colorStatusBar">#FF4081</color>
+    <color name="colorMainMenuTitle">#32cd32</color>
+
+    <color name="colorBase">#a52a2a</color>
+    <color name="colorSub">#800080</color>
+    <color name="colorAccent">#a1dda1</color>
 </resources>

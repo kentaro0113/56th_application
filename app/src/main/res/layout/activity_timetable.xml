@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonTabDay1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_timetable_day1"
+            android:text="@string/TimeTableTabDay1"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="16sp" />
+        <Button
+            android:id="@+id/buttonTabDay2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_timetable_day2"
+            android:text="@string/TimeTableTabDay2"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="16sp" />
+        <Button
+            android:id="@+id/buttonTabDay3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_timetable_day3"
+            android:text="@string/TimeTableTabDay3"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="16sp" />
+        <Button
+            android:id="@+id/buttonTabDay4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_timetable_day4"
+            android:text="@string/TimeTableTabDay4"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="16sp" />
+        <Button
+            android:id="@+id/buttonTabCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_timetable_check"
+            android:text="@string/TimeTableTabCheck"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:id="@+id/scrollTimeTable"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/viewTableBase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="ステージ"
+                    android:textSize="18sp" />
+
+                <com.chibafes.chibafes56.MeasureListView
+                    android:id="@+id/list_timetable"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:text="ストリートパフォーマンス"
+                    android:textSize="18sp" />
+
+                <com.chibafes.chibafes56.MeasureListView
+                    android:id="@+id/list_timetable2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/viewNoFavorite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorTabCheck"
+            android:textSize="17dp"
+            android:padding="16dp"
+            android:gravity="center"
+            android:text="@string/TimeTableNoCheck" />
+    </FrameLayout>
+</LinearLayout>

@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/buttonBack"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="@null"
+            android:onClick="onClickButtonBack"
+            android:padding="4dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/icon_back"/>
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:textAlignment="center" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_weight="3"
+            android:background="@null"
+            android:padding="4dp"
+            android:scaleType="fitEnd"
+            android:src="@null" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/viewInfo1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/icon_button_cosplay" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo1_1" />
+
+                <Button
+                    android:id="@+id/buttonKikakuInfo1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/colorButton"
+                    android:onClick="onClickKikakuInfo"
+                    android:padding="10dp"
+                    android:text="@string/KikakuInfoButton1"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/buttonKikakuInfo2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/colorButton"
+                    android:onClick="onClickKikakuInfo"
+                    android:padding="10dp"
+                    android:text="@string/KikakuInfoButton2"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/buttonKikakuInfo12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/colorButton"
+                    android:onClick="onClickKikakuInfo"
+                    android:padding="10dp"
+                    android:text="@string/KikakuInfoButton3"
+                    android:textSize="19dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/viewInfo2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/icon_button_grandprix" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo2_1" />
+
+                <Button
+                    android:id="@+id/buttonKikakuInfo3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/colorButton"
+                    android:onClick="onClickKikakuInfo"
+                    android:padding="10dp"
+                    android:text="@string/KikakuInfoButton3"
+                    android:textSize="19dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/viewInfo3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/icon_button_goods" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo3_1" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="12dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/s_4792366" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="12dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/s_4792367" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="12dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/s_4792368" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="12dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/s_4792369" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo3_2" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/colorButtonLINE"
+                    android:padding="16dp"
+                    android:text="@string/KikakuInfo3_3"
+                    android:textColor="@android:color/white" />
+
+                <Button
+                    android:id="@+id/buttonKikakuInfo4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/colorButtonLINE"
+                    android:onClick="onClickKikakuInfo"
+                    android:padding="10dp"
+                    android:text="@string/KikakuInfoButton4"
+                    android:textColor="@android:color/white"
+                    android:textSize="19dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/viewInfo4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/icon_button_kikaku" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo4_1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#B5CCF4"
+                    android:padding="8dp"
+                    android:text="@string/KikakuInfo4_2"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo4_3" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#EAB5AA"
+                    android:padding="8dp"
+                    android:text="@string/KikakuInfo4_4"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo4_5" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#E4B0EA"
+                    android:padding="8dp"
+                    android:text="@string/KikakuInfo4_6"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo4_7" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#EAC76C"
+                    android:padding="8dp"
+                    android:text="@string/KikakuInfo4_8"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo4_9" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#E8E579"
+                    android:padding="8dp"
+                    android:text="@string/KikakuInfo4_10"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo4_11" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#90BE4F"
+                    android:padding="8dp"
+                    android:text="@string/KikakuInfo4_12"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo4_13" />
+
+                <Button
+                    android:id="@+id/buttonKikakuInfo5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/colorButton"
+                    android:onClick="onClickKikakuInfo"
+                    android:padding="10dp"
+                    android:text="@string/KikakuInfoButton5"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/buttonKikakuInfo6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/colorButton"
+                    android:onClick="onClickKikakuInfo"
+                    android:padding="10dp"
+                    android:text="@string/KikakuInfoButton6"
+                    android:textSize="19dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#B5CCF4"
+                    android:padding="8dp"
+                    android:text="@string/KikakuInfo4_14"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo4_15" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#F8CBB4"
+                    android:padding="8dp"
+                    android:text="@string/KikakuInfo4_16"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo4_17" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#EAB28F"
+                    android:padding="8dp"
+                    android:text="@string/KikakuInfo4_18"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo4_19" />
+
+                <Button
+                    android:id="@+id/buttonKikakuInfo7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/colorButton"
+                    android:onClick="onClickKikakuInfo"
+                    android:padding="10dp"
+                    android:text="@string/KikakuInfoButton2"
+                    android:textSize="19dp" />
+
+                <Button
+                    android:id="@+id/buttonKikakuInfo8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/colorButton"
+                    android:onClick="onClickKikakuInfo"
+                    android:padding="10dp"
+                    android:text="@string/KikakuInfoButton6"
+                    android:textSize="19dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="16dp"
+                    android:background="#AAAAF4"
+                    android:padding="8dp"
+                    android:text="@string/KikakuInfo4_20"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo4_21" />
+
+                <Button
+                    android:id="@+id/buttonKikakuInfo9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/colorButton"
+                    android:onClick="onClickKikakuInfo"
+                    android:padding="10dp"
+                    android:text="@string/KikakuInfoButton7"
+                    android:textSize="19dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/KikakuInfo4_22" />
+
+
+                <Button
+                    android:id="@+id/buttonKikakuInfo10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@color/colorButton"
+                    android:onClick="onClickKikakuInfo"
+                    android:padding="10dp"
+                    android:text="@string/KikakuInfoButton7"
+                    android:textSize="19dp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

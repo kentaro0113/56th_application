@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonTabSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_search"
+            android:text="@string/SearchTabSearch"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/buttonTabFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_favorite"
+            android:text="@string/SearchTabFavorite"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/scrollSearch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/viewSearch"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorTabSearch"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/button_search_back"
+                android:text="@string/SearchButton"
+                android:textColor="@android:color/white"
+                android:textSize="28sp" />
+
+            <ListView
+                android:id="@+id/tableSearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/viewFavorite"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorTabFavorite"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/tableFavorite"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/viewNoFavorite"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:gravity="center"
+                android:text="@string/SearchNoFavorite"
+                android:textSize="16sp" />
+        </FrameLayout>
+    </FrameLayout>
+</LinearLayout>
