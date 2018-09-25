@@ -63,29 +63,27 @@ public class Commons {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor e = pref.edit();
         e.putInt(key, value);
-        e.commit();
+        e.apply();
     }
     // long型整数を保存する
     public static void writeLong(Context context, String key, long value) {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor e = pref.edit();
         e.putLong(key, value);
-        e.commit();
+        e.apply();
     }
     // int型配列を保存する
     public static void writeArrayInt(Context context, String key, int[] values) {
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         for(int item : values) {
             buffer.append(item + ",");
         }
-        if(buffer != null) {
-            String buf = buffer.toString();
-            String stringItem = buf.substring(0, buf.length() - 1);
+        String buf = buffer.toString();
+        String stringItem = buf.substring(0, buf.length() - 1);
 
-            SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = pref.edit();
-            editor.putString(key, stringItem).commit();
-        }
+        SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString(key, stringItem).apply();
     }
 
     // 保存値を削除する
@@ -93,7 +91,7 @@ public class Commons {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor e = pref.edit();
         e.remove(key);
-        e.commit();
+        e.apply();
     }
 
     // 文字列を読み込む
@@ -105,7 +103,7 @@ public class Commons {
     public static int readInt(Context context, String key) {
         return readInt(context, key, "pref");
     }
-    public static int readInt(Context context, String key, String name) {
+    private static int readInt(Context context, String key, String name) {
         SharedPreferences pref = context.getSharedPreferences(name, Context.MODE_PRIVATE);
         return pref.getInt(key, Statics.NONE);
     }
@@ -193,8 +191,7 @@ public class Commons {
         catch (IOException e){
             // エラー処理を実装する
         }
-        PList plist = ((PListXMLHandler) parser.getHandler()).getPlist();
-        return plist;
+        return ((PListXMLHandler) parser.getHandler()).getPlist();
     }
 
     // ウェイトを行う
@@ -226,8 +223,7 @@ public class Commons {
 
         options.inSampleSize = scale;
 
-        Bitmap image = BitmapFactory.decodeResource(resource, resourceId, options);
-        return image;
+        return BitmapFactory.decodeResource(resource, resourceId, options);
     }
 
     public static Bitmap getAssetsImage(Resources resources, String path) {

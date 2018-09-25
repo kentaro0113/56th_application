@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorTitleBar">#ffaa66</color>
+    <color name="colorTitleBar">#e6b422</color>
     <color name="colorInfoTitleBar">#E8E579</color>
     <color name="colorSearchTitle">#8EC331</color>
     <color name="colorSearchButton">#E8E579</color>

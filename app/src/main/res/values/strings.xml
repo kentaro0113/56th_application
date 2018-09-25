@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">56th千葉大祭</string>
-    <string name="app_fullname">(仮)第56回千葉大祭アプリ</string>
+    <string name="app_fullname">第56回千葉大祭アプリ→祭前線←</string>
 
     <string name="ConfirmFinish">アプリを終了します。</string>
     <string name="ButtonCancel">キャンセル</string>
@@ -61,7 +61,7 @@
     <string name="SettingAbout">このアプリについて</string>
     <string name="SettingWeb">千葉大祭ホームページはこちら</string>
 
-    <string name="AboutCopyright">第55回千葉大祭アプリ〜for you〜 v1.0.0\nCopyright © 第55回千葉大祭実行委員会事務局</string>
+    <string name="AboutCopyright">第56回千葉大祭アプリ→祭前線← v1.0.0\nCopyright © 第56回千葉大祭実行委員会事務局</string>
 
     <string name="KikakuInfo1_1">千葉大祭であなたのコスプレを披露してみませんか！？1位の方には豪華景品あり！\n\n出場者PR：\n11/3(金) 12:00〜12:30\n＠ストリートパフォーマンス会場\n\n表彰式：\n11/5(日) 14:30〜15:00\n＠ストリートパフォーマンス会場\nエンディング企画内で表彰\n\n詳しい情報は千葉大祭Twitterをチェック！\n※コスプレをしたままの来場・退場はお控えください。</string>
     <string name="KikakuInfoButton1">エントリーフォームへ</string>
@@ -103,6 +103,7 @@
     <string name="mainmenu_thisname">メインメニュー</string>
     <string name="button">Button</string>
     <string name="todo">TODO</string>
+    <string name="title_activity_maps">Map</string>
 
 
 </resources>

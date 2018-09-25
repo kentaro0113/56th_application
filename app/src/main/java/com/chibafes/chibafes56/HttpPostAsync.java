@@ -49,12 +49,6 @@ public class HttpPostAsync extends AsyncTask<String, Integer, String> {
             // データを書き込む
             con.setDoOutput(true);
 
-            // Transfer-Encoding => chunked を使わない
-            //con.setFixedLengthStreamingMode(length);
-
-            // Transfer-Encoding => chunked を使う
-            // con.setChunkedStreamingMode(0);
-
             // タイムアウト
             con.setReadTimeout(6000);
             con.setConnectTimeout(6000);
