@@ -19,7 +19,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="224dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,6 +30,7 @@
 
             <ImageButton
                 android:id="@+id/imageButton18"
+                style="@style/Widget.AppCompat.ImageButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -50,5 +53,11 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 
 </android.support.constraint.ConstraintLayout>
