@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -13,7 +12,6 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.qozix.tileview.TileView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,17 +22,12 @@ import org.json.JSONObject;
  */
 
 public class MapActivity extends Fragment  implements OnMapReadyCallback {
-    private MapItem[] arraySpotList = null;
-    private TileView imageMap = null;
-    private ListView listView;
+
     private MapItem[] arrayKikakuData;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        //View view = inflater.inflate(R.layout.actmapivity_google_maps, container, false);
-        //setMapInfo(view);
 
         View view = inflater.inflate(R.layout.activity_google_map, container, false);
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
@@ -55,18 +48,11 @@ public class MapActivity extends Fragment  implements OnMapReadyCallback {
                 e.printStackTrace();
             }
         }
-        /*
-        WebView webView = (WebView)view.findViewById(R.id.webView);
-        webView.setWebChromeClient(new WebChromeClient());
-        webView.setWebViewClient(new WebViewClient());
-        webView.getSettings().setJavaScriptEnabled(true);
-        String summary = "<html><body><iframe width='100%' height='100%' frameborder='0' style='border:0' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyA6ZBXcmrfuIe-FvRSt6qvClJyNf_gafjA&q=%E5%8D%83%E8%91%89%E5%A4%A7%E5%AD%A6' allowfullscreen></iframe></body></html>";
-        webView.loadData(summary, "text/html", "utf-8");
-        */
+
         return view;
     }
 
-/*
+    /*
     private void setMapInfo(View view) {
         String newImage = null;
         int imageWidth = 0;
@@ -160,7 +146,7 @@ public class MapActivity extends Fragment  implements OnMapReadyCallback {
 
         // Add a marker in Sydney and move the camera
         for (MapItem item : arrayKikakuData) {
-            LatLng position = new LatLng(item.getDoubleValue("lat"), item.getDoubleValue("lon"));
+            LatLng position = new LatLng(item.getDoubleValue("g_lat"), item.getDoubleValue("g_lon"));
             googleMap.addMarker(new MarkerOptions().position(position).title(item.getStringValue("place_name")));
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 15));
         }
