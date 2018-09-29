@@ -29,11 +29,11 @@ public class HappiActivity extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        final View view = inflater.inflate(R.layout.activity_happi, container, false);
+        final View view = inflater.inflate(R.layout.activity_happi,container, false);
 
         setHappiSerif(view, Statics.HAPPI_SERIF_NORMAL);
 
-        Button buttonHappi = (Button) view.findViewById(R.id.button2);
+        Button buttonHappi = (Button) view.findViewById(R.id.button);
         buttonHappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +41,7 @@ public class HappiActivity extends Fragment {
             }
         });
 
-        ImageButton buttonProfile = (ImageButton) view.findViewById(R.id.button);
+        Button buttonProfile = (Button) view.findViewById(R.id.imageButton18);
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +49,7 @@ public class HappiActivity extends Fragment {
                 startActivity(intent);
             }
         });
-        ImageButton buttonGacha = (ImageButton) view.findViewById(R.id.button3);
+        Button buttonGacha = (Button) view.findViewById(R.id.imageButton19);
         buttonGacha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +57,7 @@ public class HappiActivity extends Fragment {
                 startActivity(intent);
             }
         });
-        ImageButton buttonCollection = (ImageButton) view.findViewById(R.id.button4);
+        Button buttonCollection = (Button) view.findViewById(R.id.imageButton20);
         buttonCollection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

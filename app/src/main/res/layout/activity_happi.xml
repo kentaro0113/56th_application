@@ -1,134 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="3">
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:src="@drawable/room_kodomobeya" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="6"
-                    android:orientation="horizontal">
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textSerif"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_margin="24dp"
-                        android:layout_weight="2"
-                        android:background="@android:color/white"
-                        android:gravity="center_vertical|center"
-                        android:padding="16dp"
-                        android:text="TextView"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="4"
-                android:orientation="horizontal">
-
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="20dp">
-
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/happi1" />
-
-                    <Button
-                        android:id="@+id/button2"
-                        android:layout_width="351dp"
-                        android:layout_height="460dp"
-                        android:text="@string/button"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="16dp" />
-                </FrameLayout>
-
-            </LinearLayout>
-
-        </LinearLayout>
-    </FrameLayout>
+    <ImageButton
+        android:id="@+id/imageButton21"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/room_kodomobeya"
+        tools:layout_editor_absoluteX="0dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="6"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="45dp"
+        tools:layout_editor_absoluteY="224dp">
 
-        <ImageButton
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="503dp"
-            android:src="@drawable/happi_uchiwa1"
-            android:contentDescription="@string/todo" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button"
-            tools:layout_editor_absoluteX="157dp"
-            tools:layout_editor_absoluteY="503dp"
-            android:src="@drawable/happi_uchiwa2"
-            android:contentDescription="@string/todo" />
+            <ImageButton
+                android:id="@+id/imageButton18"
+                style="@style/Widget.AppCompat.ImageButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/happi_uchiwa1" />
 
-        <ImageButton
-            android:id="@+id/button4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button"
-            tools:layout_editor_absoluteX="280dp"
-            tools:layout_editor_absoluteY="503dp"
-            android:src="@drawable/happi_uchiwa3"
-            android:contentDescription="@string/todo" />
+            <ImageButton
+                android:id="@+id/imageButton19"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/happi_uchiwa2" />
+
+            <ImageButton
+                android:id="@+id/imageButton20"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/happi_uchiwa3" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-</LinearLayout>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+</android.support.constraint.ConstraintLayout>
