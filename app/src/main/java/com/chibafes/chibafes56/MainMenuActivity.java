@@ -130,8 +130,8 @@ public class MainMenuActivity extends FragmentActivity implements HttpPostAsync.
             return;
         }
 
-        // 特別ログインボーナス（11/2~5のログイン時に追加で30pt）
-        if(sToday.equals("20171102") || sToday.equals("20171103") || sToday.equals("20171104") || sToday.equals("20171105")) {
+        // 特別ログインボーナス（11/1~4のログイン時に追加で30pt）
+        if(sToday.equals("20181101") || sToday.equals("20181102") || sToday.equals("20181103") || sToday.equals("20181104")) {
             if(Commons.readInt(this, "login" + sToday) == 0) {
 
                 int nGetPoint = 30;

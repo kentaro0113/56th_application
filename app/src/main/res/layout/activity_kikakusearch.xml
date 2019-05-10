@@ -47,13 +47,14 @@
             android:background="@color/colorTabSearch"
             android:orientation="vertical">
 
-            <Button
+            <ImageButton
                 android:id="@+id/buttonSearch"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="100dp"
                 android:layout_margin="8dp"
-                android:background="@drawable/button_search_back"
-                android:text="@string/SearchButton"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                android:src="@drawable/button_search_modification"
                 android:textColor="@android:color/white"
                 android:textSize="28sp" />
 

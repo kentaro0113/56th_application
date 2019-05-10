@@ -6,58 +6,125 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageButton
-        android:id="@+id/imageButton21"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_weight="1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/room_kodomobeya"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="224dp">
+        android:layout_weight="3">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/room_kodomobeya_resize"
+            app:srcCompat="@drawable/room_kodomobeya_resize" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
-            <ImageButton
-                android:id="@+id/imageButton18"
-                style="@style/Widget.AppCompat.ImageButton"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/happi_uchiwa1" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="6"
+                android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/imageButton19"
+                <ImageButton
+                    android:id="@+id/imageButton18"
+                    style="@style/Widget.AppCompat.ImageButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/happi_uchiwa1"
+                    app:srcCompat="@drawable/happi_uchiwa1" />
+
+                <ImageButton
+                    android:id="@+id/imageButton19"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/happi_uchiwa2"
+                    app:srcCompat="@drawable/happi_uchiwa2" />
+
+                <ImageButton
+                    android:id="@+id/imageButton20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/happi_uchiwa3"
+                    app:srcCompat="@drawable/happi_uchiwa3" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/happi_uchiwa2" />
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/imageButton20"
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:text="@null" />
+
+                <TextView
+                    android:id="@+id/Happi_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite"
+                    android:gravity="center_vertical|center"
+                    android:padding="16dp"
+                    android:text="TextView"
+                    android:textColor="@color/colorBase" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:text="@null" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/happi_uchiwa3" />
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:orientation="horizontal">
 
+                <ImageButton
+                    android:id="@+id/SerifButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@null"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/happi1_resize"
+                    app:srcCompat="@drawable/happi1_resize" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:text="@null" />
+            </LinearLayout>
         </LinearLayout>
 
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button" />
+    </FrameLayout>
 
 </android.support.constraint.ConstraintLayout>

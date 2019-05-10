@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -90,8 +90,8 @@
 
             <LinearLayout
                 android:id="@+id/viewMessage"
-                android:layout_width="364dp"
-                android:layout_height="236dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
@@ -102,15 +102,24 @@
 
                 <TextView
                     android:id="@+id/textMessage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="137dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_margin="4dp"
+                    android:gravity="center_vertical|center_horizontal"
                     android:padding="8dp"
                     android:text="@string/GachaMessage1"
                     android:textColor="@android:color/white"
-                    android:textSize="17sp"
-                    tools:text="ポイントを貯めてはっぴガチャを始めよう！" />
+                    android:textSize="17sp" />
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageHappi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:contentDescription="TODO"
+                android:src="@drawable/happi1_resize"
+                android:visibility="invisible" />
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -211,14 +220,13 @@
 
         <Button
             android:id="@+id/buttonGacha"
-            android:layout_width="372dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="16dp"
+            android:textColor="?attr/colorPrimary"
             android:background="@color/colorButton"
-            android:onClick="onClickGacha"
-            android:text="ガチャを始める"
-            android:textColor="?attr/colorPrimary" />
+            android:onClick="onClickGacha" />
 
     </FrameLayout>
 </LinearLayout>

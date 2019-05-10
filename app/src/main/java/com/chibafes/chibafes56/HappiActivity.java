@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -33,7 +32,7 @@ public class HappiActivity extends Fragment {
 
         setHappiSerif(view, Statics.HAPPI_SERIF_NORMAL);
 
-        Button buttonHappi = (Button) view.findViewById(R.id.button);
+        ImageButton buttonHappi = (ImageButton) view.findViewById(R.id.SerifButton);
         buttonHappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +40,7 @@ public class HappiActivity extends Fragment {
             }
         });
 
-        Button buttonProfile = (Button) view.findViewById(R.id.imageButton18);
+        ImageButton buttonProfile = (ImageButton) view.findViewById(R.id.imageButton18);
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +48,7 @@ public class HappiActivity extends Fragment {
                 startActivity(intent);
             }
         });
-        Button buttonGacha = (Button) view.findViewById(R.id.imageButton19);
+        ImageButton buttonGacha = (ImageButton) view.findViewById(R.id.imageButton19);
         buttonGacha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +56,7 @@ public class HappiActivity extends Fragment {
                 startActivity(intent);
             }
         });
-        Button buttonCollection = (Button) view.findViewById(R.id.imageButton20);
+        ImageButton buttonCollection = (ImageButton) view.findViewById(R.id.imageButton20);
         buttonCollection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,7 +102,7 @@ public class HappiActivity extends Fragment {
         }
 
         // セリフの抽選
-        TextView textSerif = (TextView) view.findViewById(R.id.textSerif);
+        TextView textSerif = (TextView) view.findViewById(R.id.Happi_line);
         textSerif.setText(arraySerif.get(Commons.getRandom(arraySerif.size())));
 
     }

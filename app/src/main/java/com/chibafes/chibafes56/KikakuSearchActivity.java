@@ -89,7 +89,7 @@ public class KikakuSearchActivity extends Fragment {
                 }
             }
         });
-        Button buttonSearch = (Button) view.findViewById(R.id.buttonSearch);
+        ImageButton buttonSearch = (ImageButton) view.findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -289,7 +289,7 @@ public class KikakuSearchActivity extends Fragment {
             imagePRcut.setImageResource(R.drawable.no_image);
         }
         else {
-            imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".png"));
+            imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".jpg"));
         }
         ImageView imageGenre1 = (ImageView) viewDetail.findViewById(R.id.imageGenre1);
         imageGenre1.setImageResource(getResources().getIdentifier("icon_genre" + item.getIntValue("genre1"), "drawable", getContext().getPackageName()));
@@ -528,7 +528,7 @@ class KikakuListAdapter extends ArrayAdapter<KikakuItem> {
                 imagePRcut.setImageResource(R.drawable.no_image);
             }
             else {
-                imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".png"));
+                imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".jpg"));
             }
         }
         TextView textName = (TextView) convertView.findViewById(R.id.textGroupName);

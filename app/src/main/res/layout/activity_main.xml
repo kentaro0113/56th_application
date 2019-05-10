@@ -8,11 +8,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/splash" />
+        android:src="@drawable/splash_resize" />
 
     <TextView
         android:id="@+id/textProgress"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center" />
+        android:gravity="center"
+        android:textColor="@color/colorWhite" />
 </FrameLayout>

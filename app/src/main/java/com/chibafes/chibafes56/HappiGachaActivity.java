@@ -266,11 +266,11 @@ public class HappiGachaActivity extends Activity {
             }
             imageBox.setVisibility(View.VISIBLE);
 
-            int nItemCount = Commons.readInt(this, "getItem" + nGetItem);
+            int nItemCount = Commons.readInt(this, "getItem_56th" + nGetItem);
             if(nItemCount < 0) {
                 nItemCount = 0;
             }
-            Commons.writeInt(this, "getItem" + nGetItem, nItemCount + 1);
+            Commons.writeInt(this, "getItem_56th" + nGetItem, nItemCount + 1);
             String sStatus = "はっぴガチャで「" + ((Dict)array.get(nGetItem)).getConfiguration("name").getValue() + "」が当たったよ！";
             String sUrl = "http://chibafes.com/appli.html";
             sTwitterUrl = "http://twitter.com/share?url=" + sUrl + "&text=" + sStatus + "&hashtags=千葉大祭";
@@ -294,7 +294,7 @@ public class HappiGachaActivity extends Activity {
 
     private int getRate(int i, Array array) {
         int nBuf = ((Dict)array.get(i)).getConfigurationInteger("rate").getValue();
-        int nGotCount = Commons.readInt(this, "getItem" + i);
+        int nGotCount = Commons.readInt(this, "getItem_56th" + i);
         if(nGotCount > 0) {
             if(nGotCount > 5) {
                 nGotCount = 5;

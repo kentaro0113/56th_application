@@ -27,9 +27,11 @@ public class HttpPostAsync extends AsyncTask<String, Integer, String> {
         bError = false;
     }
 
+    HttpURLConnection con = null;
+
     @Override
     protected String doInBackground(String... params) {
-        HttpURLConnection con = null;
+      //  HttpURLConnection con = null;
         URL url;
         String result = null;
 
@@ -129,6 +131,11 @@ public class HttpPostAsync extends AsyncTask<String, Integer, String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
+        try {
+            final int status = con.getResponseCode();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         callback.postExecute(result, bError);
     }
 

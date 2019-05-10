@@ -534,7 +534,7 @@ public class TimeTableActivity extends Fragment {
             return nIndex;
         }
         public String getTimeString() {
-            return (String.format("11/%d %02d:%02d", (2 + nIndex / 2), (nTime / 100), (nTime % 100)));
+            return (String.format("11/%d %02d:%02d", (1 + nIndex / 2), (nTime / 100), (nTime % 100)));
         }
 
         public KikakuItem getKikakuItem() {
@@ -573,7 +573,7 @@ public class TimeTableActivity extends Fragment {
                 imagePRcut.setImageResource(R.drawable.no_image);
             }
             else {
-                imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), itemKikaku.getStringValue("image") + ".png"));
+                imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), itemKikaku.getStringValue("image") + ".jpg"));
             }
             TextView textName = (TextView) convertView.findViewById(R.id.textGroupName);
             textName.setText(itemKikaku.getStringValue("name"));

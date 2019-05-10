@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -44,9 +45,9 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_weight="1"
-                    android:background="@color/colorBase"
+                    android:background="@null"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/no_image" />
+                    android:src="@drawable/icon_button_project_2" />
 
                 <ImageButton
                     android:id="@+id/buttonKikaku2"
@@ -90,7 +91,9 @@
                     android:layout_weight="1"
                     android:background="@null"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_button_kikaku" />
+                    app:srcCompat="@drawable/icon_button_guest_2"
+                    android:src="@drawable/icon_button_guest_2" />
+
             </LinearLayout>
 
             <TextView

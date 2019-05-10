@@ -50,7 +50,7 @@ public class HappiCollectionActivity extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (Commons.readInt(HappiCollectionActivity.this, "getItem" + position) > 0) {
+                if (Commons.readInt(HappiCollectionActivity.this, "getItem_56th" + position) > 0) {
                     Dict dic = (Dict) arrayCollectionList.get(position);
 
                     ScrollView viewInfo = (ScrollView) getLayoutInflater().inflate(R.layout.collection_info_view, null);
@@ -101,7 +101,7 @@ class HappiCollectionAdapter extends ArrayAdapter<Dict> {
         ImageView image = (ImageView) convertView.findViewById(R.id.imageCollection);
         TextView label = (TextView) convertView.findViewById(R.id.textName);
 
-        if (Commons.readInt(context, "getItem" + position) > 0) {
+        if (Commons.readInt(context, "getItem_56th" + position) > 0) {
             String nFileName = item.getConfiguration("image").getValue();
             int nImageId = context.getResources().getIdentifier(nFileName, "drawable", context.getPackageName());
             image.setImageResource(nImageId);

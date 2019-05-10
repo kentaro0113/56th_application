@@ -94,7 +94,7 @@ public class MainActivity extends Activity implements HttpPostAsync.AsyncTaskCal
         // アプリインストール後の初回起動かどうかのチェックを行う
         if(Commons.readLong(this, "UserID") == Statics.NONE) {
             // 初回起動なら初回起動用の画面へ遷移する
-            Intent intent = new Intent(MainActivity.this, FirstRunActivity.class);
+            Intent intent = new Intent(MainActivity.this, MainMenuActivity.class);
             startActivity(intent);
             // 処理が終わったらこのActivityを破棄する
             finish();
