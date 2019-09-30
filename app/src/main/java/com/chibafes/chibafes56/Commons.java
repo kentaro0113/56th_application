@@ -47,75 +47,73 @@ public class Commons {
     }
 
     // 0～引数の値未満のランダムな正数を取得する
-    public static int getRandom(int nMax) {
+    static int getRandom(int nMax) {
         return (int)(Math.random() * nMax);
     }
 
     // 文字列を保存する
-    public static void writeString(Context context, String key, String value) {
+    static void writeString(Context context, String key, String value) {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor e = pref.edit();
         e.putString(key, value);
         e.apply();
     }
     // int型整数を保存する
-    public static void writeInt(Context context, String key, int value) {
+    static void writeInt(Context context, String key, int value) {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor e = pref.edit();
         e.putInt(key, value);
-        e.commit();
+        e.apply();
     }
     // long型整数を保存する
-    public static void writeLong(Context context, String key, long value) {
+    static void writeLong(Context context, String key, long value) {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor e = pref.edit();
         e.putLong(key, value);
-        e.commit();
+        e.apply();
     }
     // int型配列を保存する
-    public static void writeArrayInt(Context context, String key, int[] values) {
-        StringBuffer buffer = new StringBuffer();
+    static void writeArrayInt(Context context, String key, int[] values) {
+        StringBuilder buffer = new StringBuilder();
         for(int item : values) {
             buffer.append(item + ",");
         }
-        if(buffer != null) {
-            String buf = buffer.toString();
-            String stringItem = buf.substring(0, buf.length() - 1);
+        String buf = buffer.toString();
+        String stringItem = buf.substring(0, buf.length() - 1);
 
-            SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = pref.edit();
-            editor.putString(key, stringItem).commit();
-        }
+        SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString(key, stringItem).apply();
     }
 
     // 保存値を削除する
-    public static void deleteSave(Context context, String key) {
+    static void deleteSave(Context context, String key) {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor e = pref.edit();
         e.remove(key);
-        e.commit();
+        e.apply();
     }
 
     // 文字列を読み込む
-    public static String readString(Context context, String key) {
+    static String readString(Context context, String key) {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
         return pref.getString(key, null);
     }
     // int型整数を読み込む
-    public static int readInt(Context context, String key) {
+    static int readInt(Context context, String key) {
         return readInt(context, key, "pref");
     }
-    public static int readInt(Context context, String key, String name) {
+    private static int readInt(Context context, String key, String name) {
         SharedPreferences pref = context.getSharedPreferences(name, Context.MODE_PRIVATE);
         return pref.getInt(key, Statics.NONE);
     }
     // long型整数を読み込む
-    public static long readLong(Context context, String key) {
+    static long readLong(Context context, String key) {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
         return pref.getLong(key, Statics.NONE);
     }
     // int型配列を読み込む
-    public static int[] readArrayInt(Context context, String key) {
+    static int[] readArrayInt(Context context, String key) {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
         String stringItem = pref.getString(key, null);
         if(stringItem != null && stringItem.length() != 0){
@@ -131,7 +129,7 @@ public class Commons {
     }
 
     // 対象の画像の縦横幅を取得する
-    public static PointF getImageSize(ImageView image) {
+    static PointF getImageSize(ImageView image) {
         Rect rect = image.getDrawable().getBounds();
         float scaleX = (float) image.getWidth() / (float) rect.width();
         float scaleY = (float) image.getHeight() / (float) rect.height();
@@ -142,7 +140,7 @@ public class Commons {
     }
 
     // 画面サイズを取得する
-    public static Point getDisplaySize(Context context){
+    static Point getDisplaySize(Context context){
         WindowManager windowManager = (WindowManager)context.getSystemService(Context.WINDOW_SERVICE);
         Display display = windowManager.getDefaultDisplay();
         Point point = new Point();
@@ -154,7 +152,7 @@ public class Commons {
     public static String getAssetsText(Context context, String path) {
         InputStream is = null;
         BufferedReader br = null;
-        String result = "";
+        StringBuilder result = new StringBuilder();
 
         try {
             try {
@@ -164,7 +162,7 @@ public class Commons {
                 // １行ずつ読み込み、改行を付加する
                 String str;
                 while ((str = br.readLine()) != null) {
-                    result += str + "\n";
+                    result.append(str).append("\n");
                 }
             } finally {
                 if (is != null) is.close();
@@ -174,11 +172,11 @@ public class Commons {
             // エラー発生時の処理
         }
 
-        return result;
+        return result.toString();
     }
 
     // Assetsフォルダ内のPlistファイルをパースして取得する
-    public static PList getParsedPlist(Context context, String path) {
+    static PList getParsedPlist(Context context, String path) {
         PListXMLHandler handler = new PListXMLHandler();
         PListXMLParser parser = new PListXMLParser();
         parser.setHandler(handler);
@@ -193,8 +191,7 @@ public class Commons {
         catch (IOException e){
             // エラー処理を実装する
         }
-        PList plist = ((PListXMLHandler) parser.getHandler()).getPlist();
-        return plist;
+        return ((PListXMLHandler) parser.getHandler()).getPlist();
     }
 
     // ウェイトを行う
@@ -207,14 +204,14 @@ public class Commons {
     }
 
     // 現在時間を指定したフォーマットの文字列で取得する
-    public static String getTimeString(String formatString) {
+    static String getTimeString(String formatString) {
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat(formatString);
         return sdf.format(date);
     }
 
     // ビューサイズに合わせた画像を取得する
-    public static Bitmap getResizeBitmapFromId(Resources resource, int resourceId, Point size) {
+    static Bitmap getResizeBitmapFromId(Resources resource, int resourceId, Point size) {
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inJustDecodeBounds = true;
         BitmapFactory.decodeResource(resource, resourceId, options);
@@ -226,11 +223,10 @@ public class Commons {
 
         options.inSampleSize = scale;
 
-        Bitmap image = BitmapFactory.decodeResource(resource, resourceId, options);
-        return image;
+        return BitmapFactory.decodeResource(resource, resourceId, options);
     }
 
-    public static Bitmap getAssetsImage(Resources resources, String path) {
+    static Bitmap getAssetsImage(Resources resources, String path) {
         InputStream is = null;
         try {
             is = resources.getAssets().open(Statics.IMAGE_PATH + path);

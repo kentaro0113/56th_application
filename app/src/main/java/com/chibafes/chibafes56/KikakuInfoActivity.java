@@ -20,11 +20,11 @@ public class KikakuInfoActivity extends Activity {
     private static final String URL_GRANDPRIX = "https://goo.gl/forms/AxdFYu1JIlHr5o9F2";
     private static final String URL_HAPPI_LINE = "https://store.line.me/stickershop/product/1169796/";
     private static final String URL_KIKAKU_OTHER1 = "https://twitter.com/chibafes_happi";
-    private static final String URL_KIKAKU_OTHER2 = "https://twitter.com/share?hashtags=はっぴを探せ";
     private static final String URL_KIKAKU_OTHER3 = "https://twitter.com/ChibafesShinkan";
     private static final String URL_KIKAKU_OTHER4 = "https://twitter.com/share?hashtags=千葉大祭フォトコン";
     private static final String URL_KIKAKU_GUEST1 = "http://guest.chibafes.com/";
     private static final String URL_KIKAKU_GUEST2 = "https://twitter.com/ChibafesShinkan/status/905402689286057984";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
