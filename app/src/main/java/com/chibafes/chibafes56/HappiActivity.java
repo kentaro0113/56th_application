@@ -33,7 +33,7 @@ public class HappiActivity extends Fragment {
 
         setHappiSerif(view, Statics.HAPPI_SERIF_NORMAL);
 
-        Button buttonHappi = (Button) view.findViewById(R.id.button);
+        ImageButton buttonHappi = (ImageButton) view.findViewById(R.id.imageButton21);
         buttonHappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +41,7 @@ public class HappiActivity extends Fragment {
             }
         });
 
-        Button buttonProfile = (Button) view.findViewById(R.id.imageButton18);
+        ImageButton buttonProfile = (ImageButton) view.findViewById(R.id.imageButton18);
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +49,7 @@ public class HappiActivity extends Fragment {
                 startActivity(intent);
             }
         });
-        Button buttonGacha = (Button) view.findViewById(R.id.imageButton19);
+        ImageButton buttonGacha = ImageButton) view.findViewById(R.id.imageButton19);
         buttonGacha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +57,7 @@ public class HappiActivity extends Fragment {
                 startActivity(intent);
             }
         });
-        Button buttonCollection = (Button) view.findViewById(R.id.imageButton20);
+        ImageButton buttonCollection = (ImageButton) view.findViewById(R.id.imageButton20);
         buttonCollection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
