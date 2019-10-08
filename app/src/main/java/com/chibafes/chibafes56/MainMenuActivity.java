@@ -3,11 +3,6 @@ package com.chibafes.chibafes56;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -20,6 +15,12 @@ import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 /**
  * MainMenu Activity
@@ -112,7 +113,7 @@ public class MainMenuActivity extends FragmentActivity implements HttpPostAsync.
     private void checkPopup() {
         // 当日初回起動かどうかのチェック
         String sLastRunDay = Commons.readString(this, "LastRunDay");
-        String sToday = Commons.getTimeString("yyyyMMdd");
+        String sToday = Commons.getTimeString();
         if(!sToday.equals(sLastRunDay)) {
             // 初回起動ならはっぴポイントを加算する
             int nGetPoint = 5;
@@ -206,32 +207,30 @@ public class MainMenuActivity extends FragmentActivity implements HttpPostAsync.
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
-            switch (event.getKeyCode()) {
-                // バックキー押下時の処理
-                case KeyEvent.KEYCODE_BACK:
-                    // アプリを終了する
-                    // 終了の確認ダイアログ生成
-                    AlertDialog.Builder alertDlg = new AlertDialog.Builder(this);
-                    // 終了確認のメッセージを設定する
-                    alertDlg.setMessage(getResources().getString(R.string.ConfirmFinish));
-                    // OKボタンを設定する
-                    alertDlg.setPositiveButton(
-                            getResources().getString(R.string.ButtonOk),
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                    finish();
-                                }
-                            });
-                    // キャンセルボタンを設定知る
-                    alertDlg.setNegativeButton(
-                            getResources().getString(R.string.ButtonCancel),
-                            new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int which) {
-                                }
-                            });
-                    // ダイアログを表示する
-                    alertDlg.create().show();
-                    return true;
+            // バックキー押下時の処理
+            if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {// アプリを終了する
+                // 終了の確認ダイアログ生成
+                AlertDialog.Builder alertDlg = new AlertDialog.Builder(this);
+                // 終了確認のメッセージを設定する
+                alertDlg.setMessage(getResources().getString(R.string.ConfirmFinish));
+                // OKボタンを設定する
+                alertDlg.setPositiveButton(
+                        getResources().getString(R.string.ButtonOk),
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        });
+                // キャンセルボタンを設定知る
+                alertDlg.setNegativeButton(
+                        getResources().getString(R.string.ButtonCancel),
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                            }
+                        });
+                // ダイアログを表示する
+                alertDlg.create().show();
+                return true;
             }
         }
         return super.dispatchKeyEvent(event);
@@ -243,7 +242,7 @@ public class MainMenuActivity extends FragmentActivity implements HttpPostAsync.
     // アンケート送信ボタンが押された時
     public void onClickSend(View view) {
         // 送信用パラメータとして、アンケート情報を文字列として保持
-        String paramString = "question_id=" + nQuestionNo + "&user_id=" + Commons.readLong(this, "UserID");
+        String paramString = "question_id=" + nQuestionNo + "&user_id=" + Commons.readLong(this);
         // アンケートの種類による分岐
         switch(nQuestionType) {
             // 選択式

@@ -3,7 +3,6 @@ package com.chibafes.chibafes56;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +19,8 @@ import com.longevitysoft.android.xml.plist.domain.PList;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.appcompat.app.AlertDialog;
 
 /**
  * Created by llrk on 2017/03/26.

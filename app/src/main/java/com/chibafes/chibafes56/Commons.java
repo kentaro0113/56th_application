@@ -66,31 +66,31 @@ public class Commons {
         e.apply();
     }
     // long型整数を保存する
-    static void writeLong(Context context, String key, long value) {
+    static void writeLong(Context context, long value) {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor e = pref.edit();
-        e.putLong(key, value);
+        e.putLong("UserID", value);
         e.apply();
     }
     // int型配列を保存する
-    static void writeArrayInt(Context context, String key, int[] values) {
+    static void writeArrayInt(Context context, int[] values) {
         StringBuilder buffer = new StringBuilder();
         for(int item : values) {
-            buffer.append(item + ",");
+            buffer.append(item).append(",");
         }
         String buf = buffer.toString();
         String stringItem = buf.substring(0, buf.length() - 1);
 
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
-        editor.putString(key, stringItem).apply();
+        editor.putString("timetable_check", stringItem).apply();
     }
 
     // 保存値を削除する
-    static void deleteSave(Context context, String key) {
+    static void deleteSave(Context context) {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
         SharedPreferences.Editor e = pref.edit();
-        e.remove(key);
+        e.remove("timetable_check");
         e.apply();
     }
 
@@ -108,14 +108,14 @@ public class Commons {
         return pref.getInt(key, Statics.NONE);
     }
     // long型整数を読み込む
-    static long readLong(Context context, String key) {
+    static long readLong(Context context) {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
-        return pref.getLong(key, Statics.NONE);
+        return pref.getLong("UserID", Statics.NONE);
     }
     // int型配列を読み込む
-    static int[] readArrayInt(Context context, String key) {
+    static int[] readArrayInt(Context context) {
         SharedPreferences pref = context.getSharedPreferences("pref", Context.MODE_PRIVATE);
-        String stringItem = pref.getString(key, null);
+        String stringItem = pref.getString("timetable_check", null);
         if(stringItem != null && stringItem.length() != 0){
             String[] arrayBuf = stringItem.split(",");
             int[] result = new int[arrayBuf.length];
@@ -150,23 +150,16 @@ public class Commons {
 
     // Assetsフォルダ内のテキストを取得する
     public static String getAssetsText(Context context, String path) {
-        InputStream is = null;
-        BufferedReader br = null;
         StringBuilder result = new StringBuilder();
 
         try {
-            try {
-                is = context.getAssets().open(path);
-                br = new BufferedReader(new InputStreamReader(is));
+            try (InputStream is = context.getAssets().open(path); BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
 
                 // １行ずつ読み込み、改行を付加する
                 String str;
                 while ((str = br.readLine()) != null) {
                     result.append(str).append("\n");
                 }
-            } finally {
-                if (is != null) is.close();
-                if (br != null) br.close();
             }
         } catch (Exception e){
             // エラー発生時の処理
@@ -185,10 +178,7 @@ public class Commons {
             // assets フォルダの plist ファイルを開き、パースする
             parser.parse(context.getResources().getAssets().open(path));
         }
-        catch (IllegalStateException e){
-            // エラー処理を実装する
-        }
-        catch (IOException e){
+        catch (IllegalStateException | IOException e){
             // エラー処理を実装する
         }
         return ((PListXMLHandler) parser.getHandler()).getPlist();
@@ -204,9 +194,9 @@ public class Commons {
     }
 
     // 現在時間を指定したフォーマットの文字列で取得する
-    static String getTimeString(String formatString) {
+    static String getTimeString() {
         Date date = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat(formatString);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
         return sdf.format(date);
     }
 

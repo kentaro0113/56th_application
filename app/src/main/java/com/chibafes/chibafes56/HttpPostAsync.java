@@ -27,7 +27,7 @@ public class HttpPostAsync extends AsyncTask<String, Integer, String> {
         bError = false;
     }
 
-    HttpURLConnection con = null;
+    private HttpURLConnection con = null;
 
     @Override
     protected String doInBackground(String... params) {

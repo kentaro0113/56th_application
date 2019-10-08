@@ -1,7 +1,6 @@
 package com.chibafes.chibafes56;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +17,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import androidx.fragment.app.Fragment;
+
 
 /**
  * Created by aki09 on 2017/09/08.
  */
 
-public class MapActivity extends Fragment  implements OnMapReadyCallback {
+public class MapActivity extends Fragment implements OnMapReadyCallback {
 
     private MapItem[] arrayKikakuData;
 

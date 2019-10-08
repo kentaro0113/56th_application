@@ -4,10 +4,11 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.view.KeyEvent;
 import android.view.Window;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
 
 /**
  * Main Activity
@@ -33,7 +34,7 @@ public class MainActivity extends Activity implements HttpPostAsync.AsyncTaskCal
         else {
             paramString = "lastdate=" + buf;
         }
-        long nUserId = Commons.readLong(this, "UserID");
+        long nUserId = Commons.readLong(this);
         if(nUserId == Statics.NONE) {
             paramString = paramString + "&user_id=0";
         }
@@ -92,7 +93,7 @@ public class MainActivity extends Activity implements HttpPostAsync.AsyncTaskCal
 
     private void checkRunState() {
         // アプリインストール後の初回起動かどうかのチェックを行う
-        if(Commons.readLong(this, "UserID") == Statics.NONE) {
+        if(Commons.readLong(this) == Statics.NONE) {
             // 初回起動なら初回起動用の画面へ遷移する
             Intent intent = new Intent(MainActivity.this, MainMenuActivity.class);
             startActivity(intent);
@@ -111,11 +112,9 @@ public class MainActivity extends Activity implements HttpPostAsync.AsyncTaskCal
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
-            switch (event.getKeyCode()) {
-                // バックキー押下時の処理
-                case KeyEvent.KEYCODE_BACK:
-                    // バックキーを押しても何も起きないようにする
-                    return true;
+            // バックキー押下時の処理
+            if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {// バックキーを押しても何も起きないようにする
+                return true;
             }
         }
         return super.dispatchKeyEvent(event);
