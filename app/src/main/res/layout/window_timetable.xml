@@ -75,7 +75,7 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_genre1" />
+                    android:src="@drawable/icon_genre1_on" />
 
                 <ImageView
                     android:id="@+id/imageGenre2"
@@ -84,7 +84,7 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_genre1" />
+                    android:src="@drawable/icon_genre1_on" />
             </LinearLayout>
 
             <TextView

@@ -1,7 +1,6 @@
 package com.chibafes.chibafes56;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,17 +10,21 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import androidx.fragment.app.Fragment;
+
+
 /**
  * Created by aki09 on 2017/09/08.
  */
 
-public class MapActivity extends Fragment  implements OnMapReadyCallback {
+public class MapActivity extends Fragment implements OnMapReadyCallback {
 
     private MapItem[] arrayKikakuData;
 
@@ -144,11 +147,23 @@ public class MapActivity extends Fragment  implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
+        MarkerOptions options = new MarkerOptions();
+
         // Add a marker in Sydney and move the camera
         for (MapItem item : arrayKikakuData) {
             LatLng position = new LatLng(item.getDoubleValue("g_lat"), item.getDoubleValue("g_lon"));
-            googleMap.addMarker(new MarkerOptions().position(position).title(item.getStringValue("place_name")));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 15));
+
+            options.position(position);
+            // マーカー情報設定
+            options.title(item.getStringValue("name"));
+            // マップにマーカー追加
+            Marker marker = googleMap.addMarker(options);
+
+            if(item.getStringValue("name").equals("大祭本部")) {
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 18));
+                // インフォウィンドウ表示
+                marker.showInfoWindow();
+            }
         }
     }
 }
@@ -162,7 +177,7 @@ class MapItem{
         data = null;
     }
 
-    public boolean setData(JSONObject data) {
+    boolean setData(JSONObject data) {
         try {
             this.data = data;
         } catch (Exception e) {
@@ -171,7 +186,7 @@ class MapItem{
         return true;
     }
 
-    public String getStringValue(String key) {
+    String getStringValue(String key) {
         try {
             return data.getString(key);
         } catch (JSONException e) {
@@ -179,7 +194,7 @@ class MapItem{
         }
         return "";
     }
-    public double getDoubleValue(String key) {
+    double getDoubleValue(String key) {
         try {
             return data.getDouble(key);
         } catch (JSONException e) {

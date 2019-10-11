@@ -67,16 +67,15 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_genre1" />
+                    android:src="@drawable/icon_genre1_on" />
 
                 <ImageView
                     android:id="@+id/imageGenre2"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:layout_margin="8dp"
-                    android:layout_weight="1"
+                    android:layout_margin="8dp"                    android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_genre1" />
+                    android:src="@drawable/icon_genre1_on" />
             </LinearLayout>
 
             <TextView
@@ -117,7 +116,7 @@
                         android:layout_margin="8dp"
                         android:layout_weight="1"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/icon_day1" />
+                        android:src="@drawable/icon_day1_on" />
 
                     <ImageView
                         android:id="@+id/imageDay2"
@@ -126,7 +125,7 @@
                         android:layout_margin="8dp"
                         android:layout_weight="1"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/icon_day2" />
+                        android:src="@drawable/icon_day2_on" />
 
                     <ImageView
                         android:id="@+id/imageDay3"
@@ -135,7 +134,7 @@
                         android:layout_margin="8dp"
                         android:layout_weight="1"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/icon_day3" />
+                        android:src="@drawable/icon_day3_on" />
 
                     <ImageView
                         android:id="@+id/imageDay4"
@@ -144,7 +143,7 @@
                         android:layout_margin="8dp"
                         android:layout_weight="1"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/icon_day4" />
+                        android:src="@drawable/icon_day4_on" />
                 </LinearLayout>
 
             </LinearLayout>

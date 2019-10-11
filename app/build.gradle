@@ -1,33 +1,52 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.2'
+    signingConfigs {
+        config {
+            keyAlias '55th_chibafes'
+            keyPassword '55thchibafes'
+            //storeFile file('C:/Users/steee/Google ドライブ/57th大祭アプリチーム/過去資料(55th, 2016新歓)/アプリ関係/大祭/アプリ/55th_chibafes.jks')
+            storePassword '55thchibafes'
+        }
+    }
+
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
     defaultConfig {
-        applicationId "com.chibafes.chibafes56"
-        minSdkVersion 15
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        applicationId "com.chibafes.chibafes55"
+        minSdkVersion 24
+        targetSdkVersion 29
+        versionCode 6         // ストアに出すたびにこの数字をあげる
+        versionName "2.1.1"  // 後方互換のない機能追加.後方互換のある機能追加.バグ修正、あてはまる数字をあげる
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+        debug {
+            debuggable true
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
     }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.google.android.gms:play-services-maps:15.0.1'
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.3.0-alpha02', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    implementation 'com.android.support:design:23.4.0'
-    implementation 'com.android.support:appcompat-v7:23.4.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
     implementation 'com.qozix:tileview:2.2.7'
     testImplementation 'junit:junit:4.12'
 }

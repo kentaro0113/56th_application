@@ -3,9 +3,6 @@ package com.chibafes.chibafes56;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +26,10 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 
 /**
  * Created by shiho on 2017/08/31.
@@ -174,7 +175,7 @@ public class TimeTableActivity extends Fragment {
         arrayTimeTable = (Array) plist.getRootElement();
 
         // チェックリストを読み込む
-        arrayCheck = Commons.readArrayInt(getContext(), "timetable_check");
+        arrayCheck = Commons.readArrayInt(getContext());
 
         // リスト
         listView1 = (android.widget.ListView) view.findViewById(R.id.list_timetable);
@@ -238,7 +239,7 @@ public class TimeTableActivity extends Fragment {
                 buttonTabCheck.setAlpha(1.0f);
                 viewTableBase.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorTabCheck));
 
-                arrayCheck = Commons.readArrayInt(getContext(), "timetable_check");
+                arrayCheck = Commons.readArrayInt(getContext());
                 if(arrayCheck == null || arrayCheck.length <= 0) {
                     viewNoFavorite.setVisibility(View.VISIBLE);
                 }
@@ -368,12 +369,12 @@ public class TimeTableActivity extends Fragment {
                         }
                         NotificationUtil.setLocalNotification(getContext(), sTicker, sMessage, nTime, calendar);
                     }
-                    Commons.writeArrayInt(getContext(), "timetable_check", arrayCheck);
+                    Commons.writeArrayInt(getContext(), arrayCheck);
                 }
                 else {
                     if(arrayCheck.length <= 1) {
                         arrayCheck = null;
-                        Commons.deleteSave(getContext(), "timetable_check");
+                        Commons.deleteSave(getContext());
                     }
                     else {
                         int[] newCheck = new int[arrayCheck.length - 1];
@@ -389,7 +390,7 @@ public class TimeTableActivity extends Fragment {
 
                         NotificationUtil.cancelLocalNotification(getContext(), nTime);
 
-                        Commons.writeArrayInt(getContext(), "timetable_check", arrayCheck);
+                        Commons.writeArrayInt(getContext(), arrayCheck);
                     }
                 }
                     // 通知の作成
@@ -527,17 +528,17 @@ public class TimeTableActivity extends Fragment {
         public int getId() {
             return nId;
         }
-        public int getTime() {
+        int getTime() {
             return nTime;
         }
-        public int getIndex() {
+        int getIndex() {
             return nIndex;
         }
-        public String getTimeString() {
-            return (String.format("11/%d %02d:%02d", (2 + nIndex / 2), (nTime / 100), (nTime % 100)));
+        String getTimeString() {
+            return (String.format("11/%d %02d:%02d", (1 + nIndex / 2), (nTime / 100), (nTime % 100)));
         }
 
-        public KikakuItem getKikakuItem() {
+        KikakuItem getKikakuItem() {
             return itemKikaku;
         }
     }
@@ -573,7 +574,7 @@ public class TimeTableActivity extends Fragment {
                 imagePRcut.setImageResource(R.drawable.no_image);
             }
             else {
-                imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), itemKikaku.getStringValue("image") + ".png"));
+                imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), itemKikaku.getStringValue("image") + ".jpg"));
             }
             TextView textName = (TextView) convertView.findViewById(R.id.textGroupName);
             textName.setText(itemKikaku.getStringValue("name"));

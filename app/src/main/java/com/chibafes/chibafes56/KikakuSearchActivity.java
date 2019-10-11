@@ -4,8 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +24,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Objects;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
 
 /**-
  * Created by steee on 2017/09/01.
@@ -89,7 +91,7 @@ public class KikakuSearchActivity extends Fragment {
                 }
             }
         });
-        Button buttonSearch = (Button) view.findViewById(R.id.buttonSearch);
+        ImageButton buttonSearch = (ImageButton) view.findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -130,8 +132,6 @@ public class KikakuSearchActivity extends Fragment {
                     arrayKikakuData[i] = new KikakuItem();
                     arrayKikakuData[i].setData(jsonArray.getJSONObject(i));
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -144,7 +144,7 @@ public class KikakuSearchActivity extends Fragment {
         }
 
         // 検索ダイアログの生成
-        scrollSearch = (ScrollView) getActivity().getLayoutInflater().inflate(R.layout.window_kikakusearch, null);
+        scrollSearch = (ScrollView) Objects.requireNonNull(getActivity()).getLayoutInflater().inflate(R.layout.window_kikakusearch, null);
 
         editFreeWord = (EditText) scrollSearch.findViewById(R.id.editFreeWord);
         editFreeWord.setText(sSearchWord);
@@ -289,7 +289,7 @@ public class KikakuSearchActivity extends Fragment {
             imagePRcut.setImageResource(R.drawable.no_image);
         }
         else {
-            imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".png"));
+            imagePRcut.setImageBitmap(Commons.getAssetsImage(Objects.requireNonNull(getContext()).getResources(), item.getStringValue("image") + ".jpg"));
         }
         ImageView imageGenre1 = (ImageView) viewDetail.findViewById(R.id.imageGenre1);
         imageGenre1.setImageResource(getResources().getIdentifier("icon_genre" + item.getIntValue("genre1"), "drawable", getContext().getPackageName()));
@@ -359,7 +359,7 @@ public class KikakuSearchActivity extends Fragment {
     }
 
 
-    public void setSearchRandom() {
+    private void setSearchRandom() {
         sSearchWord = null;
 
         arraySearchData = new ArrayList<>();
@@ -380,7 +380,7 @@ public class KikakuSearchActivity extends Fragment {
         }
     }
 
-    public void setSearchData(boolean[] array, String sWord) {
+    private void setSearchData(boolean[] array, String sWord) {
         sSearchWord = sWord;
 
         arraySearchData = new ArrayList<>();
@@ -444,21 +444,24 @@ public class KikakuSearchActivity extends Fragment {
         }
     }
 
-    public ArrayList<Integer> getFavorite() {
+    private ArrayList<Integer> getFavorite() {
         ArrayList<Integer> arrayList = new ArrayList<>();
-        String str = Commons.readString(getContext(), "kikaku_favorite");
+        String str = Commons.readString(Objects.requireNonNull(getContext()), "kikaku_favorite");
         if(str == null) {
             return arrayList;
         }
-        String[] arrStr = str.split(",");
-        for (String anArrStr : arrStr) {
-            arrayList.add(Integer.parseInt(anArrStr));
+        try {
+            String[] arrStr = str.split(",");
+            for (String anArrStr : arrStr) {
+                arrayList.add(Integer.parseInt(anArrStr));
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
         }
-
         return arrayList;
     }
 
-    public void saveFavorite(ArrayList<Integer> arrayList) {
+    private void saveFavorite(ArrayList<Integer> arrayList) {
         StringBuilder result = new StringBuilder();
         for(int i = 0; i < arrayList.size() - 1; ++i) {
             result.append(arrayList.get(i)).append(",");
@@ -466,7 +469,7 @@ public class KikakuSearchActivity extends Fragment {
         if(arrayList.size() > 0) {
             result.append(arrayList.get(arrayList.size() - 1));
         }
-        Commons.writeString(getContext(), "kikaku_favorite", result.toString());
+        Commons.writeString(Objects.requireNonNull(getContext()), "kikaku_favorite", result.toString());
     }
 }
 
@@ -481,7 +484,7 @@ class KikakuItem {
         this.data = data;
     }
 
-    public String getStringValue(String key) {
+    String getStringValue(String key) {
         try {
             return data.getString(key);
         } catch (JSONException e) {
@@ -489,7 +492,7 @@ class KikakuItem {
         }
         return "";
     }
-    public int getIntValue(String key) {
+    int getIntValue(String key) {
         try {
             return data.getInt(key);
         } catch (JSONException e) {
@@ -528,7 +531,7 @@ class KikakuListAdapter extends ArrayAdapter<KikakuItem> {
                 imagePRcut.setImageResource(R.drawable.no_image);
             }
             else {
-                imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".png"));
+                imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".jpg"));
             }
         }
         TextView textName = (TextView) convertView.findViewById(R.id.textGroupName);

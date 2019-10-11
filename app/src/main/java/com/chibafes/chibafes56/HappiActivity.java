@@ -2,11 +2,9 @@ package com.chibafes.chibafes56;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -16,6 +14,8 @@ import com.longevitysoft.android.xml.plist.domain.Dict;
 import com.longevitysoft.android.xml.plist.domain.PList;
 
 import java.util.ArrayList;
+
+import androidx.fragment.app.Fragment;
 
 /**
  * Created by shiho on 2017/09/01.
@@ -33,7 +33,7 @@ public class HappiActivity extends Fragment {
 
         setHappiSerif(view, Statics.HAPPI_SERIF_NORMAL);
 
-        ImageButton buttonHappi = (ImageButton) view.findViewById(R.id.imageButton21);
+        ImageButton buttonHappi = (ImageButton) view.findViewById(R.id.SerifButton);
         buttonHappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +49,7 @@ public class HappiActivity extends Fragment {
                 startActivity(intent);
             }
         });
-        ImageButton buttonGacha = ImageButton) view.findViewById(R.id.imageButton19);
+        ImageButton buttonGacha = (ImageButton) view.findViewById(R.id.imageButton19);
         buttonGacha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,7 +103,7 @@ public class HappiActivity extends Fragment {
         }
 
         // セリフの抽選
-        TextView textSerif = (TextView) view.findViewById(R.id.textSerif);
+        TextView textSerif = (TextView) view.findViewById(R.id.Happi_line);
         textSerif.setText(arraySerif.get(Commons.getRandom(arraySerif.size())));
 
     }

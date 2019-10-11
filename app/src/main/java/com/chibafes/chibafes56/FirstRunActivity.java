@@ -4,17 +4,19 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
+
+import com.google.android.material.tabs.TabLayout;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 
 /**
@@ -73,11 +75,9 @@ public class FirstRunActivity extends FragmentActivity implements ViewPager.OnPa
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
-            switch (event.getKeyCode()) {
-                // バックキー押下時の処理
-                case KeyEvent.KEYCODE_BACK:
-                    // バックキーを押しても何も起きないようにする
-                    return true;
+            // バックキー押下時の処理
+            if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {// バックキーを押しても何も起きないようにする
+                return true;
             }
         }
         return super.dispatchKeyEvent(event);
@@ -94,7 +94,7 @@ public class FirstRunActivity extends FragmentActivity implements ViewPager.OnPa
             // 最後のページを開いたら次の画面へ移動する
             // 現在のミリ秒を保存してユーザIDとして用いる(※重複可能性あり)
             long currentTimeMillis = System.currentTimeMillis();
-            Commons.writeLong(this, "UserID", currentTimeMillis);
+            Commons.writeLong(this, currentTimeMillis);
 
             // メインメニューへ遷移する
             Intent intent = new Intent(FirstRunActivity.this, MainMenuActivity.class);
@@ -115,7 +115,7 @@ public class FirstRunActivity extends FragmentActivity implements ViewPager.OnPa
         public FirstRunFragment() {
         }
 
-        public static FirstRunFragment newInstance(String sFileName) {
+        static FirstRunFragment newInstance(String sFileName) {
             Bundle bundle = new Bundle();
             bundle.putString(PAGE, sFileName);
 

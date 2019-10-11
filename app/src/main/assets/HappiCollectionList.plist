@@ -6,12 +6,32 @@
 		<key>name</key>
 		<string>56thはっぴ</string>
 		<key>note</key>
-		<string>今年度のはっぴだっぴ。よろしくだっぴ！</string>
+		<string>今年度もはっぴが千葉大祭を盛り上げていくっぴ！よろしくだっぴ！</string>
 		<key>image</key>
-		<string>happi1</string>
+		<string>happi1_resize</string>
 		<key>rate</key>
-		<integer>30</integer>
+		<integer>40</integer>
 	</dict>
+    <dict>
+       <key>name</key>
+       <string>はぴレンジャー</string>
+       <key>note</key>
+       <string>ぼくの名前ははぴレンジャー！世界の平和をまもってるっぴ！きみのことも守るっぴ！まかせてっぴ！</string>
+       <key>image</key>
+       <string>hapi_ranger</string>
+       <key>rate</key>
+       <integer>30</integer>
+   </dict>
+   <dict>
+      <key>name</key>
+      <string>和柄はっぴ</string>
+      <key>note</key>
+      <string>今年のテーマに合わせて着替えてみたっぴ。似合ってるっぴ？</string>
+      <key>image</key>
+      <string>wahuu_happi</string>
+      <key>rate</key>
+      <integer>30</integer>
+  </dict>
     <dict>
         <key>name</key>
         <string>教育学部はっぴ</string>
@@ -70,7 +90,7 @@
         <key>image</key>
         <string>gacha_happi_pumpkin</string>
         <key>rate</key>
-        <integer>20</integer>
+        <integer>15</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -80,7 +100,7 @@
         <key>image</key>
         <string>gacha_happi_santa</string>
         <key>rate</key>
-        <integer>20</integer>
+        <integer>15</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -90,7 +110,7 @@
         <key>image</key>
         <string>gacha_happi_knight</string>
         <key>rate</key>
-        <integer>20</integer>
+        <integer>15</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -100,7 +120,7 @@
         <key>image</key>
         <string>gacha_happi_magician</string>
         <key>rate</key>
-        <integer>20</integer>
+        <integer>15</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -110,7 +130,7 @@
         <key>image</key>
         <string>gacha_happi_ninja</string>
         <key>rate</key>
-        <integer>20</integer>
+        <integer>15</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -120,7 +140,7 @@
         <key>image</key>
         <string>gacha_happi_pirate</string>
         <key>rate</key>
-        <integer>20</integer>
+        <integer>15</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -130,7 +150,7 @@
         <key>image</key>
         <string>gacha_happi_cowboy</string>
         <key>rate</key>
-        <integer>20</integer>
+        <integer>15</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -140,7 +160,7 @@
         <key>image</key>
         <string>gacha_happi_dragon</string>
         <key>rate</key>
-        <integer>20</integer>
+        <integer>15</integer>
     </dict>
     <dict>
         <key>name</key>
@@ -150,7 +170,7 @@
         <key>image</key>
         <string>gacha_happi_51th</string>
         <key>rate</key>
-        <integer>5</integer>
+        <integer>7</integer>
     </dict>
 	<dict>
 		<key>name</key>
@@ -160,7 +180,7 @@
 		<key>image</key>
 		<string>gacha_happi_chimei</string>
 		<key>rate</key>
-		<integer>3</integer>
+		<integer>7</integer>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -170,7 +190,7 @@
 		<key>image</key>
 		<string>gacha_happi_shicho</string>
 		<key>rate</key>
-		<integer>3</integer>
+		<integer>7</integer>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -180,7 +200,7 @@
 		<key>image</key>
 		<string>gacha_happi_sai</string>
 		<key>rate</key>
-		<integer>3</integer>
+		<integer>7</integer>
 	</dict>
 </array>
 </plist>
