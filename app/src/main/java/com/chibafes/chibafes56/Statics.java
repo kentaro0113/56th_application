@@ -7,8 +7,8 @@ package com.chibafes.chibafes56;
  */
 
 public class Statics {
-    static final String URL_UPDATE       = "http://demo.chibafes.com/appli/php/56th/update.php";
-    static final String URL_ENQUETE      = "http://demo.chibafes.com/appli/php/56th/enquete_answer.php";
+    static final String URL_UPDATE       = "http://demo.chibafes.com/appli/php/57th/update.php";
+    static final String URL_ENQUETE      = "http://demo.chibafes.com/appli/php/57th/enquete_answer.php";
     static final String URL_CHIBAFES_WEB = "http://chibafes.com/";
 
     static final int NONE                = -1;
