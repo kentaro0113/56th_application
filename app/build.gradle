@@ -9,6 +9,7 @@ android {
             storePassword '55thchibafes'
         }
     }
+
     compileSdkVersion 29
     buildToolsVersion '29.0.2'
     defaultConfig {
