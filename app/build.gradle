@@ -5,7 +5,7 @@ android {
         config {
             keyAlias '55th_chibafes'
             keyPassword '55thchibafes'
-            storeFile file('C:/Users/steee/Google ドライブ/56th大祭アプリチーム/過去資料(55th, 2016新歓)/アプリ関係/大祭/アプリ/55th_chibafes.jks')
+            //storeFile file('C:/Users/steee/Google ドライブ/57th大祭アプリチーム/過去資料(55th, 2016新歓)/アプリ関係/大祭/アプリ/55th_chibafes.jks')
             storePassword '55thchibafes'
         }
     }
