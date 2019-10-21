@@ -104,10 +104,9 @@ public class KikakuInfoActivity extends Activity {
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
-            switch (event.getKeyCode()) {
-                // バックキー押下時の処理
-                case KeyEvent.KEYCODE_BACK:
-                    return true;
+            // バックキー押下時の処理
+            if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+                return true;
             }
         }
         return super.dispatchKeyEvent(event);

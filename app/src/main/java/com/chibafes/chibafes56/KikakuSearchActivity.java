@@ -289,7 +289,7 @@ public class KikakuSearchActivity extends Fragment {
             imagePRcut.setImageResource(R.drawable.no_image);
         }
         else {
-            imagePRcut.setImageBitmap(Commons.getAssetsImage(Objects.requireNonNull(getContext()).getResources(), item.getStringValue("image") + ".jpg"));
+            imagePRcut.setImageBitmap(Commons.getAssetsImage(getResources(), item.getStringValue("image") + ".jpg"));
         }
         ImageView imageGenre1 = (ImageView) viewDetail.findViewById(R.id.imageGenre1);
         imageGenre1.setImageResource(getResources().getIdentifier("icon_genre" + item.getIntValue("genre1"), "drawable", getContext().getPackageName()));

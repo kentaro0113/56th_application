@@ -21,7 +21,6 @@ import com.longevitysoft.android.xml.plist.domain.Dict;
 import com.longevitysoft.android.xml.plist.domain.PList;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -164,8 +163,6 @@ public class TimeTableActivity extends Fragment {
                         h++;
                     }
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
             } catch (Exception e) {
                 e.printStackTrace();
             }
