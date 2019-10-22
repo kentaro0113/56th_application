@@ -16,7 +16,7 @@ import android.widget.LinearLayout;
 public class KikakuInfoActivity extends Activity {
 
     private static final String URL_GUEST = "http://guest.chibafes.com/";
-    private static final String URL_GRANDPRIX = "https://docs.google.com/forms/d/e/1FAIpQLScPKUeblse1guKtsbiiu0XPxVUKPT3PE_aEw5cQMz-jHWHriw/viewform";
+    private static final String URL_GRANDPRIX = "https://docs.google.com/forms/d/13aTfkeX2oxQUgNlfUqs-UM-Fx1g9HM3iOXCq1ojRxQY/edit";
 
 
     @Override
