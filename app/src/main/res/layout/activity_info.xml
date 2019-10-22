@@ -91,8 +91,8 @@
                     android:layout_weight="1"
                     android:background="@null"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/icon_button_guest_2"
-                    android:src="@drawable/icon_button_guest_2" />
+                    app:srcCompat="@drawable/icon_button_guest"
+                    android:src="@drawable/icon_button_guest" />
 
             </LinearLayout>
 
