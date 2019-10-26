@@ -2,7 +2,7 @@
 
 
     <string name="app_name">57th千葉大祭</string>
-    <string name="app_fullname">第57回千葉大祭アプリ→祭前線←</string>
+    <string name="app_fullname">第57回千葉大祭アプリ</string>
 
     <string name="ConfirmFinish">アプリを終了します</string>
     <string name="ButtonCancel">キャンセル</string>
@@ -70,7 +70,6 @@
     <string name="KikakuInfoButton2">千葉大祭Twitterを見る</string>
     <string name="KikakuInfo2_1">今年度も、千葉大祭のマスコットキャラクターである「はっぴ」のグッズを作りました！\nクリアファイル・ストラップ等を、南門・教育学部棟1号館と2号館の間で販売！千葉大祭の記念にぜひどうぞ！\n\nまた、今年度も缶バッジのガチャガチャ機を設置します！\n5種類の缶バッジのうち、どれが当たるかは運次第。何回か回しても欲しいものが出なかったら、ガチャガチャの近くにいる赤いジャンパーのスタッフに声をかけてみよう！いいことがあるかも・・？！</string>
     <string name="KikakuInfoButton3">投票する！</string>
-    <string name="KikakuInfo3_1"></string>
     <string name="KikakuInfoButton4">詳細はこちらから！</string>
     <string name="KikakuInfo4_1">本年度も千葉大祭では、たくさんの企画を用意しています！</string>
     <string name="KikakuInfo4_2">チーバくん</string>
@@ -103,6 +102,8 @@
     <string name="button">Button</string>
     <string name="todo">TODO</string>
     <string name="title_activity_maps">Map</string>
+    <string name="happi_explanation">第57回千葉大祭公式キャラクター</string>
+    <string name="textview">TextView</string>
 
     <string-array name = "list">
         <item>A型</item>
