@@ -12,11 +12,11 @@
 
         <TextView
             android:id="@+id/textTitle"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:layout_weight="1"
-            android:text="TextView"
+            android:text="@string/textview"
             android:textSize="20sp" />
 
         <ImageButton
@@ -31,9 +31,9 @@
         android:id="@+id/textTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="6dp"
-        android:gravity="right"
-        android:text="TextView"
+        android:layout_marginEnd="6dp"
+        android:gravity="end"
+        android:text="@string/textview"
         android:textSize="15sp" />
 
     <ScrollView
@@ -50,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 android:textSize="17sp" />
         </LinearLayout>
     </ScrollView>

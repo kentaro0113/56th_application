@@ -100,7 +100,7 @@
                     android:layout_weight="3"
                     android:background="@color/colorSearchButton"
                     android:gravity="center"
-                    android:text="日程"
+                    android:text="@string/event_day"
                     android:textSize="16sp" />
 
                 <LinearLayout
@@ -163,7 +163,7 @@
                     android:layout_weight="3"
                     android:background="@color/colorSearchButton"
                     android:gravity="center"
-                    android:text="場所"
+                    android:text="@string/event_place"
                     android:textSize="16sp" />
 
                 <TextView

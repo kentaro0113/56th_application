@@ -20,7 +20,7 @@
                 android:background="@color/colorSearchButton"
                 android:gravity="center"
                 android:padding="12dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 android:textSize="17sp" />
 
             <LinearLayout

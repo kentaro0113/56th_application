@@ -33,7 +33,7 @@
             android:id="@+id/imageButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:layout_weight="3"
             android:background="@null"
             android:padding="4dp"
@@ -162,7 +162,7 @@
                     android:background="#B5CCF4"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_2"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -179,7 +179,7 @@
                     android:background="#EAB5AA"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_4"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -196,7 +196,7 @@
                     android:background="#E4B0EA"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_6"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -213,7 +213,7 @@
                     android:background="#EAC76C"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_8"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -230,7 +230,7 @@
                     android:background="#90BE4F"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_12"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -246,7 +246,7 @@
                     android:background="#B5CCF4"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_14"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -263,7 +263,7 @@
                     android:background="#F8CBB4"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_16"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -280,7 +280,7 @@
                     android:background="#EAB28F"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_18"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -296,7 +296,7 @@
                     android:background="#AAAAF4"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_20"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
