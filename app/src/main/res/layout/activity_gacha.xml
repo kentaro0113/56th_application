@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -36,7 +35,7 @@
             android:id="@+id/imageButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:layout_weight="3"
             android:background="@null"
             android:padding="4dp"
@@ -63,7 +62,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
+
+        </LinearLayout>
 
             <ImageView
                 android:id="@+id/imageBox"
@@ -79,7 +80,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
+            </LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
@@ -117,8 +120,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:contentDescription="TODO"
-                android:src="@drawable/happi1_resize"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/happi"
                 android:visibility="invisible" />
 
             <FrameLayout
@@ -139,7 +142,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
-                        android:orientation="vertical"></LinearLayout>
+                        android:orientation="vertical">
+                    </LinearLayout>
 
                     <FrameLayout
                         android:id="@+id/viewHappiPoint"
@@ -165,19 +169,20 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1"
-                                android:orientation="vertical"></LinearLayout>
+                                android:orientation="vertical">
+                            </LinearLayout>
 
                             <TextView
                                 android:id="@+id/textHappiPoint"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="right"
+                                android:layout_gravity="end"
                                 android:layout_margin="4dp"
                                 android:layout_weight="1"
                                 android:background="@android:color/white"
-                                android:gravity="right"
+                                android:gravity="end"
                                 android:padding="12dp"
-                                android:text="TextView" />
+                                android:text="@string/textview" />
                         </LinearLayout>
 
                     </FrameLayout>
@@ -186,7 +191,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
-                        android:orientation="vertical"></LinearLayout>
+                        android:orientation="vertical">
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -195,7 +201,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="24dp"
+                    android:layout_marginStart="24dp"
                     android:layout_weight="0"
                     android:background="@null"
                     android:onClick="onClickTwitter"
@@ -211,7 +217,7 @@
             android:id="@+id/buttonSkip"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:background="@color/colorButton"
             android:onClick="onClickSkip"
             android:scaleType="fitCenter"

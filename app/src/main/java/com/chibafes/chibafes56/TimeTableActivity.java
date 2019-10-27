@@ -21,7 +21,6 @@ import com.longevitysoft.android.xml.plist.domain.Dict;
 import com.longevitysoft.android.xml.plist.domain.PList;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -164,8 +163,6 @@ public class TimeTableActivity extends Fragment {
                         h++;
                     }
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -178,8 +175,8 @@ public class TimeTableActivity extends Fragment {
         arrayCheck = Commons.readArrayInt(getContext());
 
         // リスト
-        listView1 = (android.widget.ListView) view.findViewById(R.id.list_timetable);
-        listView2 = (android.widget.ListView) view.findViewById(R.id.list_timetable2);
+        listView1 = view.findViewById(R.id.list_timetable);
+        listView2 = view.findViewById(R.id.list_timetable2);
 
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -351,7 +348,7 @@ public class TimeTableActivity extends Fragment {
                     }
 
                     Calendar calendar = Calendar.getInstance();
-                    calendar.set(2017, 10, (2 + itemTimeTable.getIndex() / 2), itemTimeTable.getTime() / 100, itemTimeTable.getTime() % 100, 0);
+                    calendar.set(2019, 11, (2 + itemTimeTable.getIndex() / 2), itemTimeTable.getTime() / 100, itemTimeTable.getTime() % 100, 0);
                     calendar.add(Calendar.MINUTE, -15);
 
                     Calendar calendar2 = Calendar.getInstance();
@@ -482,7 +479,7 @@ public class TimeTableActivity extends Fragment {
             imagePRcut.setImageResource(R.drawable.no_image);
         }
         else {
-            imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".png"));
+            imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".jpg"));
         }
         ImageView imageGenre1 = (ImageView) viewDetail.findViewById(R.id.imageGenre1);
         imageGenre1.setImageResource(getResources().getIdentifier("icon_genre" + item.getIntValue("genre1"), "drawable", getContext().getPackageName()));

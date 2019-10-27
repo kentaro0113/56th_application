@@ -21,18 +21,18 @@
                 android:background="@color/colorSearchButton"
                 android:gravity="center"
                 android:padding="12dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 android:textSize="17sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/buttonFavorite"
-                    android:layout_width="52dp"
+                    android:layout_width="0dp"
                     android:layout_height="52dp"
                     android:layout_weight="1"
                     android:background="@null"
@@ -52,7 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="TextView" />
+                android:text="@string/textview" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -67,15 +67,16 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_genre1_on" />
+                    android:src="@drawable/icon_genre1" />
 
                 <ImageView
                     android:id="@+id/imageGenre2"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:layout_margin="8dp"                    android:layout_weight="1"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_genre1_on" />
+                    android:src="@drawable/icon_genre1" />
             </LinearLayout>
 
             <TextView
@@ -83,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="16dp"
-                android:text="TextView" />
+                android:text="@string/textview" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -105,7 +106,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:orientation="horizontal">
 
@@ -171,7 +172,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="TextView" />
+                    android:text="@string/textview" />
 
             </LinearLayout>
         </LinearLayout>

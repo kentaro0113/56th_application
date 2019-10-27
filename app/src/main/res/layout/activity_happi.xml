@@ -88,7 +88,7 @@
                     android:background="@color/colorWhite"
                     android:gravity="center_vertical|center"
                     android:padding="16dp"
-                    android:text="TextView"
+                    android:text="@string/textview"
                     android:textColor="@color/colorBase" />
 
                 <TextView
@@ -112,8 +112,8 @@
                     android:layout_weight="3"
                     android:background="@null"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/happi1_resize"
-                    app:srcCompat="@drawable/happi1_resize" />
+                    android:src="@drawable/happi"
+                    app:srcCompat="@drawable/happi" />
 
                 <TextView
                     android:id="@+id/textView11"

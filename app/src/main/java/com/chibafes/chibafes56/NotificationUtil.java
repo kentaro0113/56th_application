@@ -7,9 +7,9 @@ import android.content.Intent;
 
 import java.util.Calendar;
 
-public class NotificationUtil {
+class NotificationUtil {
 
-    public static void setLocalNotification(Context context, String ticker, String message, int requestCode, Calendar calendar){
+    static void setLocalNotification(Context context, String ticker, String message, int requestCode, Calendar calendar){
         Intent intent = new Intent(context, NotificationReceiver.class);
         intent.putExtra("TICKER", ticker);
         intent.putExtra("MESSAGE", message);
@@ -21,7 +21,7 @@ public class NotificationUtil {
         }
     }
 
-    public static void cancelLocalNotification(Context context, int requestCode){
+    static void cancelLocalNotification(Context context, int requestCode){
         Intent intent = new Intent(context, NotificationReceiver.class);
         PendingIntent sender = PendingIntent.getBroadcast(context, requestCode, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
