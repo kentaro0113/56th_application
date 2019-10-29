@@ -109,29 +109,6 @@
                     android:src="@drawable/goods1"
                     app:srcCompat="@drawable/goods1" />
 
-                <ImageView
-                    android:layout_width="600dp"
-                    android:layout_height="300dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="16dp"
-                    android:src="@drawable/goods2"
-                    app:srcCompat="@drawable/goods2" />
-
-                <ImageView
-                    android:layout_width="600dp"
-                    android:layout_height="300dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="16dp"
-                    android:src="@drawable/goods3"
-                    app:srcCompat="@drawable/goods3" />
-
-                <ImageView
-                    android:layout_width="600dp"
-                    android:layout_height="300dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="16dp"
-                    android:src="@drawable/goods4"
-                    app:srcCompat="@drawable/goods4" />
             </LinearLayout>
 
             <LinearLayout

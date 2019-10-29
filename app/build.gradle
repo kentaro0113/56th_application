@@ -16,13 +16,13 @@ android {
         applicationId "com.chibafes.chibafes55"
         minSdkVersion 24
         targetSdkVersion 29
-        versionCode 6         // ストアに出すたびにこの数字をあげる
-        versionName "2.1.1"  // 後方互換のない機能追加.後方互換のある機能追加.バグ修正、あてはまる数字をあげる
+        versionCode 7         // ストアに出すたびにこの数字をあげる
+        versionName "3.0.0"  // 後方互換のない機能追加.後方互換のある機能追加.バグ修正、あてはまる数字をあげる
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         debug {
-            debuggable true
+            debuggable false
         }
         release {
             minifyEnabled false

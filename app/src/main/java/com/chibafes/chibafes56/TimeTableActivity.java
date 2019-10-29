@@ -532,7 +532,7 @@ public class TimeTableActivity extends Fragment {
             return nIndex;
         }
         String getTimeString() {
-            return (String.format("11/%d %02d:%02d", (1 + nIndex / 2), (nTime / 100), (nTime % 100)));
+            return (String.format("%02d:%02d", (nTime / 100), (nTime % 100)));
         }
 
         KikakuItem getKikakuItem() {
