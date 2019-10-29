@@ -505,12 +505,6 @@
 		</dict>
 		<dict>
             <key>id</key>
-            <integer>185</integer>
-            <key>time</key>
-            <integer>1350</integer>
-        </dict>
-        <dict>
-            <key>id</key>
             <integer>192</integer>
             <key>time</key>
             <integer>1430</integer>
