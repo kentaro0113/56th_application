@@ -117,7 +117,7 @@ public class MainMenuActivity extends FragmentActivity implements HttpPostAsync.
         if(!sToday.equals(sLastRunDay)) {
             // 初回起動ならはっぴポイントを加算する
             int nGetPoint = 5;
-            Commons.writeInt(this, "happi_point", Commons.readInt(this, "happi_point") + nGetPoint);
+            Commons.writeInt(this, "happi_point_57th", Commons.readInt(this, "happi_point_57th") + nGetPoint);
             Commons.writeString(this, "LastRunDay", sToday);
 
             new AlertDialog.Builder(this)
@@ -132,11 +132,11 @@ public class MainMenuActivity extends FragmentActivity implements HttpPostAsync.
         }
 
         // 特別ログインボーナス（11/1~4のログイン時に追加で30pt）
-        if(sToday.equals("20181101") || sToday.equals("20181102") || sToday.equals("20181103") || sToday.equals("20181104")) {
+        if(sToday.equals("20191031") || sToday.equals("20191101") || sToday.equals("20191102") || sToday.equals("20191103")) {
             if(Commons.readInt(this, "login" + sToday) == 0) {
 
                 int nGetPoint = 30;
-                Commons.writeInt(this, "happi_point", Commons.readInt(this, "happi_point") + nGetPoint);
+                Commons.writeInt(this, "happi_point_57th", Commons.readInt(this, "happi_point_57th") + nGetPoint);
                 Commons.writeInt(this, "login" + sToday, 1);
 
                 new AlertDialog.Builder(this)
@@ -170,7 +170,7 @@ public class MainMenuActivity extends FragmentActivity implements HttpPostAsync.
 
                         nQuestionType = Statics.TYPE_SELECT;
                         String sAnswer = json.getString("answer");
-                        if(sAnswer == null || sAnswer.length() <= 0) {
+                        if(sAnswer.length() <= 0) {
                             nQuestionType = Statics.TYPE_TEXT;
                         }
                         switch (nQuestionType) {
@@ -278,7 +278,7 @@ public class MainMenuActivity extends FragmentActivity implements HttpPostAsync.
             // 通信に成功した場合
             if(result.contains("OK")) {
                 int nGetPoint = 10;
-                Commons.writeInt(this, "happi_point", Commons.readInt(this, "happi_point") + nGetPoint);
+                Commons.writeInt(this, "happi_point_57th", Commons.readInt(this, "happi_point_57th") + nGetPoint);
                 // 回答済みのアンケート番号を今回のアンケート番号に更新する
                 Commons.writeInt(this, "answer_no", nQuestionNo);
                 // 正常に完了した旨のダイアログを表示

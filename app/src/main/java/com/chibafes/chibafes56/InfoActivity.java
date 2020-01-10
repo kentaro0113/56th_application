@@ -37,7 +37,7 @@ public class InfoActivity extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.activity_info, container, false);
 
-        ListView tableNewsList = (ListView) view.findViewById(R.id.tableNewsList);
+        ListView tableNewsList = view.findViewById(R.id.tableNewsList);
 
         String sNews = Commons.readString(getContext(), "data_news");
         arrayInfoItem = null;
@@ -65,11 +65,11 @@ public class InfoActivity extends Fragment {
                     InfoItem item = arrayInfoItem[position];
 
                     // それぞれ文言を設定して表示する
-                    TextView textTitle = (TextView) viewInfo.findViewById(R.id.textTitle);
+                    TextView textTitle = viewInfo.findViewById(R.id.textTitle);
                     textTitle.setText(item.getTitle());
-                    TextView textTime = (TextView) viewInfo.findViewById(R.id.textTime);
+                    TextView textTime = viewInfo.findViewById(R.id.textTime);
                     textTime.setText(item.getTime());
-                    TextView textMessage = (TextView) viewInfo.findViewById(R.id.textMessage);
+                    TextView textMessage = viewInfo.findViewById(R.id.textMessage);
                     textMessage.setText(item.getDetail());
                     alertInfo.show();
                 }
@@ -77,7 +77,7 @@ public class InfoActivity extends Fragment {
         }
         // 新着情報の詳細ウィンドウビューの設定
         viewInfo = (LinearLayout) getActivity().getLayoutInflater().inflate(R.layout.window_info_detail, null);
-        ImageButton buttonClose = (ImageButton) viewInfo.findViewById(R.id.buttonClose);
+        ImageButton buttonClose = viewInfo.findViewById(R.id.buttonClose);
         buttonClose.setOnClickListener(new View.OnClickListener() {
             // 閉じるボタンを押した時の処理
             @Override
@@ -87,7 +87,7 @@ public class InfoActivity extends Fragment {
         });
         alertInfo = new AlertDialog.Builder(getActivity()).setView(viewInfo).create();
 
-        ImageButton buttonKikaku1 = (ImageButton) view.findViewById(R.id.buttonKikaku1);
+        ImageButton buttonKikaku1 = view.findViewById(R.id.buttonKikaku1);
         buttonKikaku1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,7 +96,7 @@ public class InfoActivity extends Fragment {
                 startActivity(intent);
             }
         });
-        ImageButton buttonKikaku2 = (ImageButton) view.findViewById(R.id.buttonKikaku2);
+        ImageButton buttonKikaku2 = view.findViewById(R.id.buttonKikaku2);
         buttonKikaku2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -105,7 +105,7 @@ public class InfoActivity extends Fragment {
                 startActivity(intent);
             }
         });
-        ImageButton buttonKikaku3 = (ImageButton) view.findViewById(R.id.buttonKikaku3);
+        ImageButton buttonKikaku3 = view.findViewById(R.id.buttonKikaku3);
         buttonKikaku3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,7 +114,7 @@ public class InfoActivity extends Fragment {
                 startActivity(intent);
             }
         });
-        ImageButton buttonKikaku4 = (ImageButton) view.findViewById(R.id.buttonKikaku4);
+        ImageButton buttonKikaku4 = view.findViewById(R.id.buttonKikaku4);
         buttonKikaku4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -201,8 +201,8 @@ class InfoListAdapter extends ArrayAdapter<InfoItem> {
             convertView = layoutInflater.inflate(R.layout.listitem_info, null);
         }
 
-        TextView textTitle = (TextView) convertView.findViewById(R.id.textTitle);
-        TextView textTime = (TextView) convertView.findViewById(R.id.textTime);
+        TextView textTitle = convertView.findViewById(R.id.textTitle);
+        TextView textTime = convertView.findViewById(R.id.textTime);
         if (item != null) {
             textTitle.setText(item.getTitle());
         }

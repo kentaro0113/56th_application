@@ -38,8 +38,8 @@ public class FirstRunActivity extends FragmentActivity implements ViewPager.OnPa
         // このActivityに関連づけるレイアウトの設定
         setContentView(R.layout.activity_firstrun);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        TabLayout tabLayout = findViewById(R.id.tabs);
+        ViewPager viewPager = findViewById(R.id.pager);
 
         FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
@@ -62,14 +62,6 @@ public class FirstRunActivity extends FragmentActivity implements ViewPager.OnPa
         viewPager.addOnPageChangeListener(this);
 
         tabLayout.setupWithViewPager(viewPager);
-    }
-
-    public void onClickButton(View view) {
-        // メインメニューへ遷移する
-        Intent intent = new Intent(FirstRunActivity.this, TimeTableActivity.class);
-        startActivity(intent);
-        // 処理が終わったらこのActivityを破棄する
-        finish();
     }
 
     @Override
@@ -135,7 +127,7 @@ public class FirstRunActivity extends FragmentActivity implements ViewPager.OnPa
             String sFileName = getArguments().getString(PAGE, "");
 
             View view = inflater.inflate(R.layout.activity_firstrun2, container, false);
-            ImageView imageTutorial = (ImageView) view.findViewById(R.id.imageTutorial);
+            ImageView imageTutorial = view.findViewById(R.id.imageTutorial);
 
             if (!sFileName.equals("")) {
                 Resources resource = getContext().getResources();

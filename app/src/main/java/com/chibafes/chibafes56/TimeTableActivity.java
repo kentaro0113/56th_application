@@ -303,7 +303,7 @@ public class TimeTableActivity extends Fragment {
 
     private void setDetailLayout(final View viewDetail, final TimeTableItem itemTimeTable) {
         final KikakuItem item = itemTimeTable.getKikakuItem();
-        final ImageButton buttonFavorite = (ImageButton) viewDetail.findViewById(R.id.buttonFavorite);
+        final ImageButton buttonFavorite = viewDetail.findViewById(R.id.buttonFavorite);
         buttonFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -425,15 +425,6 @@ public class TimeTableActivity extends Fragment {
                     }
                 }
                 */
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 
                 if (nCurrentList == BUTTON_TIMETABLE_TAB_CHECK) {
                     setList(BUTTON_TIMETABLE_TAB_CHECK);
@@ -573,9 +564,9 @@ public class TimeTableActivity extends Fragment {
             else {
                 imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), itemKikaku.getStringValue("image") + ".jpg"));
             }
-            TextView textName = (TextView) convertView.findViewById(R.id.textGroupName);
+            TextView textName = convertView.findViewById(R.id.textGroupName);
             textName.setText(itemKikaku.getStringValue("name"));
-            TextView textTime = (TextView) convertView.findViewById(R.id.textGroupTime);
+            TextView textTime = convertView.findViewById(R.id.textGroupTime);
             textTime.setText(itemTime.getTimeString());
 
             return convertView;

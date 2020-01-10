@@ -7,6 +7,7 @@ android {
             keyPassword '55thchibafes'
             //storeFile file('C:/Users/steee/Google ドライブ/57th大祭アプリチーム/過去資料(55th, 2016新歓)/アプリ関係/大祭/アプリ/55th_chibafes.jks')
             storePassword '55thchibafes'
+            storeFile file('C:\\Users\\steee\\Google ドライブ\\57th大祭アプリチーム\\過去資料(55th, 2016新歓)\\アプリ関係\\大祭\\アプリ\\55th_chibafes.jks')
         }
     }
 
@@ -16,8 +17,8 @@ android {
         applicationId "com.chibafes.chibafes55"
         minSdkVersion 24
         targetSdkVersion 29
-        versionCode 7         // ストアに出すたびにこの数字をあげる
-        versionName "3.0.0"  // 後方互換のない機能追加.後方互換のある機能追加.バグ修正、あてはまる数字をあげる
+        versionCode 10   // ストアに出すたびにこの数字をあげる
+        versionName "3.0.2"  // 後方互換のない機能追加.後方互換のある機能追加.バグ修正、あてはまる数字をあげる
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -46,7 +47,7 @@ dependencies {
     })
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-beta3'
     implementation 'com.qozix:tileview:2.2.7'
     testImplementation 'junit:junit:4.12'
 }

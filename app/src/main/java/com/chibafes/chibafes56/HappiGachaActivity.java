@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.graphics.PointF;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.core.content.ContextCompat;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -28,12 +27,14 @@ import com.longevitysoft.android.xml.plist.domain.Array;
 import com.longevitysoft.android.xml.plist.domain.Dict;
 import com.longevitysoft.android.xml.plist.domain.PList;
 
+import androidx.core.content.ContextCompat;
+
 /**
  * Created by llrk on 2017/02/05.
  */
 
 public class HappiGachaActivity extends Activity {
-    private static final int HAPPI_GACHA_POINT = 3;
+    private static final int HAPPI_GACHA_POINT = 5;
     int             nStep;
     int             nGetItem;
     AnimationSet    animationSet;
@@ -45,13 +46,13 @@ public class HappiGachaActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_gacha);
 
-        TextView textMessage = (TextView) findViewById(R.id.textMessage);
+        TextView textMessage = findViewById(R.id.textMessage);
         textMessage.setText(getResources().getString(R.string.GachaMessage1));
 
-        Button buttonGacha = (Button) findViewById(R.id.buttonGacha);
-        TextView textHappiPoint = (TextView) findViewById(R.id.textHappiPoint);
-        textHappiPoint.setText("" + Commons.readInt(this, "happi_point"));
-        if(Commons.readInt(this, "happi_point") >= HAPPI_GACHA_POINT) {
+        Button buttonGacha = findViewById(R.id.buttonGacha);
+        TextView textHappiPoint = findViewById(R.id.textHappiPoint);
+        textHappiPoint.setText("" + Commons.readInt(this, "happi_point_57th"));
+        if(Commons.readInt(this, "happi_point_57th") >= HAPPI_GACHA_POINT) {
             buttonGacha.setText("ガチャをする(" + HAPPI_GACHA_POINT + "pt)");
             buttonGacha.setBackgroundColor(ContextCompat.getColor(this, R.color.colorButton));
             buttonGacha.setTextColor(ContextCompat.getColor(this, R.color.colorPrimary));
@@ -70,8 +71,8 @@ public class HappiGachaActivity extends Activity {
     }
 
     private void doGachaAnimation() {
-        ImageView imageHappi = (ImageView) findViewById(R.id.imageHappi);
-        ImageView imageBox = (ImageView) findViewById(R.id.imageBox);
+        ImageView imageHappi = findViewById(R.id.imageHappi);
+        ImageView imageBox = findViewById(R.id.imageBox);
         PointF posImageBox = Commons.getImageSize(imageBox);
 
         Animation.AnimationListener animationListener = new Animation.AnimationListener() {
@@ -205,11 +206,11 @@ public class HappiGachaActivity extends Activity {
     }
 
     private void endGachaAnimation() {
-        ImageView imageHappi = (ImageView) findViewById(R.id.imageHappi);
-        ImageView imageBox = (ImageView) findViewById(R.id.imageBox);
-        ImageButton buttonSkip = (ImageButton) findViewById(R.id.buttonSkip);
-        ImageButton buttonTwitter = (ImageButton) findViewById(R.id.buttonTwitter);
-        LinearLayout viewMessage = (LinearLayout) findViewById(R.id.viewMessage);
+        ImageView imageHappi = findViewById(R.id.imageHappi);
+        ImageView imageBox = findViewById(R.id.imageBox);
+        ImageButton buttonSkip = findViewById(R.id.buttonSkip);
+        ImageButton buttonTwitter = findViewById(R.id.buttonTwitter);
+        LinearLayout viewMessage = findViewById(R.id.viewMessage);
 
         nStep = 10;
         animationSet.cancel();
@@ -222,14 +223,14 @@ public class HappiGachaActivity extends Activity {
     }
 
     public void onClickGacha(View view) {
-        if(Commons.readInt(this, "happi_point") >= HAPPI_GACHA_POINT) {
-            Button buttonGacha = (Button) findViewById(R.id.buttonGacha);
-            ImageButton buttonSkip = (ImageButton) findViewById(R.id.buttonSkip);
+        if(Commons.readInt(this, "happi_point_57th") >= HAPPI_GACHA_POINT) {
+            Button buttonGacha = findViewById(R.id.buttonGacha);
+            ImageButton buttonSkip = findViewById(R.id.buttonSkip);
             buttonGacha.setVisibility(View.INVISIBLE);
             buttonSkip.setVisibility(View.VISIBLE);
-            FrameLayout viewHappiPoint = (FrameLayout) findViewById(R.id.viewHappiPoint);
+            FrameLayout viewHappiPoint = findViewById(R.id.viewHappiPoint);
             viewHappiPoint.setVisibility(View.INVISIBLE);
-            LinearLayout viewMessage = (LinearLayout) findViewById(R.id.viewMessage);
+            LinearLayout viewMessage = findViewById(R.id.viewMessage);
             viewMessage.setVisibility(View.INVISIBLE);
 
             // このタイミングで抽選とフラグ立てを行う
@@ -266,11 +267,11 @@ public class HappiGachaActivity extends Activity {
             }
             imageBox.setVisibility(View.VISIBLE);
 
-            int nItemCount = Commons.readInt(this, "getItem_56th" + nGetItem);
+            int nItemCount = Commons.readInt(this, "getItem_57th" + nGetItem);
             if(nItemCount < 0) {
                 nItemCount = 0;
             }
-            Commons.writeInt(this, "getItem_56th" + nGetItem, nItemCount + 1);
+            Commons.writeInt(this, "getItem_57th" + nGetItem, nItemCount + 1);
             String sStatus = "はっぴガチャで「" + ((Dict)array.get(nGetItem)).getConfiguration("name").getValue() + "」が当たったよ！";
             String sUrl = "http://chibafes.com/appli.html";
             sTwitterUrl = "http://twitter.com/share?url=" + sUrl + "&text=" + sStatus + "&hashtags=千葉大祭";
@@ -283,7 +284,7 @@ public class HappiGachaActivity extends Activity {
             TextView textMessage = (TextView) findViewById(R.id.textMessage);
             textMessage.setText("「" + ((Dict)array.get(nGetItem)).getConfiguration("name").getValue() + "」" + getResources().getString(R.string.GachaMessage2));
 
-            Commons.writeInt(this, "happi_point", Commons.readInt(this, "happi_point") - HAPPI_GACHA_POINT);
+            Commons.writeInt(this, "happi_point_57th", Commons.readInt(this, "happi_point_57th") - HAPPI_GACHA_POINT);
 
             // ガチャ演出を開始する
             nStep = 0;
@@ -294,7 +295,7 @@ public class HappiGachaActivity extends Activity {
 
     private int getRate(int i, Array array) {
         int nBuf = ((Dict)array.get(i)).getConfigurationInteger("rate").getValue();
-        int nGotCount = Commons.readInt(this, "getItem_56th" + i);
+        int nGotCount = Commons.readInt(this, "getItem_57th" + i);
         if(nGotCount > 0) {
             if(nGotCount > 5) {
                 nGotCount = 5;
@@ -325,10 +326,8 @@ public class HappiGachaActivity extends Activity {
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
-            switch (event.getKeyCode()) {
-                case KeyEvent.KEYCODE_BACK:
-                    // バックキー押下時の処理
-                    return true;
+            if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {// バックキー押下時の処理
+                return true;
             }
         }
         return super.dispatchKeyEvent(event);

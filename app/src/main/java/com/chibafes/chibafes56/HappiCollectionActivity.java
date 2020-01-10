@@ -27,7 +27,6 @@ import androidx.appcompat.app.AlertDialog;
  */
 
 public class HappiCollectionActivity extends Activity {
-    private PList listHappi;
     private Array arrayCollectionList;
     private AlertDialog alartInfo = null;
 
@@ -37,7 +36,7 @@ public class HappiCollectionActivity extends Activity {
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_collection);
 
-        listHappi = Commons.getParsedPlist(this, "HappiCollectionList.plist");
+        PList listHappi = Commons.getParsedPlist(this, "HappiCollectionList.plist");
         arrayCollectionList = (Array) listHappi.getRootElement();
         List<Dict> objects = new ArrayList<>();
         for(int i = 0; i < arrayCollectionList.size(); ++i) {
@@ -45,21 +44,21 @@ public class HappiCollectionActivity extends Activity {
         }
 
         HappiCollectionAdapter collectionAdapter = new HappiCollectionAdapter(this, 0, objects);
-        ListView listView = (ListView)findViewById(R.id.listCollection);
+        ListView listView = findViewById(R.id.listCollection);
         listView.setAdapter(collectionAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (Commons.readInt(HappiCollectionActivity.this, "getItem_56th" + position) > 0) {
+                if (Commons.readInt(HappiCollectionActivity.this, "getItem_57th" + position) > 0) {
                     Dict dic = (Dict) arrayCollectionList.get(position);
 
                     ScrollView viewInfo = (ScrollView) getLayoutInflater().inflate(R.layout.collection_info_view, null);
-                    TextView textName = (TextView) viewInfo.findViewById(R.id.textName);
+                    TextView textName = viewInfo.findViewById(R.id.textName);
                     textName.setText(dic.getConfiguration("name").getValue());
-                    TextView textInfo = (TextView) viewInfo.findViewById(R.id.textInfo);
+                    TextView textInfo = viewInfo.findViewById(R.id.textInfo);
                     textInfo.setText(dic.getConfiguration("note").getValue());
-                    ImageView imageHappi = (ImageView) viewInfo.findViewById(R.id.imageHappi);
+                    ImageView imageHappi = viewInfo.findViewById(R.id.imageHappi);
                     imageHappi.setImageResource(getResources().getIdentifier((dic.getConfiguration("image").getValue()), "drawable", getPackageName()));
                     alartInfo = new AlertDialog.Builder(HappiCollectionActivity.this)
                             .setView(viewInfo)
@@ -84,7 +83,7 @@ class HappiCollectionAdapter extends ArrayAdapter<Dict> {
     private Context context;
     private LayoutInflater layoutInflater;
 
-    public HappiCollectionAdapter(Context context, int textViewResourceId, List<Dict> objects) {
+    HappiCollectionAdapter(Context context, int textViewResourceId, List<Dict> objects) {
         super(context, textViewResourceId, objects);
 
         this.context = context;
@@ -99,10 +98,10 @@ class HappiCollectionAdapter extends ArrayAdapter<Dict> {
             convertView = layoutInflater.inflate(R.layout.list_collection_item, null);
         }
 
-        ImageView image = (ImageView) convertView.findViewById(R.id.imageCollection);
-        TextView label = (TextView) convertView.findViewById(R.id.textName);
+        ImageView image = convertView.findViewById(R.id.imageCollection);
+        TextView label = convertView.findViewById(R.id.textName);
 
-        if (Commons.readInt(context, "getItem_56th" + position) > 0) {
+        if (Commons.readInt(context, "getItem_57th" + position) > 0) {
             String nFileName = item.getConfiguration("image").getValue();
             int nImageId = context.getResources().getIdentifier(nFileName, "drawable", context.getPackageName());
             image.setImageResource(nImageId);

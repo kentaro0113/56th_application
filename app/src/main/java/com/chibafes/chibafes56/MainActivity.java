@@ -94,6 +94,7 @@ public class MainActivity extends Activity implements HttpPostAsync.AsyncTaskCal
     private void checkRunState() {
         // アプリインストール後の初回起動かどうかのチェックを行う
         if(Commons.readLong(this) == Statics.NONE) {
+            Commons.writeInt(this, "happi_point_57th", 0);
             // 初回起動なら初回起動用の画面へ遷移する
             Intent intent = new Intent(MainActivity.this, MainMenuActivity.class);
             startActivity(intent);
@@ -101,6 +102,9 @@ public class MainActivity extends Activity implements HttpPostAsync.AsyncTaskCal
             finish();
         }
         else {
+            if(Commons.readInt(this, "happi_point_57th") < 0){
+                Commons.writeInt(this, "happi_point_57th", 0);
+            }
             // 初回起動でなければメインメニューへ遷移する
             Intent intent = new Intent(MainActivity.this, MainMenuActivity.class);
             startActivity(intent);
