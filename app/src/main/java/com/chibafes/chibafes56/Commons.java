@@ -46,6 +46,7 @@ public class Commons {
         return versionCode;
     }
 
+
     // 0～引数の値未満のランダムな正数を取得する
     static int getRandom(int nMax) {
         return (int)(Math.random() * nMax);
