@@ -44,17 +44,7 @@
             android:text="@string/TimeTableTabDay3"
             android:textColor="?attr/colorPrimary"
             android:textSize="16sp" />
-        <Button
-            android:id="@+id/buttonTabDay4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_weight="1"
-            android:background="@drawable/tab_timetable_day4"
-            android:text="@string/TimeTableTabDay4"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="16sp" />
+
         <Button
             android:id="@+id/buttonTabCheck"
             android:layout_width="wrap_content"

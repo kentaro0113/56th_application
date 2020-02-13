@@ -16,6 +16,10 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+
 import com.longevitysoft.android.xml.plist.domain.Array;
 import com.longevitysoft.android.xml.plist.domain.Dict;
 import com.longevitysoft.android.xml.plist.domain.PList;
@@ -26,10 +30,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-
 /**
  * Created by shiho on 2017/08/31.
  */
@@ -39,7 +39,6 @@ public class TimeTableActivity extends Fragment {
     private static final int BUTTON_TIMETABLE_TAB_DAY1 = 0;
     private static final int BUTTON_TIMETABLE_TAB_DAY2 = 1;
     private static final int BUTTON_TIMETABLE_TAB_DAY3 = 2;
-    private static final int BUTTON_TIMETABLE_TAB_DAY4 = 3;
     private static final int BUTTON_TIMETABLE_TAB_CHECK = 4;
 
     private TextView viewNoFavorite;
@@ -74,7 +73,6 @@ public class TimeTableActivity extends Fragment {
         buttonTabDay1 = (Button) view.findViewById(R.id.buttonTabDay1);
         buttonTabDay2 = (Button) view.findViewById(R.id.buttonTabDay2);
         buttonTabDay3 = (Button) view.findViewById(R.id.buttonTabDay3);
-        buttonTabDay4 = (Button) view.findViewById(R.id.buttonTabDay4);
         buttonTabCheck = (Button) view.findViewById(R.id.buttonTabCheck);
 
         Point displaySize = Commons.getDisplaySize(getContext());
@@ -96,10 +94,7 @@ public class TimeTableActivity extends Fragment {
         params.height = nTabImageHeight;
         buttonTabDay3.setLayoutParams(params);
 
-        params = (LinearLayout.LayoutParams) buttonTabDay4.getLayoutParams();
-        params.width = nTabImageWidth;
-        params.height = nTabImageHeight;
-        buttonTabDay4.setLayoutParams(params);
+
 
         params = (LinearLayout.LayoutParams) buttonTabCheck.getLayoutParams();
         params.width = nTabImageWidth;
@@ -124,12 +119,7 @@ public class TimeTableActivity extends Fragment {
                 setList(BUTTON_TIMETABLE_TAB_DAY3);
             }
         });
-        buttonTabDay4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setList(BUTTON_TIMETABLE_TAB_DAY4);
-            }
-        });
+
         buttonTabCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -228,10 +218,7 @@ public class TimeTableActivity extends Fragment {
                 buttonTabDay3.setAlpha(1.0f);
                 viewTableBase.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorTabDay3));
                 break;
-            case BUTTON_TIMETABLE_TAB_DAY4:
-                buttonTabDay4.setAlpha(1.0f);
-                viewTableBase.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorTabDay4));
-                break;
+
             case BUTTON_TIMETABLE_TAB_CHECK:
                 buttonTabCheck.setAlpha(1.0f);
                 viewTableBase.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorTabCheck));

@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imagePRCut"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="373dp"
+        android:layout_height="113dp"
         android:layout_weight="2"
         android:padding="4dp" />
 

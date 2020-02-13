@@ -19,15 +19,15 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Objects;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
 
 /**-
  * Created by steee on 2017/09/01.
@@ -316,11 +316,7 @@ public class KikakuSearchActivity extends Fragment {
         if(item.getIntValue("day3") == 0) {
             imageDay3.setAlpha(0.25f);
         }
-        ImageView imageDay4 = viewDetail.findViewById(R.id.imageDay4);
-        imageDay4.setAlpha(1.0f);
-        if(item.getIntValue("day4") == 0) {
-            imageDay4.setAlpha(0.25f);
-        }
+
     }
 
     private void setSearchTab(int nTarget) {
@@ -389,11 +385,11 @@ public class KikakuSearchActivity extends Fragment {
             int BUTTON_SEARCH_DAY1 = 0;
             int BUTTON_SEARCH_DAY2 = 1;
             int BUTTON_SEARCH_DAY3 = 2;
-            int BUTTON_SEARCH_DAY4 = 3;
+
             if (!((array[BUTTON_SEARCH_DAY1] && item.getIntValue("day1") == 1) ||
                     (array[BUTTON_SEARCH_DAY2] && item.getIntValue("day2") == 1) ||
-                    (array[BUTTON_SEARCH_DAY3] && item.getIntValue("day3") == 1) ||
-                    (array[BUTTON_SEARCH_DAY4] && item.getIntValue("day4") == 1))) {
+                    (array[BUTTON_SEARCH_DAY3] && item.getIntValue("day3") == 1)
+                   )) {
                 continue;
             }
             // ジャンル：チェックしているいずれかのジャンルであるかのチェック
