@@ -45,7 +45,7 @@ public class TimeTableActivity extends Fragment {
     private Button buttonTabDay1;
     private Button buttonTabDay2;
     private Button buttonTabDay3;
-    private Button buttonTabDay4;
+
     private Button buttonTabCheck;
     private ListView listView1;
     private ListView listView2;
@@ -202,7 +202,7 @@ public class TimeTableActivity extends Fragment {
         buttonTabDay1.setAlpha(0.25f);
         buttonTabDay2.setAlpha(0.25f);
         buttonTabDay3.setAlpha(0.25f);
-        buttonTabDay4.setAlpha(0.25f);
+
         buttonTabCheck.setAlpha(0.25f);
         viewNoFavorite.setVisibility(View.GONE);
         switch(nextList) {
