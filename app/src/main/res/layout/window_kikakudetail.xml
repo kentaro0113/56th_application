@@ -137,14 +137,6 @@
                         android:scaleType="fitCenter"
                         android:src="@drawable/icon_day3_on" />
 
-                    <ImageView
-                        android:id="@+id/imageDay4"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:layout_margin="8dp"
-                        android:layout_weight="1"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/icon_day4_on" />
                 </LinearLayout>
 
             </LinearLayout>
