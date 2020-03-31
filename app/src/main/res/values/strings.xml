@@ -54,7 +54,7 @@
     <string name="TimeTableTabDay1">1日目</string>
     <string name="TimeTableTabDay2">2日目</string>
     <string name="TimeTableTabDay3">3日目</string>
-    <string name="TimeTableTabDay4">4日目</string>
+
     <string name="TimeTableTabCheck">★</string>
     <string name="TimeTableNoCheck">チェックした企画が表示されます。\nまた、チェックしたステージ・ストリートパフォーマンスは、開始の15分前に通知されます。</string>
 
