@@ -30,6 +30,7 @@ public class HappiCollectionActivity extends Activity {
     private Array arrayCollectionList;
     private AlertDialog alartInfo = null;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
