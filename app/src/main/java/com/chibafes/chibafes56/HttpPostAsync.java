@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 
 /**
  * HttpPostAsync
@@ -63,7 +64,7 @@ public class HttpPostAsync extends AsyncTask<String, Integer, String> {
                 OutputStream out = null;
                 try {
                     out = con.getOutputStream();
-                    out.write(params[1].getBytes("UTF-8"));
+                    out.write(params[1].getBytes(StandardCharsets.UTF_8));
                     out.flush();
                 } catch (IOException e) {
                     // POST送信エラー
@@ -86,7 +87,7 @@ public class HttpPostAsync extends AsyncTask<String, Integer, String> {
                 InputStream in = null;
                 try {
                     in = con.getInputStream();
-                    BufferedReader br = new BufferedReader(new InputStreamReader(in, "UTF-8"));
+                    BufferedReader br = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
                     StringBuilder sb = new StringBuilder();
                     String buf;
                     while ((buf = br.readLine()) != null) {

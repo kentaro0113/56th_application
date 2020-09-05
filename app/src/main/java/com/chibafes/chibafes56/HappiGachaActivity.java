@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.graphics.PointF;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.core.content.ContextCompat;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
@@ -28,6 +27,8 @@ import com.longevitysoft.android.xml.plist.domain.Array;
 import com.longevitysoft.android.xml.plist.domain.Dict;
 import com.longevitysoft.android.xml.plist.domain.PList;
 
+import androidx.core.content.ContextCompat;
+
 /**
  * Created by llrk on 2017/02/05.
  */
@@ -45,11 +46,11 @@ public class HappiGachaActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_gacha);
 
-        TextView textMessage = (TextView) findViewById(R.id.textMessage);
+        TextView textMessage = findViewById(R.id.textMessage);
         textMessage.setText(getResources().getString(R.string.GachaMessage1));
 
-        Button buttonGacha = (Button) findViewById(R.id.buttonGacha);
-        TextView textHappiPoint = (TextView) findViewById(R.id.textHappiPoint);
+        Button buttonGacha = findViewById(R.id.buttonGacha);
+        TextView textHappiPoint = findViewById(R.id.textHappiPoint);
         textHappiPoint.setText("" + Commons.readInt(this, "happi_point"));
         if(Commons.readInt(this, "happi_point") >= HAPPI_GACHA_POINT) {
             buttonGacha.setText("ガチャをする(" + HAPPI_GACHA_POINT + "pt)");
@@ -70,8 +71,8 @@ public class HappiGachaActivity extends Activity {
     }
 
     private void doGachaAnimation() {
-        ImageView imageHappi = (ImageView) findViewById(R.id.imageHappi);
-        ImageView imageBox = (ImageView) findViewById(R.id.imageBox);
+        ImageView imageHappi = findViewById(R.id.imageHappi);
+        ImageView imageBox = findViewById(R.id.imageBox);
         PointF posImageBox = Commons.getImageSize(imageBox);
 
         Animation.AnimationListener animationListener = new Animation.AnimationListener() {
@@ -205,11 +206,11 @@ public class HappiGachaActivity extends Activity {
     }
 
     private void endGachaAnimation() {
-        ImageView imageHappi = (ImageView) findViewById(R.id.imageHappi);
-        ImageView imageBox = (ImageView) findViewById(R.id.imageBox);
-        ImageButton buttonSkip = (ImageButton) findViewById(R.id.buttonSkip);
-        ImageButton buttonTwitter = (ImageButton) findViewById(R.id.buttonTwitter);
-        LinearLayout viewMessage = (LinearLayout) findViewById(R.id.viewMessage);
+        ImageView imageHappi = findViewById(R.id.imageHappi);
+        ImageView imageBox = findViewById(R.id.imageBox);
+        ImageButton buttonSkip = findViewById(R.id.buttonSkip);
+        ImageButton buttonTwitter = findViewById(R.id.buttonTwitter);
+        LinearLayout viewMessage = findViewById(R.id.viewMessage);
 
         nStep = 10;
         animationSet.cancel();
@@ -223,13 +224,13 @@ public class HappiGachaActivity extends Activity {
 
     public void onClickGacha(View view) {
         if(Commons.readInt(this, "happi_point") >= HAPPI_GACHA_POINT) {
-            Button buttonGacha = (Button) findViewById(R.id.buttonGacha);
-            ImageButton buttonSkip = (ImageButton) findViewById(R.id.buttonSkip);
+            Button buttonGacha = findViewById(R.id.buttonGacha);
+            ImageButton buttonSkip = findViewById(R.id.buttonSkip);
             buttonGacha.setVisibility(View.INVISIBLE);
             buttonSkip.setVisibility(View.VISIBLE);
-            FrameLayout viewHappiPoint = (FrameLayout) findViewById(R.id.viewHappiPoint);
+            FrameLayout viewHappiPoint = findViewById(R.id.viewHappiPoint);
             viewHappiPoint.setVisibility(View.INVISIBLE);
-            LinearLayout viewMessage = (LinearLayout) findViewById(R.id.viewMessage);
+            LinearLayout viewMessage = findViewById(R.id.viewMessage);
             viewMessage.setVisibility(View.INVISIBLE);
 
             // このタイミングで抽選とフラグ立てを行う
@@ -254,7 +255,7 @@ public class HappiGachaActivity extends Activity {
             // プレ箱イメージ変更
             Dict dic = (Dict) array.get(nGetItem);
             int nBuf = dic.getConfigurationInteger("rate").getValue();
-            ImageView imageBox = (ImageView) findViewById(R.id.imageBox);
+            ImageView imageBox = findViewById(R.id.imageBox);
             if(nBuf < 10) {
                 imageBox.setImageResource(R.drawable.image_presentbox3);
             }
@@ -275,12 +276,12 @@ public class HappiGachaActivity extends Activity {
             String sUrl = "http://chibafes.com/appli.html";
             sTwitterUrl = "http://twitter.com/share?url=" + sUrl + "&text=" + sStatus + "&hashtags=千葉大祭";
 
-            ImageView imageHappi = (ImageView) findViewById(R.id.imageHappi);
+            ImageView imageHappi = findViewById(R.id.imageHappi);
             String sGetItem = ((Dict) array.get(nGetItem)).getConfiguration("image").getValue();
             System.out.println(sGetItem);
             int nImageId = getResources().getIdentifier(sGetItem, "drawable", getPackageName());
             imageHappi.setImageResource(nImageId);
-            TextView textMessage = (TextView) findViewById(R.id.textMessage);
+            TextView textMessage = findViewById(R.id.textMessage);
             textMessage.setText("「" + ((Dict)array.get(nGetItem)).getConfiguration("name").getValue() + "」" + getResources().getString(R.string.GachaMessage2));
 
             Commons.writeInt(this, "happi_point", Commons.readInt(this, "happi_point") - HAPPI_GACHA_POINT);

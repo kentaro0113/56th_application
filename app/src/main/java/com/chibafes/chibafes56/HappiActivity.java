@@ -33,7 +33,7 @@ public class HappiActivity extends Fragment {
 
         setHappiSerif(view, Statics.HAPPI_SERIF_NORMAL);
 
-        ImageButton buttonHappi = (ImageButton) view.findViewById(R.id.SerifButton);
+        ImageButton buttonHappi = view.findViewById(R.id.SerifButton);
         buttonHappi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +41,7 @@ public class HappiActivity extends Fragment {
             }
         });
 
-        ImageButton buttonProfile = (ImageButton) view.findViewById(R.id.imageButton18);
+        ImageButton buttonProfile = view.findViewById(R.id.imageButton18);
         buttonProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +49,7 @@ public class HappiActivity extends Fragment {
                 startActivity(intent);
             }
         });
-        ImageButton buttonGacha = (ImageButton) view.findViewById(R.id.imageButton19);
+        ImageButton buttonGacha = view.findViewById(R.id.imageButton19);
         buttonGacha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +57,7 @@ public class HappiActivity extends Fragment {
                 startActivity(intent);
             }
         });
-        ImageButton buttonCollection = (ImageButton) view.findViewById(R.id.imageButton20);
+        ImageButton buttonCollection = view.findViewById(R.id.imageButton20);
         buttonCollection.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,7 +103,7 @@ public class HappiActivity extends Fragment {
         }
 
         // セリフの抽選
-        TextView textSerif = (TextView) view.findViewById(R.id.Happi_line);
+        TextView textSerif = view.findViewById(R.id.Happi_line);
         textSerif.setText(arraySerif.get(Commons.getRandom(arraySerif.size())));
 
     }

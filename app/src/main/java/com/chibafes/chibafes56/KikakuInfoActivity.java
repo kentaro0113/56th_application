@@ -18,7 +18,6 @@ public class KikakuInfoActivity extends Activity {
     private static final String URL_GUEST = "http://guest.chibafes.com/";
     private static final String URL_GRANDPRIX = "https://docs.google.com/forms/d/13aTfkeX2oxQUgNlfUqs-UM-Fx1g9HM3iOXCq1ojRxQY/edit";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +27,10 @@ public class KikakuInfoActivity extends Activity {
         setContentView(R.layout.activity_kikakuinfo);
 
         int nVisiblePage = getIntent().getExtras().getInt("page");
-        LinearLayout view1 = (LinearLayout) findViewById(R.id.viewInfo1);
-        LinearLayout view2 = (LinearLayout) findViewById(R.id.viewInfo2);
-        LinearLayout view3 = (LinearLayout) findViewById(R.id.viewInfo3);
-        LinearLayout view4 = (LinearLayout) findViewById(R.id.viewInfo4);
+        LinearLayout view1 = findViewById(R.id.viewInfo1);
+        LinearLayout view2 = findViewById(R.id.viewInfo2);
+        LinearLayout view3 = findViewById(R.id.viewInfo3);
+        LinearLayout view4 = findViewById(R.id.viewInfo4);
         view1.setVisibility(View.GONE);
         view2.setVisibility(View.GONE);
         view3.setVisibility(View.GONE);

@@ -50,7 +50,7 @@ public class MainMenuActivity extends FragmentActivity implements HttpPostAsync.
         setContentView(R.layout.activity_mainmenu);
 
         fragmentManager = getSupportFragmentManager();
-        textTitle = (TextView)findViewById(R.id.textTitle);
+        textTitle = findViewById(R.id.textTitle);
 
         // 初期メニューはINFOを表示する
         onClickButtonInfo(null);
@@ -97,7 +97,7 @@ public class MainMenuActivity extends FragmentActivity implements HttpPostAsync.
         // タブの表示変更
         for(int i = 0; i < 5; ++i) {
             String sName = arrTabImages[i];
-            ImageButton button = (ImageButton) findViewById(arrTabItemIds[i]);
+            ImageButton button = findViewById(arrTabItemIds[i]);
             if(i == index) {
                 sName = sName + "_on";
             }
@@ -163,10 +163,10 @@ public class MainMenuActivity extends FragmentActivity implements HttpPostAsync.
                     int nAnswerNo = Commons.readInt(this, "answer_no");
                     if ((nAnswerNo == 0 || nAnswerNo != nQuestionNo) && nQuestionNo != 0) {
                         ScrollView viewEnquete = (ScrollView) getLayoutInflater().inflate(R.layout.enquete_window_view, null);
-                        TextView textQuestion = (TextView) viewEnquete.findViewById(R.id.textQuestion);
+                        TextView textQuestion = viewEnquete.findViewById(R.id.textQuestion);
                         textQuestion.setText(json.getString("question"));
-                        spinnerSelect = (Spinner) viewEnquete.findViewById(R.id.spinnerSelect);
-                        editComment = (EditText) viewEnquete.findViewById(R.id.editComment);
+                        spinnerSelect = viewEnquete.findViewById(R.id.spinnerSelect);
+                        editComment = viewEnquete.findViewById(R.id.editComment);
 
                         nQuestionType = Statics.TYPE_SELECT;
                         String sAnswer = json.getString("answer");

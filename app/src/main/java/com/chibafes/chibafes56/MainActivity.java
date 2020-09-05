@@ -42,7 +42,7 @@ public class MainActivity extends Activity implements HttpPostAsync.AsyncTaskCal
             paramString = paramString + "&user_id=" + nUserId;
         }
 
-        TextView textProgress = (TextView) findViewById(R.id.textProgress);
+        TextView textProgress = findViewById(R.id.textProgress);
         textProgress.setText("通信中\n");
 
         // アンケートや情報などをネットワーク更新する処理を開始する

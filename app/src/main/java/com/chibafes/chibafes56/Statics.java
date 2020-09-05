@@ -11,8 +11,8 @@ public class Statics {
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //この下の"http://demo.chibafes.com/appli/php/○○/～～～～.php"の○○は開催する回の序数(第55回→55th, 第57回→57th)を埋める！！
 
-    static final String URL_UPDATE       = "http://demo.chibafes.com/appli/php/57th/update.php";
-    static final String URL_ENQUETE      = "http://demo.chibafes.com/appli/php/57th/enquete_answer.php";
+    static final String URL_UPDATE       = "https://lolipop-dp38028386.ssl-lolipop.jp/appli/php/57th/update_57th.php";
+    static final String URL_ENQUETE      = "https://lolipop-dp38028386.ssl-lolipop.jp/appli/php/57th/enquete_answer_57th.php";
     static final String URL_CHIBAFES_WEB = "http://chibafes.com/";
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Wrapper for {@link StringBuilder}.
@@ -80,7 +81,7 @@ public class Stringer {
 			char[] buffer = new char[1024];
 			try {
 				Reader reader = new BufferedReader(new InputStreamReader(is,
-						"UTF-8"));
+                        StandardCharsets.UTF_8));
 				int n;
 				while ((n = reader.read(buffer)) != -1) {
 					ret.getBuilder().append(buffer, 0, n);

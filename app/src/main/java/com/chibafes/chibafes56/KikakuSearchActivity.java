@@ -50,7 +50,7 @@ public class KikakuSearchActivity extends Fragment {
     private static int BUTTON_KIKAKU_TAB_SEARCH = 0;
     private static int BUTTON_KIKAKU_TAB_FAVORITE = 1;
 
-    private static int MAX_OPTION = 17;
+    private static int MAX_OPTION = 16;
 
     private ArrayList<KikakuItem> arraySearchData;
     private ArrayList<Integer> arrayFavorite;
@@ -155,6 +155,7 @@ public class KikakuSearchActivity extends Fragment {
                 arrayOption[i] = true;
             }
         }
+
         for(int i = 1; i <= MAX_OPTION; ++i) {
             ImageButton button = scrollSearch.findViewById(getResources().getIdentifier("buttonSearchSetting" + i, "id", getContext().getPackageName()));
             button.setTag(i - 1);

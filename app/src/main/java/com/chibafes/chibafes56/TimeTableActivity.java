@@ -70,10 +70,10 @@ public class TimeTableActivity extends Fragment {
         View view = inflater.inflate(R.layout.activity_timetable, container, false);
 
         // タブのボタンサイズを調整
-        buttonTabDay1 = (Button) view.findViewById(R.id.buttonTabDay1);
-        buttonTabDay2 = (Button) view.findViewById(R.id.buttonTabDay2);
-        buttonTabDay3 = (Button) view.findViewById(R.id.buttonTabDay3);
-        buttonTabCheck = (Button) view.findViewById(R.id.buttonTabCheck);
+        buttonTabDay1 = view.findViewById(R.id.buttonTabDay1);
+        buttonTabDay2 = view.findViewById(R.id.buttonTabDay2);
+        buttonTabDay3 = view.findViewById(R.id.buttonTabDay3);
+        buttonTabCheck = view.findViewById(R.id.buttonTabCheck);
 
         Point displaySize = Commons.getDisplaySize(getContext());
         int nTabImageWidth = (displaySize.x - 56) / 5;
@@ -127,9 +127,9 @@ public class TimeTableActivity extends Fragment {
             }
         });
 
-        viewTableBase = (LinearLayout) view.findViewById(R.id.viewTableBase);
-        viewNoFavorite = (TextView) view.findViewById(R.id.viewNoFavorite);
-        scrollBase = (ScrollView) view.findViewById(R.id.scrollTimeTable);
+        viewTableBase = view.findViewById(R.id.viewTableBase);
+        viewNoFavorite = view.findViewById(R.id.viewNoFavorite);
+        scrollBase = view.findViewById(R.id.scrollTimeTable);
 
         // 企画、タイムテーブルデータを読み込む
         String sKikaku = Commons.readString(getContext(), "data_kikaku");
@@ -290,7 +290,7 @@ public class TimeTableActivity extends Fragment {
 
     private void setDetailLayout(final View viewDetail, final TimeTableItem itemTimeTable) {
         final KikakuItem item = itemTimeTable.getKikakuItem();
-        final ImageButton buttonFavorite = (ImageButton) viewDetail.findViewById(R.id.buttonFavorite);
+        final ImageButton buttonFavorite = viewDetail.findViewById(R.id.buttonFavorite);
         buttonFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -453,24 +453,24 @@ public class TimeTableActivity extends Fragment {
         else {
             buttonFavorite.setImageResource(R.drawable.icon_favo);
         }
-        TextView textName = (TextView) viewDetail.findViewById(R.id.textName);
+        TextView textName = viewDetail.findViewById(R.id.textName);
         textName.setText(item.getStringValue("name"));
-        TextView textSummary = (TextView) viewDetail.findViewById(R.id.textSummary);
+        TextView textSummary = viewDetail.findViewById(R.id.textSummary);
         textSummary.setText(item.getStringValue("summary"));
-        TextView textDetail = (TextView) viewDetail.findViewById(R.id.textDetail);
+        TextView textDetail = viewDetail.findViewById(R.id.textDetail);
         textDetail.setText(item.getStringValue("detail"));
-        TextView textTime = (TextView) viewDetail.findViewById(R.id.textTime);
+        TextView textTime = viewDetail.findViewById(R.id.textTime);
         textTime.setText(itemTimeTable.getTimeString());
-        ImageView imagePRcut = (ImageView) viewDetail.findViewById(R.id.imagePRCut);
+        ImageView imagePRcut = viewDetail.findViewById(R.id.imagePRCut);
         if(item.getStringValue("image") == null || item.getStringValue("image").length() <= 0) {
             imagePRcut.setImageResource(R.drawable.no_image);
         }
         else {
             imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".jpg"));
         }
-        ImageView imageGenre1 = (ImageView) viewDetail.findViewById(R.id.imageGenre1);
+        ImageView imageGenre1 = viewDetail.findViewById(R.id.imageGenre1);
         imageGenre1.setImageResource(getResources().getIdentifier("icon_genre" + item.getIntValue("genre1"), "drawable", getContext().getPackageName()));
-        ImageView imageGenre2 = (ImageView) viewDetail.findViewById(R.id.imageGenre2);
+        ImageView imageGenre2 = viewDetail.findViewById(R.id.imageGenre2);
         if(item.getIntValue("genre2") == 0) {
             imageGenre2.setVisibility(View.INVISIBLE);
         }
@@ -553,16 +553,16 @@ public class TimeTableActivity extends Fragment {
                 return convertView;
             }
             
-            ImageView imagePRcut = (ImageView) convertView.findViewById(R.id.imagePRCut);
+            ImageView imagePRcut = convertView.findViewById(R.id.imagePRCut);
             if(itemKikaku.getStringValue("image") == null || itemKikaku.getStringValue("image").length() <= 0) {
                 imagePRcut.setImageResource(R.drawable.no_image);
             }
             else {
                 imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), itemKikaku.getStringValue("image") + ".jpg"));
             }
-            TextView textName = (TextView) convertView.findViewById(R.id.textGroupName);
+            TextView textName = convertView.findViewById(R.id.textGroupName);
             textName.setText(itemKikaku.getStringValue("name"));
-            TextView textTime = (TextView) convertView.findViewById(R.id.textGroupTime);
+            TextView textTime = convertView.findViewById(R.id.textGroupTime);
             textTime.setText(itemTime.getTimeString());
 
             return convertView;
