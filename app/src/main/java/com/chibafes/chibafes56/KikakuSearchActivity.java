@@ -19,15 +19,15 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Objects;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
 
 /**-
  * Created by steee on 2017/09/01.
@@ -41,7 +41,7 @@ public class KikakuSearchActivity extends Fragment {
     private Button buttonTabFavorite;
     private ListView tableSearch;
     private ListView tableFavorite;
-    private TextView viewNoFavorite;
+//    private TextView viewNoFavorite;
     private AlertDialog alertSearch = null;
     private AlertDialog alertDetail = null;
     private EditText editFreeWord;
@@ -99,7 +99,7 @@ public class KikakuSearchActivity extends Fragment {
                 scrollSearch.scrollTo(0, 0);
             }
         });
-        Point displaySize = Commons.getDisplaySize(getContext());
+        Point displaySize = Commons.getDisplaySize(Objects.requireNonNull(getContext()));
         int nTabImageWidth = (displaySize.x - 64) / 2;
         int nTabImageHeight = nTabImageWidth / 4;
         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) buttonTabSearch.getLayoutParams();
@@ -120,7 +120,7 @@ public class KikakuSearchActivity extends Fragment {
 
         tableSearch = view.findViewById(R.id.tableSearch);
         tableFavorite = view.findViewById(R.id.tableFavorite);
-        viewNoFavorite = view.findViewById(R.id.viewNoFavorite);
+//        viewNoFavorite = view.findViewById(R.id.viewNoFavorite);
 
         arraySearchData = null;
         String sKikaku = Commons.readString(getContext(), "data_kikaku");
@@ -333,10 +333,10 @@ public class KikakuSearchActivity extends Fragment {
             arrayFavorite = getFavorite();
             arrayFavoriteData = new ArrayList<>();
             if (arrayFavorite == null || arrayFavorite.size() <=0){
-                viewNoFavorite.setVisibility(View.VISIBLE);
+//                viewNoFavorite.setVisibility(View.VISIBLE);
             }
             else{
-                viewNoFavorite.setVisibility(View.INVISIBLE);
+//                viewNoFavorite.setVisibility(View.INVISIBLE);
                 for(int i = 0; i < arrayFavorite.size(); ++i) {
                     int nId = arrayFavorite.get(i);
                     for (KikakuItem anArrayKikakuData : arrayKikakuData) {
@@ -380,63 +380,65 @@ public class KikakuSearchActivity extends Fragment {
         sSearchWord = sWord;
 
         arraySearchData = new ArrayList<>();
-        for (KikakuItem item : arrayKikakuData) {
-            // 日付：チェックしている日付のうちいずれかが出店日であるかのチェック
-            int BUTTON_SEARCH_DAY1 = 0;
-            int BUTTON_SEARCH_DAY2 = 1;
-            int BUTTON_SEARCH_DAY3 = 2;
+        if (arrayKikakuData != null) {
+            for (KikakuItem item : arrayKikakuData) {
+                // 日付：チェックしている日付のうちいずれかが出店日であるかのチェック
+                int BUTTON_SEARCH_DAY1 = 0;
+                int BUTTON_SEARCH_DAY2 = 1;
+                int BUTTON_SEARCH_DAY3 = 2;
 
-            if (!((array[BUTTON_SEARCH_DAY1] && item.getIntValue("day1") == 1) ||
-                    (array[BUTTON_SEARCH_DAY2] && item.getIntValue("day2") == 1) ||
-                    (array[BUTTON_SEARCH_DAY3] && item.getIntValue("day3") == 1)
-                   )) {
-                continue;
-            }
-            // ジャンル：チェックしているいずれかのジャンルであるかのチェック
-            int h;
-            int MAX_GENRE = 8;
-            for (h = 0; h < MAX_GENRE; ++h) {
-                int BUTTON_SEARCH_GENRE1 = 4;
-                if (!array[BUTTON_SEARCH_GENRE1 + h]) {
+                if (!((array[BUTTON_SEARCH_DAY1] && item.getIntValue("day1") == 1) ||
+                        (array[BUTTON_SEARCH_DAY2] && item.getIntValue("day2") == 1) ||
+                        (array[BUTTON_SEARCH_DAY3] && item.getIntValue("day3") == 1)
+                )) {
                     continue;
                 }
-                if (item.getIntValue("genre1") == (h + 1)) {
-                    break;
+                // ジャンル：チェックしているいずれかのジャンルであるかのチェック
+                int h;
+                int MAX_GENRE = 8;
+                for (h = 0; h < MAX_GENRE; ++h) {
+                    int BUTTON_SEARCH_GENRE1 = 4;
+                    if (!array[BUTTON_SEARCH_GENRE1 + h]) {
+                        continue;
+                    }
+                    if (item.getIntValue("genre1") == (h + 1)) {
+                        break;
+                    }
+                    if (item.getIntValue("genre2") == (h + 1)) {
+                        break;
+                    }
                 }
-                if (item.getIntValue("genre2") == (h + 1)) {
-                    break;
-                }
-            }
-            if (h == MAX_GENRE) {
-                continue;
-            }
-            // 形態：チェックしているいずれかの形態であるかのチェック
-            int MAX_TYPE = 5;
-            for (h = 0; h < MAX_TYPE; ++h) {
-                int BUTTON_SEARCH_TYPE1 = 12;
-                if (!array[BUTTON_SEARCH_TYPE1 + h]) {
+                if (h == MAX_GENRE) {
                     continue;
                 }
-                if (item.getIntValue("type_id") == (h + 1)) {
-                    break;
+                // 形態：チェックしているいずれかの形態であるかのチェック
+                int MAX_TYPE = 5;
+                for (h = 0; h < MAX_TYPE; ++h) {
+                    int BUTTON_SEARCH_TYPE1 = 12;
+                    if (!array[BUTTON_SEARCH_TYPE1 + h]) {
+                        continue;
+                    }
+                    if (item.getIntValue("type_id") == (h + 1)) {
+                        break;
+                    }
                 }
-            }
-            if (h == MAX_TYPE) {
-                continue;
-            }
-
-            // フリーワード：名前、概要、詳細、場所のいずれかにヒットするかのチェック
-            if (sWord != null && sWord.length() > 0) {
-                if (!item.getStringValue("name").contains(sWord) &&
-                        !item.getStringValue("summary").contains(sWord) &&
-                        !item.getStringValue("detail").contains(sWord) &&
-                        !item.getStringValue("place_name").contains(sWord)) {
+                if (h == MAX_TYPE) {
                     continue;
                 }
-            }
 
-            // 全チェックを抜けたデータを配列に追加
-            arraySearchData.add(item);
+                // フリーワード：名前、概要、詳細、場所のいずれかにヒットするかのチェック
+                if (sWord != null && sWord.length() > 0) {
+                    if (!item.getStringValue("name").contains(sWord) &&
+                            !item.getStringValue("summary").contains(sWord) &&
+                            !item.getStringValue("detail").contains(sWord) &&
+                            !item.getStringValue("place_name").contains(sWord)) {
+                        continue;
+                    }
+                }
+
+                // 全チェックを抜けたデータを配列に追加
+                arraySearchData.add(item);
+            }
         }
     }
 

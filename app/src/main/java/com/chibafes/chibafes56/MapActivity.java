@@ -149,20 +149,22 @@ public class MapActivity extends Fragment implements OnMapReadyCallback {
 
         MarkerOptions options = new MarkerOptions();
 
-        // Add a marker in Sydney and move the camera
-        for (MapItem item : arrayKikakuData) {
-            LatLng position = new LatLng(item.getDoubleValue("g_lat"), item.getDoubleValue("g_lon"));
+        if (arrayKikakuData != null) {
+            // Add a marker in Sydney and move the camera
+            for (MapItem item : arrayKikakuData) {
+                LatLng position = new LatLng(item.getDoubleValue("g_lat"), item.getDoubleValue("g_lon"));
 
-            options.position(position);
-            // マーカー情報設定
-            options.title(item.getStringValue("name"));
-            // マップにマーカー追加
-            Marker marker = googleMap.addMarker(options);
+                options.position(position);
+                // マーカー情報設定
+                options.title(item.getStringValue("name"));
+                // マップにマーカー追加
+                Marker marker = googleMap.addMarker(options);
 
-            if(item.getStringValue("name").equals("大祭本部")) {
-                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 18));
-                // インフォウィンドウ表示
-                marker.showInfoWindow();
+                if(item.getStringValue("name").equals("大祭本部")) {
+                    googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 18));
+                    // インフォウィンドウ表示
+                    marker.showInfoWindow();
+                }
             }
         }
     }
