@@ -4,8 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,11 +19,15 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**-
  * Created by steee on 2017/09/01.
@@ -65,9 +67,9 @@ public class KikakuSearchActivity extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.activity_kikakusearch, container, false);
 
-        viewSearch = (LinearLayout) view.findViewById(R.id.viewSearch);
-        viewFavorite = (FrameLayout) view.findViewById(R.id.viewFavorite);
-        buttonTabSearch = (Button) view.findViewById(R.id.buttonTabSearch);
+        viewSearch = view.findViewById(R.id.viewSearch);
+        viewFavorite = view.findViewById(R.id.viewFavorite);
+        buttonTabSearch = view.findViewById(R.id.buttonTabSearch);
         buttonTabSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,7 +80,7 @@ public class KikakuSearchActivity extends Fragment {
                 }
             }
         });
-        buttonTabFavorite = (Button) view.findViewById(R.id.buttonTabFavorite);
+        buttonTabFavorite = view.findViewById(R.id.buttonTabFavorite);
         buttonTabFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,7 +91,7 @@ public class KikakuSearchActivity extends Fragment {
                 }
             }
         });
-        Button buttonSearch = (Button) view.findViewById(R.id.buttonSearch);
+        ImageButton buttonSearch = view.findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,9 +118,9 @@ public class KikakuSearchActivity extends Fragment {
         params.height = nTabImageHeight;
         buttonSearch.setLayoutParams(params);
 
-        tableSearch = (ListView) view.findViewById(R.id.tableSearch);
-        tableFavorite = (ListView) view.findViewById(R.id.tableFavorite);
-        viewNoFavorite = (TextView) view.findViewById(R.id.viewNoFavorite);
+        tableSearch = view.findViewById(R.id.tableSearch);
+        tableFavorite = view.findViewById(R.id.tableFavorite);
+        viewNoFavorite = view.findViewById(R.id.viewNoFavorite);
 
         arraySearchData = null;
         String sKikaku = Commons.readString(getContext(), "data_kikaku");
@@ -130,8 +132,6 @@ public class KikakuSearchActivity extends Fragment {
                     arrayKikakuData[i] = new KikakuItem();
                     arrayKikakuData[i].setData(jsonArray.getJSONObject(i));
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -144,9 +144,9 @@ public class KikakuSearchActivity extends Fragment {
         }
 
         // 検索ダイアログの生成
-        scrollSearch = (ScrollView) getActivity().getLayoutInflater().inflate(R.layout.window_kikakusearch, null);
+        scrollSearch = (ScrollView) Objects.requireNonNull(getActivity()).getLayoutInflater().inflate(R.layout.window_kikakusearch, null);
 
-        editFreeWord = (EditText) scrollSearch.findViewById(R.id.editFreeWord);
+        editFreeWord = scrollSearch.findViewById(R.id.editFreeWord);
         editFreeWord.setText(sSearchWord);
 
         if(arrayOption == null) {
@@ -156,7 +156,7 @@ public class KikakuSearchActivity extends Fragment {
             }
         }
         for(int i = 1; i <= MAX_OPTION; ++i) {
-            ImageButton button = (ImageButton) scrollSearch.findViewById(getResources().getIdentifier("buttonSearchSetting" + i, "id", getContext().getPackageName()));
+            ImageButton button = scrollSearch.findViewById(getResources().getIdentifier("buttonSearchSetting" + i, "id", getContext().getPackageName()));
             button.setTag(i - 1);
             if (arrayOption[i - 1]) {
                 button.setAlpha(1.0f);
@@ -176,19 +176,19 @@ public class KikakuSearchActivity extends Fragment {
             });
         }
 
-        ImageButton buttonReset = (ImageButton) scrollSearch.findViewById(R.id.buttonSettingReset);
+        ImageButton buttonReset = scrollSearch.findViewById(R.id.buttonSettingReset);
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 for(int i = 0; i < MAX_OPTION; ++i) {
                     arrayOption[i] = true;
-                    ImageButton button = (ImageButton) scrollSearch.findViewById(getResources().getIdentifier("buttonSearchSetting" + (i + 1), "id", getContext().getPackageName()));
+                    ImageButton button = scrollSearch.findViewById(getResources().getIdentifier("buttonSearchSetting" + (i + 1), "id", getContext().getPackageName()));
                     button.setAlpha(1.0f);
                 }
                 editFreeWord = null;
             }
         });
-        ImageButton buttonRandom = (ImageButton) scrollSearch.findViewById(R.id.buttonSettingRandom);
+        ImageButton buttonRandom = scrollSearch.findViewById(R.id.buttonSettingRandom);
         buttonRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -199,7 +199,7 @@ public class KikakuSearchActivity extends Fragment {
             }
         });
 
-        Button buttonExec = (Button) scrollSearch.findViewById(R.id.buttonSearchExec);
+        Button buttonExec = scrollSearch.findViewById(R.id.buttonSearchExec);
         buttonExec.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -247,7 +247,7 @@ public class KikakuSearchActivity extends Fragment {
     }
 
     private void setDetailLayout(final View viewDetail, final KikakuItem item) {
-        final ImageButton buttonFavorite = (ImageButton) viewDetail.findViewById(R.id.buttonFavorite);
+        final ImageButton buttonFavorite = viewDetail.findViewById(R.id.buttonFavorite);
         buttonFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -276,24 +276,24 @@ public class KikakuSearchActivity extends Fragment {
         else {
             buttonFavorite.setImageResource(R.drawable.icon_favo);
         }
-        TextView textName = (TextView) viewDetail.findViewById(R.id.textName);
+        TextView textName = viewDetail.findViewById(R.id.textName);
         textName.setText(item.getStringValue("name"));
-        TextView textSummary = (TextView) viewDetail.findViewById(R.id.textSummary);
+        TextView textSummary = viewDetail.findViewById(R.id.textSummary);
         textSummary.setText(item.getStringValue("summary"));
-        TextView textDetail = (TextView) viewDetail.findViewById(R.id.textDetail);
+        TextView textDetail = viewDetail.findViewById(R.id.textDetail);
         textDetail.setText(item.getStringValue("detail"));
-        TextView textLocation = (TextView) viewDetail.findViewById(R.id.textLocation);
+        TextView textLocation = viewDetail.findViewById(R.id.textLocation);
         textLocation.setText(item.getStringValue("place_name"));
-        ImageView imagePRcut = (ImageView) viewDetail.findViewById(R.id.imagePRCut);
+        ImageView imagePRcut = viewDetail.findViewById(R.id.imagePRCut);
         if(item.getStringValue("image") == null || item.getStringValue("image").length() <= 0) {
             imagePRcut.setImageResource(R.drawable.no_image);
         }
         else {
-            imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".png"));
+            imagePRcut.setImageBitmap(Commons.getAssetsImage(getResources(), item.getStringValue("image") + ".jpg"));
         }
-        ImageView imageGenre1 = (ImageView) viewDetail.findViewById(R.id.imageGenre1);
+        ImageView imageGenre1 = viewDetail.findViewById(R.id.imageGenre1);
         imageGenre1.setImageResource(getResources().getIdentifier("icon_genre" + item.getIntValue("genre1"), "drawable", getContext().getPackageName()));
-        ImageView imageGenre2 = (ImageView) viewDetail.findViewById(R.id.imageGenre2);
+        ImageView imageGenre2 = viewDetail.findViewById(R.id.imageGenre2);
         if(item.getIntValue("genre2") == 0) {
             imageGenre2.setVisibility(View.INVISIBLE);
         }
@@ -301,29 +301,25 @@ public class KikakuSearchActivity extends Fragment {
             imageGenre2.setVisibility(View.VISIBLE);
             imageGenre2.setImageResource(getResources().getIdentifier("icon_genre" + item.getIntValue("genre2"), "drawable", getContext().getPackageName()));
         }
-        ImageView imageDay1 = (ImageView) viewDetail.findViewById(R.id.imageDay1);
+        ImageView imageDay1 = viewDetail.findViewById(R.id.imageDay1);
         imageDay1.setAlpha(1.0f);
         if(item.getIntValue("day1") == 0) {
             imageDay1.setAlpha(0.25f);
         }
-        ImageView imageDay2 = (ImageView) viewDetail.findViewById(R.id.imageDay2);
+        ImageView imageDay2 = viewDetail.findViewById(R.id.imageDay2);
         imageDay2.setAlpha(1.0f);
         if(item.getIntValue("day2") == 0) {
             imageDay2.setAlpha(0.25f);
         }
-        ImageView imageDay3 = (ImageView) viewDetail.findViewById(R.id.imageDay3);
+        ImageView imageDay3 = viewDetail.findViewById(R.id.imageDay3);
         imageDay3.setAlpha(1.0f);
         if(item.getIntValue("day3") == 0) {
             imageDay3.setAlpha(0.25f);
         }
-        ImageView imageDay4 = (ImageView) viewDetail.findViewById(R.id.imageDay4);
-        imageDay4.setAlpha(1.0f);
-        if(item.getIntValue("day4") == 0) {
-            imageDay4.setAlpha(0.25f);
-        }
+
     }
 
-    private void setSearchTab(int nTarget) throws Exception {
+    private void setSearchTab(int nTarget) {
         if (nTarget == BUTTON_KIKAKU_TAB_SEARCH) {
             buttonTabSearch.setAlpha((float) 1.0);
             buttonTabFavorite.setAlpha((float) 0.3);
@@ -359,7 +355,7 @@ public class KikakuSearchActivity extends Fragment {
     }
 
 
-    public void setSearchRandom() {
+    private void setSearchRandom() {
         sSearchWord = null;
 
         arraySearchData = new ArrayList<>();
@@ -380,7 +376,7 @@ public class KikakuSearchActivity extends Fragment {
         }
     }
 
-    public void setSearchData(boolean[] array, String sWord) {
+    private void setSearchData(boolean[] array, String sWord) {
         sSearchWord = sWord;
 
         arraySearchData = new ArrayList<>();
@@ -389,11 +385,11 @@ public class KikakuSearchActivity extends Fragment {
             int BUTTON_SEARCH_DAY1 = 0;
             int BUTTON_SEARCH_DAY2 = 1;
             int BUTTON_SEARCH_DAY3 = 2;
-            int BUTTON_SEARCH_DAY4 = 3;
+
             if (!((array[BUTTON_SEARCH_DAY1] && item.getIntValue("day1") == 1) ||
                     (array[BUTTON_SEARCH_DAY2] && item.getIntValue("day2") == 1) ||
-                    (array[BUTTON_SEARCH_DAY3] && item.getIntValue("day3") == 1) ||
-                    (array[BUTTON_SEARCH_DAY4] && item.getIntValue("day4") == 1))) {
+                    (array[BUTTON_SEARCH_DAY3] && item.getIntValue("day3") == 1)
+                   )) {
                 continue;
             }
             // ジャンル：チェックしているいずれかのジャンルであるかのチェック
@@ -444,21 +440,24 @@ public class KikakuSearchActivity extends Fragment {
         }
     }
 
-    public ArrayList<Integer> getFavorite() {
+    private ArrayList<Integer> getFavorite() {
         ArrayList<Integer> arrayList = new ArrayList<>();
-        String str = Commons.readString(getContext(), "kikaku_favorite");
+        String str = Commons.readString(Objects.requireNonNull(getContext()), "kikaku_favorite");
         if(str == null) {
             return arrayList;
         }
-        String[] arrStr = str.split(",");
-        for (String anArrStr : arrStr) {
-            arrayList.add(Integer.parseInt(anArrStr));
+        try {
+            String[] arrStr = str.split(",");
+            for (String anArrStr : arrStr) {
+                arrayList.add(Integer.parseInt(anArrStr));
+            }
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
         }
-
         return arrayList;
     }
 
-    public void saveFavorite(ArrayList<Integer> arrayList) {
+    private void saveFavorite(ArrayList<Integer> arrayList) {
         StringBuilder result = new StringBuilder();
         for(int i = 0; i < arrayList.size() - 1; ++i) {
             result.append(arrayList.get(i)).append(",");
@@ -466,7 +465,7 @@ public class KikakuSearchActivity extends Fragment {
         if(arrayList.size() > 0) {
             result.append(arrayList.get(arrayList.size() - 1));
         }
-        Commons.writeString(getContext(), "kikaku_favorite", result.toString());
+        Commons.writeString(Objects.requireNonNull(getContext()), "kikaku_favorite", result.toString());
     }
 }
 
@@ -477,11 +476,11 @@ class KikakuItem {
         data = null;
     }
 
-    public void setData(JSONObject data) throws Exception {
+    public void setData(JSONObject data) {
         this.data = data;
     }
 
-    public String getStringValue(String key) {
+    String getStringValue(String key) {
         try {
             return data.getString(key);
         } catch (JSONException e) {
@@ -489,7 +488,7 @@ class KikakuItem {
         }
         return "";
     }
-    public int getIntValue(String key) {
+    int getIntValue(String key) {
         try {
             return data.getInt(key);
         } catch (JSONException e) {
@@ -522,20 +521,20 @@ class KikakuListAdapter extends ArrayAdapter<KikakuItem> {
         else {
             convertView.setBackgroundColor(Color.argb(0, 255, 255, 255));
         }
-        ImageView imagePRcut = (ImageView) convertView.findViewById(R.id.imagePRCut);
+        ImageView imagePRcut = convertView.findViewById(R.id.imagePRCut);
         if (item != null) {
             if(item.getStringValue("image") == null || item.getStringValue("image").length() <= 0) {
                 imagePRcut.setImageResource(R.drawable.no_image);
             }
             else {
-                imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".png"));
+                imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".jpg"));
             }
         }
-        TextView textName = (TextView) convertView.findViewById(R.id.textGroupName);
+        TextView textName = convertView.findViewById(R.id.textGroupName);
         if (item != null) {
             textName.setText(item.getStringValue("name"));
         }
-        TextView textSummary = (TextView) convertView.findViewById(R.id.textGroupSummary);
+        TextView textSummary = convertView.findViewById(R.id.textGroupSummary);
         if (item != null) {
             textSummary.setText(item.getStringValue("summary"));
         }

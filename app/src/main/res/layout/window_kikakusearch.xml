@@ -61,61 +61,60 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_height="96dp"
                 android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/buttonSearchSetting1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@null"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_day1" />
+                    android:src="@drawable/icon_day1_on" />
 
                 <ImageButton
                     android:id="@+id/buttonSearchSetting2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@null"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_day2" />
+                    android:src="@drawable/icon_day2_on" />
 
                 <ImageButton
                     android:id="@+id/buttonSearchSetting3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@null"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_day3" />
+                    android:src="@drawable/icon_day3_on" />
 
                 <ImageButton
                     android:id="@+id/buttonSearchSetting4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@null"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_day4" />
+                    android:src="@drawable/icon_day4_on" />
 
             </LinearLayout>
 
@@ -134,17 +133,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="96dp"
-                android:layout_margin="8dp"
                 android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/buttonSearchSetting5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@null"
                     android:scaleType="fitCenter"
@@ -154,10 +152,10 @@
                     android:id="@+id/buttonSearchSetting6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@null"
                     android:scaleType="fitCenter"
@@ -167,10 +165,10 @@
                     android:id="@+id/buttonSearchSetting7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@null"
                     android:scaleType="fitCenter"
@@ -180,10 +178,10 @@
                     android:id="@+id/buttonSearchSetting8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@null"
                     android:scaleType="fitCenter"
@@ -193,17 +191,16 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="96dp"
-                android:layout_margin="8dp"
                 android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/buttonSearchSetting9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@null"
                     android:scaleType="fitCenter"
@@ -213,10 +210,10 @@
                     android:id="@+id/buttonSearchSetting10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@null"
                     android:scaleType="fitCenter"
@@ -226,10 +223,10 @@
                     android:id="@+id/buttonSearchSetting11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@null"
                     android:scaleType="fitCenter"
@@ -239,10 +236,10 @@
                     android:id="@+id/buttonSearchSetting12"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@null"
                     android:scaleType="fitCenter"
@@ -263,80 +260,73 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="96dp"
-                android:layout_margin="8dp"
                 android:orientation="horizontal">
 
                 <ImageButton
                     android:id="@+id/buttonSearchSetting13"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="4dp"
                     android:layout_marginTop="8dp"
-                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="5"
                     android:background="@null"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_tent" />
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/icon_tent_on" />
 
                 <ImageButton
                     android:id="@+id/buttonSearchSetting14"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
                     android:layout_marginTop="8dp"
-                    android:layout_weight="1"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="6"
                     android:background="@null"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_room" />
+                    android:src="@drawable/icon_room_on" />
 
                 <ImageButton
                     android:id="@+id/buttonSearchSetting15"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="8dp"
-                    android:layout_weight="1"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="5"
                     android:background="@null"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_stage" />
+                    android:scaleType="fitStart"
+                    android:src="@drawable/icon_stage_on" />
 
-                <ImageButton
-                    android:id="@+id/buttonSearchSetting16"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_streetperformance" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="96dp"
-                android:layout_margin="8dp"
                 android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/buttonSearchSetting16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:scaleType="fitEnd"
+                    android:src="@drawable/icon_streetperformance_on" />
 
                 <ImageButton
                     android:id="@+id/buttonSearchSetting17"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="4dp"
+                    android:layout_marginStart="4dp"
                     android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/icon_free" />
+                    android:scaleType="fitStart"
+                    android:src="@drawable/icon_free_on" />
 
             </LinearLayout>
 

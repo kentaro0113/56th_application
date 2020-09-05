@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -32,7 +33,7 @@
             android:id="@+id/imageButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:layout_weight="3"
             android:background="@null"
             android:padding="4dp"
@@ -51,19 +52,18 @@
             android:padding="8dp">
 
             <LinearLayout
-                android:id="@+id/viewInfo1"
+                android:id="@+id/viewInfo2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
                 android:orientation="vertical"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <ImageView
-                    android:layout_width="160dp"
-                    android:layout_height="80dp"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:layout_margin="8dp"
-                    android:src="@drawable/icon_button_cosplay" />
+                    android:layout_margin="16dp"
+                    android:src="@drawable/icon_button_grandprix" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -75,66 +75,10 @@
                     android:id="@+id/buttonKikakuInfo1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
                     android:background="@color/colorButton"
                     android:onClick="onClickKikakuInfo"
-                    android:padding="10dp"
-                    android:text="@string/KikakuInfoButton1"
-                    android:textSize="19dp" />
+                    android:text="@string/KikakuInfoButton1" />
 
-                <Button
-                    android:id="@+id/buttonKikakuInfo2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="@color/colorButton"
-                    android:onClick="onClickKikakuInfo"
-                    android:padding="10dp"
-                    android:text="@string/KikakuInfoButton2"
-                    android:textSize="19dp" />
-
-                <Button
-                    android:id="@+id/buttonKikakuInfo12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="@color/colorButton"
-                    android:onClick="onClickKikakuInfo"
-                    android:padding="10dp"
-                    android:text="@string/KikakuInfoButton3"
-                    android:textSize="19dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/viewInfo2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:visibility="gone">
-
-                <ImageView
-                    android:layout_width="160dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="16dp"
-                    android:src="@drawable/icon_button_grandprix" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:text="@string/KikakuInfo2_1" />
-
-                <Button
-                    android:id="@+id/buttonKikakuInfo3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="@color/colorButton"
-                    android:onClick="onClickKikakuInfo"
-                    android:padding="10dp"
-                    android:text="@string/KikakuInfoButton3"
-                    android:textSize="19dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -145,8 +89,8 @@
                 android:visibility="gone">
 
                 <ImageView
-                    android:layout_width="160dp"
-                    android:layout_height="80dp"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:layout_margin="16dp"
                     android:src="@drawable/icon_button_goods" />
@@ -155,94 +99,47 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="@string/KikakuInfo3_1" />
+                    android:text="@string/KikakuInfo2_1" />
 
                 <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_margin="12dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/s_4792366" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_margin="12dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/s_4792367" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_margin="12dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/s_4792368" />
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_margin="12dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/s_4792369" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:text="@string/KikakuInfo3_2" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="@color/colorButtonLINE"
-                    android:padding="16dp"
-                    android:text="@string/KikakuInfo3_3"
-                    android:textColor="@android:color/white" />
-
-                <Button
-                    android:id="@+id/buttonKikakuInfo4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="@color/colorButtonLINE"
-                    android:onClick="onClickKikakuInfo"
-                    android:padding="10dp"
-                    android:text="@string/KikakuInfoButton4"
-                    android:textColor="@android:color/white"
-                    android:textSize="19dp" />
-
+                    android:layout_width="600dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:src="@drawable/goods1"
+                    app:srcCompat="@drawable/goods1" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/viewInfo4"
+                android:id="@+id/viewInfo1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="160dp"
-                    android:layout_height="80dp"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
                     android:layout_gravity="center"
                     android:layout_margin="16dp"
-                    android:src="@drawable/icon_button_kikaku" />
+                    android:src="@drawable/icon_button_project_2" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="@string/KikakuInfo4_1" />
+                    android:text="@string/KikakuInfo4_1"
+                    android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
                     android:background="#B5CCF4"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_2"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -254,12 +151,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
                     android:background="#EAB5AA"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_4"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -271,12 +168,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
                     android:background="#E4B0EA"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_6"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -288,12 +185,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
                     android:background="#EAC76C"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_8"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -305,29 +202,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
-                    android:background="#E8E579"
-                    android:padding="8dp"
-                    android:text="@string/KikakuInfo4_10"
-                    android:textSize="18dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:text="@string/KikakuInfo4_11" />
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:layout_marginTop="16dp"
                     android:background="#90BE4F"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_12"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -335,37 +215,15 @@
                     android:layout_margin="8dp"
                     android:text="@string/KikakuInfo4_13" />
 
-                <Button
-                    android:id="@+id/buttonKikakuInfo5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="@color/colorButton"
-                    android:onClick="onClickKikakuInfo"
-                    android:padding="10dp"
-                    android:text="@string/KikakuInfoButton5"
-                    android:textSize="19dp" />
-
-                <Button
-                    android:id="@+id/buttonKikakuInfo6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="@color/colorButton"
-                    android:onClick="onClickKikakuInfo"
-                    android:padding="10dp"
-                    android:text="@string/KikakuInfoButton6"
-                    android:textSize="19dp" />
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
                     android:background="#B5CCF4"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_14"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -377,12 +235,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
                     android:background="#F8CBB4"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_16"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -394,12 +252,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
                     android:background="#EAB28F"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_18"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -407,37 +265,15 @@
                     android:layout_margin="8dp"
                     android:text="@string/KikakuInfo4_19" />
 
-                <Button
-                    android:id="@+id/buttonKikakuInfo7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="@color/colorButton"
-                    android:onClick="onClickKikakuInfo"
-                    android:padding="10dp"
-                    android:text="@string/KikakuInfoButton2"
-                    android:textSize="19dp" />
-
-                <Button
-                    android:id="@+id/buttonKikakuInfo8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="@color/colorButton"
-                    android:onClick="onClickKikakuInfo"
-                    android:padding="10dp"
-                    android:text="@string/KikakuInfoButton6"
-                    android:textSize="19dp" />
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginBottom="8dp"
                     android:background="#AAAAF4"
                     android:padding="8dp"
                     android:text="@string/KikakuInfo4_20"
-                    android:textSize="18dp" />
+                    android:textSize="18sp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -445,35 +281,45 @@
                     android:layout_margin="8dp"
                     android:text="@string/KikakuInfo4_21" />
 
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/viewInfo4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/icon_button_guest"
+                    app:srcCompat="@drawable/icon_button_guest" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="350dp"
+                    android:layout_height="350dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:scaleType="fitCenter"
+                    android:layout_gravity="center"
+                    android:src="@drawable/guest1"
+                    app:srcCompat="@drawable/guest1" />
+
                 <Button
-                    android:id="@+id/buttonKikakuInfo9"
+                    android:id="@+id/buttonKikakuInfo4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
                     android:background="@color/colorButton"
                     android:onClick="onClickKikakuInfo"
-                    android:padding="10dp"
-                    android:text="@string/KikakuInfoButton7"
-                    android:textSize="19dp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:text="@string/KikakuInfo4_22" />
-
-
-                <Button
-                    android:id="@+id/buttonKikakuInfo10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="@color/colorButton"
-                    android:onClick="onClickKikakuInfo"
-                    android:padding="10dp"
-                    android:text="@string/KikakuInfoButton7"
-                    android:textSize="19dp" />
-
+                    android:text="@string/KikakuInfoButton4" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

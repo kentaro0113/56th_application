@@ -15,16 +15,10 @@ import android.widget.LinearLayout;
 
 public class KikakuInfoActivity extends Activity {
 
-    private static final String URL_COSYPLAY = "https://docs.google.com/forms/d/e/1FAIpQLSc96Yydes0IUX2ytCchbEP8iKBonznZe-ji1tCpp8tA1LvhtA/viewform";
-    private static final String URL_COSYPLAY2 = "https://goo.gl/forms/8VOi0hHk06mqnkT43";
-    private static final String URL_GRANDPRIX = "https://goo.gl/forms/AxdFYu1JIlHr5o9F2";
-    private static final String URL_HAPPI_LINE = "https://store.line.me/stickershop/product/1169796/";
-    private static final String URL_KIKAKU_OTHER1 = "https://twitter.com/chibafes_happi";
-    private static final String URL_KIKAKU_OTHER2 = "https://twitter.com/share?hashtags=はっぴを探せ";
-    private static final String URL_KIKAKU_OTHER3 = "https://twitter.com/ChibafesShinkan";
-    private static final String URL_KIKAKU_OTHER4 = "https://twitter.com/share?hashtags=千葉大祭フォトコン";
-    private static final String URL_KIKAKU_GUEST1 = "http://guest.chibafes.com/";
-    private static final String URL_KIKAKU_GUEST2 = "https://twitter.com/ChibafesShinkan/status/905402689286057984";
+    private static final String URL_GUEST = "http://guest.chibafes.com/";
+    private static final String URL_GRANDPRIX = "https://docs.google.com/forms/d/13aTfkeX2oxQUgNlfUqs-UM-Fx1g9HM3iOXCq1ojRxQY/edit";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,10 +61,10 @@ public class KikakuInfoActivity extends Activity {
         Intent intent;
         switch(view.getId()) {
             case R.id.buttonKikakuInfo1:
-                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_COSYPLAY));
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_GRANDPRIX));
                 startActivity(intent);
                 break;
-            case R.id.buttonKikakuInfo2:
+            /*case R.id.buttonKikakuInfo2:
             case R.id.buttonKikakuInfo7:
                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_KIKAKU_OTHER3));
                 startActivity(intent);
@@ -78,12 +72,12 @@ public class KikakuInfoActivity extends Activity {
             case R.id.buttonKikakuInfo3:
                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_GRANDPRIX));
                 startActivity(intent);
-                break;
+                break;*/
             case R.id.buttonKikakuInfo4:
-                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_HAPPI_LINE));
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_GUEST));
                 startActivity(intent);
                 break;
-            case R.id.buttonKikakuInfo5:
+            /*case R.id.buttonKikakuInfo5:
                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_KIKAKU_OTHER1));
                 startActivity(intent);
                 break;
@@ -103,17 +97,16 @@ public class KikakuInfoActivity extends Activity {
             case R.id.buttonKikakuInfo12:
                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse(URL_COSYPLAY2));
                 startActivity(intent);
-                break;
+                break;*/
         }
     }
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
-            switch (event.getKeyCode()) {
-                // バックキー押下時の処理
-                case KeyEvent.KEYCODE_BACK:
-                    return true;
+            // バックキー押下時の処理
+            if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+                return true;
             }
         }
         return super.dispatchKeyEvent(event);

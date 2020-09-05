@@ -3,8 +3,6 @@ package com.chibafes.chibafes56;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +16,9 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
 
 /**
  * Created by steee on 2017/08/31.
@@ -136,7 +137,7 @@ class InfoItem {
         data = null;
     }
 
-    public boolean setData(JSONObject data) {
+    boolean setData(JSONObject data) {
         try {
             this.data = data;
         } catch (Exception e) {
@@ -153,7 +154,7 @@ class InfoItem {
         }
         return -1;
     }
-    public String getTitle() {
+    String getTitle() {
         try {
             return data.getString("title");
         } catch (JSONException e) {
@@ -161,7 +162,7 @@ class InfoItem {
         }
         return "";
     }
-    public String getDetail() {
+    String getDetail() {
         try {
             return data.getString("detail");
         } catch (JSONException e) {
@@ -169,7 +170,7 @@ class InfoItem {
         }
         return "";
     }
-    public String getTime() {
+    String getTime() {
         try {
             String sTime = data.getString("update_time");
             return sTime.substring(0, 10);

@@ -9,13 +9,13 @@
         android:id="@+id/textView18"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="第55回千葉大祭公式キャラクター" />
+        android:text="@string/happi_explanation" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        app:srcCompat="@drawable/happi2" />
+        app:srcCompat="@drawable/happi" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,37 +26,37 @@
             android:id="@+id/textView15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="【名前】 はっぴ" />
+            android:text="@string/happi_name" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="【体長】 25cm" />
+            android:text="@string/happi_height" />
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="【体重】 3.3kg" />
+            android:text="@string/happi_weight" />
 
         <TextView
             android:id="@+id/textView16"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="【出身】 千葉県千葉市" />
+            android:text="@string/happi_from" />
 
         <TextView
             android:id="@+id/textView17"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="【口癖】 「～っぴ！」" />
+            android:text="@string/happi_phrase" />
 
         <TextView
             android:id="@+id/textView21"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="【一言】 みんな千葉大祭を楽しんでほしいっぴ！" />
+            android:text="@string/happi_comment" />
 
     </LinearLayout>
 

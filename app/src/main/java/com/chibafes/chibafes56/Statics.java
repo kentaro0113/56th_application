@@ -7,25 +7,26 @@ package com.chibafes.chibafes56;
  */
 
 public class Statics {
-    public static final String URL_UPDATE       = "http://demo.chibafes.com/appli/php/55th/update.php";
-    public static final String URL_ENQUETE      = "http://demo.chibafes.com/appli/php/55th/enquete_answer.php";
-    public static final String URL_IMAGES      = "http://demo.chibafes.com/appli/images/55th/";
-    public static final String URL_CHIBAFES_WEB = "http://chibafes.com/";
 
-    public static final int NONE                = -1;
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //この下の"http://demo.chibafes.com/appli/php/○○/～～～～.php"の○○は開催する回の序数(第55回→55th, 第57回→57th)を埋める！！
+
+    static final String URL_UPDATE       = "http://demo.chibafes.com/appli/php/57th/update.php";
+    static final String URL_ENQUETE      = "http://demo.chibafes.com/appli/php/57th/enquete_answer.php";
+    static final String URL_CHIBAFES_WEB = "http://chibafes.com/";
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    //これ以降の文は変えない！
+
+    static final int NONE                = -1;
     public static final int LIMIT_COUNT_NO      = 99999; // 各リストの最大index値（保険）
 
-    public static final int TYPE_SELECT         = 1; // アンケート：選択式
-    public static final int TYPE_TEXT           = 2; // アンケート：記述式
+    static final int TYPE_SELECT         = 1; // アンケート：選択式
+    static final int TYPE_TEXT           = 2; // アンケート：記述式
 
-    public static final int DATA_CATEGORY_INFO      = 1; // データカテゴリ：新着情報
-    public static final int DATA_CATEGORY_KIKAKU    = 2; // データカテゴリ：企画
-    public static final int DATA_CATEGORY_STAGE     = 3; // データカテゴリ：ステージ
-    public static final int DATA_CATEGORY_STREET    = 4; // データカテゴリ：ストパ
+    static final int HAPPI_SERIF_NORMAL = 0;   // 通常時のセリフ
+    static final int HAPPI_SERIF_TAP    = 1;   // タップした時のセリフ
 
-    public static final int HAPPI_SERIF_NORMAL = 0;   // 通常時のセリフ
-    public static final int HAPPI_SERIF_TAP    = 1;   // タップした時のセリフ
-    public static final int HAPPI_SERIF_FIRST  = 2;   // 起動後最初のセリフ
-
-    public static final String IMAGE_PATH = "prcut/";
+    static final String IMAGE_PATH = "prcut/";
 }

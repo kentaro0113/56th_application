@@ -27,9 +27,11 @@ public class HttpPostAsync extends AsyncTask<String, Integer, String> {
         bError = false;
     }
 
+    private HttpURLConnection con = null;
+
     @Override
     protected String doInBackground(String... params) {
-        HttpURLConnection con = null;
+      //  HttpURLConnection con = null;
         URL url;
         String result = null;
 
@@ -48,12 +50,6 @@ public class HttpPostAsync extends AsyncTask<String, Integer, String> {
 
             // データを書き込む
             con.setDoOutput(true);
-
-            // Transfer-Encoding => chunked を使わない
-            //con.setFixedLengthStreamingMode(length);
-
-            // Transfer-Encoding => chunked を使う
-            // con.setChunkedStreamingMode(0);
 
             // タイムアウト
             con.setReadTimeout(6000);
@@ -135,6 +131,11 @@ public class HttpPostAsync extends AsyncTask<String, Integer, String> {
     @Override
     protected void onPostExecute(String result) {
         super.onPostExecute(result);
+        try {
+            final int status = con.getResponseCode();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         callback.postExecute(result, bError);
     }
 

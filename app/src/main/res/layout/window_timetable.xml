@@ -20,7 +20,7 @@
                 android:background="@color/colorSearchButton"
                 android:gravity="center"
                 android:padding="12dp"
-                android:text="TextView"
+                android:text="@string/textview"
                 android:textSize="17sp" />
 
             <LinearLayout
@@ -30,13 +30,13 @@
 
                 <TextView
                     android:id="@+id/textTime"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="12dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="12dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
-                    android:text="TextView"
+                    android:text="@string/textview"
                     android:textSize="17sp" />
 
                 <ImageButton
@@ -60,7 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="TextView" />
+                android:text="@string/textview" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -75,7 +75,8 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_genre1" />
+                    android:src="@drawable/icon_genre1"
+                    android:contentDescription="@string/todo" />
 
                 <ImageView
                     android:id="@+id/imageGenre2"
@@ -84,7 +85,8 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/icon_genre1" />
+                    android:src="@drawable/icon_genre1"
+                    android:contentDescription="@string/todo" />
             </LinearLayout>
 
             <TextView
@@ -92,7 +94,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="16dp"
-                android:text="TextView" />
+                android:text="@string/textview" />
 
         </LinearLayout>
     </ScrollView>

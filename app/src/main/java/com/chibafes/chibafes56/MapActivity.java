@@ -1,44 +1,61 @@
 package com.chibafes.chibafes56;
 
-import android.graphics.Color;
-import android.graphics.Point;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 
-import com.qozix.tileview.TileView;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import androidx.fragment.app.Fragment;
+
+
 /**
  * Created by aki09 on 2017/09/08.
  */
 
-public class MapActivity extends Fragment {
-    private MapItem[] arraySpotList = null;
-    private TileView imageMap = null;
-    private ListView listView;
+public class MapActivity extends Fragment implements OnMapReadyCallback {
+
+    private MapItem[] arrayKikakuData;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.activity_map, container, false);
-        setMapInfo(view);
+
+        View view = inflater.inflate(R.layout.activity_google_map, container, false);
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
+        String sKikaku = Commons.readString(getContext(), "data_map");
+        if(sKikaku != null) {
+            try {
+                JSONArray jsonArray = new JSONArray(sKikaku);
+                arrayKikakuData = new MapItem[jsonArray.length()];
+                for(int i = 0; i < jsonArray.length(); ++i) {
+                    arrayKikakuData[i] = new MapItem();
+                    arrayKikakuData[i].setData(jsonArray.getJSONObject(i));
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 
         return view;
     }
 
-
+    /*
     private void setMapInfo(View view) {
         String newImage = null;
         int imageWidth = 0;
@@ -125,6 +142,29 @@ public class MapActivity extends Fragment {
         }
         imageMap.setScale(0.3f);
 
+    }*/
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+
+        MarkerOptions options = new MarkerOptions();
+
+        // Add a marker in Sydney and move the camera
+        for (MapItem item : arrayKikakuData) {
+            LatLng position = new LatLng(item.getDoubleValue("g_lat"), item.getDoubleValue("g_lon"));
+
+            options.position(position);
+            // マーカー情報設定
+            options.title(item.getStringValue("name"));
+            // マップにマーカー追加
+            Marker marker = googleMap.addMarker(options);
+
+            if(item.getStringValue("name").equals("大祭本部")) {
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 18));
+                // インフォウィンドウ表示
+                marker.showInfoWindow();
+            }
+        }
     }
 }
 
@@ -137,7 +177,7 @@ class MapItem{
         data = null;
     }
 
-    public boolean setData(JSONObject data) {
+    boolean setData(JSONObject data) {
         try {
             this.data = data;
         } catch (Exception e) {
@@ -146,7 +186,7 @@ class MapItem{
         return true;
     }
 
-    public String getStringValue(String key) {
+    String getStringValue(String key) {
         try {
             return data.getString(key);
         } catch (JSONException e) {
@@ -154,12 +194,12 @@ class MapItem{
         }
         return "";
     }
-    public int getIntValue(String key) {
+    double getDoubleValue(String key) {
         try {
-            return data.getInt(key);
+            return data.getDouble(key);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return -1;
+        return -1.0;
     }
 }

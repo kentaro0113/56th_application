@@ -44,17 +44,7 @@
             android:text="@string/TimeTableTabDay3"
             android:textColor="?attr/colorPrimary"
             android:textSize="16sp" />
-        <Button
-            android:id="@+id/buttonTabDay4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_weight="1"
-            android:background="@drawable/tab_timetable_day4"
-            android:text="@string/TimeTableTabDay4"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="16sp" />
+
         <Button
             android:id="@+id/buttonTabCheck"
             android:layout_width="wrap_content"
@@ -87,7 +77,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="12dp"
-                    android:text="ステージ"
+                    android:text="@string/timetable_caption1"
                     android:textSize="18sp" />
 
                 <com.chibafes.chibafes56.MeasureListView
@@ -100,7 +90,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="12dp"
-                    android:text="ストリートパフォーマンス"
+                    android:text="@string/timetable_caption2"
                     android:textSize="18sp" />
 
                 <com.chibafes.chibafes56.MeasureListView
@@ -116,7 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorTabCheck"
-            android:textSize="17dp"
+            android:textSize="17sp"
             android:padding="16dp"
             android:gravity="center"
             android:text="@string/TimeTableNoCheck" />

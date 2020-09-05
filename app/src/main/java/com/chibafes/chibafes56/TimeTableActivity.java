@@ -3,9 +3,6 @@ package com.chibafes.chibafes56;
 import android.content.Context;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +16,15 @@ import android.widget.ListView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
+
 import com.longevitysoft.android.xml.plist.domain.Array;
 import com.longevitysoft.android.xml.plist.domain.Dict;
 import com.longevitysoft.android.xml.plist.domain.PList;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -39,14 +39,13 @@ public class TimeTableActivity extends Fragment {
     private static final int BUTTON_TIMETABLE_TAB_DAY1 = 0;
     private static final int BUTTON_TIMETABLE_TAB_DAY2 = 1;
     private static final int BUTTON_TIMETABLE_TAB_DAY3 = 2;
-    private static final int BUTTON_TIMETABLE_TAB_DAY4 = 3;
     private static final int BUTTON_TIMETABLE_TAB_CHECK = 4;
 
     private TextView viewNoFavorite;
     private Button buttonTabDay1;
     private Button buttonTabDay2;
     private Button buttonTabDay3;
-    private Button buttonTabDay4;
+
     private Button buttonTabCheck;
     private ListView listView1;
     private ListView listView2;
@@ -74,7 +73,6 @@ public class TimeTableActivity extends Fragment {
         buttonTabDay1 = (Button) view.findViewById(R.id.buttonTabDay1);
         buttonTabDay2 = (Button) view.findViewById(R.id.buttonTabDay2);
         buttonTabDay3 = (Button) view.findViewById(R.id.buttonTabDay3);
-        buttonTabDay4 = (Button) view.findViewById(R.id.buttonTabDay4);
         buttonTabCheck = (Button) view.findViewById(R.id.buttonTabCheck);
 
         Point displaySize = Commons.getDisplaySize(getContext());
@@ -96,10 +94,7 @@ public class TimeTableActivity extends Fragment {
         params.height = nTabImageHeight;
         buttonTabDay3.setLayoutParams(params);
 
-        params = (LinearLayout.LayoutParams) buttonTabDay4.getLayoutParams();
-        params.width = nTabImageWidth;
-        params.height = nTabImageHeight;
-        buttonTabDay4.setLayoutParams(params);
+
 
         params = (LinearLayout.LayoutParams) buttonTabCheck.getLayoutParams();
         params.width = nTabImageWidth;
@@ -124,12 +119,7 @@ public class TimeTableActivity extends Fragment {
                 setList(BUTTON_TIMETABLE_TAB_DAY3);
             }
         });
-        buttonTabDay4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setList(BUTTON_TIMETABLE_TAB_DAY4);
-            }
-        });
+
         buttonTabCheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -163,8 +153,6 @@ public class TimeTableActivity extends Fragment {
                         h++;
                     }
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -174,11 +162,11 @@ public class TimeTableActivity extends Fragment {
         arrayTimeTable = (Array) plist.getRootElement();
 
         // チェックリストを読み込む
-        arrayCheck = Commons.readArrayInt(getContext(), "timetable_check");
+        arrayCheck = Commons.readArrayInt(getContext());
 
         // リスト
-        listView1 = (android.widget.ListView) view.findViewById(R.id.list_timetable);
-        listView2 = (android.widget.ListView) view.findViewById(R.id.list_timetable2);
+        listView1 = view.findViewById(R.id.list_timetable);
+        listView2 = view.findViewById(R.id.list_timetable2);
 
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -214,7 +202,7 @@ public class TimeTableActivity extends Fragment {
         buttonTabDay1.setAlpha(0.25f);
         buttonTabDay2.setAlpha(0.25f);
         buttonTabDay3.setAlpha(0.25f);
-        buttonTabDay4.setAlpha(0.25f);
+
         buttonTabCheck.setAlpha(0.25f);
         viewNoFavorite.setVisibility(View.GONE);
         switch(nextList) {
@@ -230,15 +218,12 @@ public class TimeTableActivity extends Fragment {
                 buttonTabDay3.setAlpha(1.0f);
                 viewTableBase.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorTabDay3));
                 break;
-            case BUTTON_TIMETABLE_TAB_DAY4:
-                buttonTabDay4.setAlpha(1.0f);
-                viewTableBase.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorTabDay4));
-                break;
+
             case BUTTON_TIMETABLE_TAB_CHECK:
                 buttonTabCheck.setAlpha(1.0f);
                 viewTableBase.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorTabCheck));
 
-                arrayCheck = Commons.readArrayInt(getContext(), "timetable_check");
+                arrayCheck = Commons.readArrayInt(getContext());
                 if(arrayCheck == null || arrayCheck.length <= 0) {
                     viewNoFavorite.setVisibility(View.VISIBLE);
                 }
@@ -350,7 +335,7 @@ public class TimeTableActivity extends Fragment {
                     }
 
                     Calendar calendar = Calendar.getInstance();
-                    calendar.set(2017, 10, (2 + itemTimeTable.getIndex() / 2), itemTimeTable.getTime() / 100, itemTimeTable.getTime() % 100, 0);
+                    calendar.set(2019, 11, (2 + itemTimeTable.getIndex() / 2), itemTimeTable.getTime() / 100, itemTimeTable.getTime() % 100, 0);
                     calendar.add(Calendar.MINUTE, -15);
 
                     Calendar calendar2 = Calendar.getInstance();
@@ -368,12 +353,12 @@ public class TimeTableActivity extends Fragment {
                         }
                         NotificationUtil.setLocalNotification(getContext(), sTicker, sMessage, nTime, calendar);
                     }
-                    Commons.writeArrayInt(getContext(), "timetable_check", arrayCheck);
+                    Commons.writeArrayInt(getContext(), arrayCheck);
                 }
                 else {
                     if(arrayCheck.length <= 1) {
                         arrayCheck = null;
-                        Commons.deleteSave(getContext(), "timetable_check");
+                        Commons.deleteSave(getContext());
                     }
                     else {
                         int[] newCheck = new int[arrayCheck.length - 1];
@@ -389,7 +374,7 @@ public class TimeTableActivity extends Fragment {
 
                         NotificationUtil.cancelLocalNotification(getContext(), nTime);
 
-                        Commons.writeArrayInt(getContext(), "timetable_check", arrayCheck);
+                        Commons.writeArrayInt(getContext(), arrayCheck);
                     }
                 }
                     // 通知の作成
@@ -481,7 +466,7 @@ public class TimeTableActivity extends Fragment {
             imagePRcut.setImageResource(R.drawable.no_image);
         }
         else {
-            imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".png"));
+            imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), item.getStringValue("image") + ".jpg"));
         }
         ImageView imageGenre1 = (ImageView) viewDetail.findViewById(R.id.imageGenre1);
         imageGenre1.setImageResource(getResources().getIdentifier("icon_genre" + item.getIntValue("genre1"), "drawable", getContext().getPackageName()));
@@ -527,17 +512,17 @@ public class TimeTableActivity extends Fragment {
         public int getId() {
             return nId;
         }
-        public int getTime() {
+        int getTime() {
             return nTime;
         }
-        public int getIndex() {
+        int getIndex() {
             return nIndex;
         }
-        public String getTimeString() {
-            return (String.format("11/%d %02d:%02d", (2 + nIndex / 2), (nTime / 100), (nTime % 100)));
+        String getTimeString() {
+            return (String.format("%d:%02d", (nTime / 100), (nTime % 100)));
         }
 
-        public KikakuItem getKikakuItem() {
+        KikakuItem getKikakuItem() {
             return itemKikaku;
         }
     }
@@ -573,7 +558,7 @@ public class TimeTableActivity extends Fragment {
                 imagePRcut.setImageResource(R.drawable.no_image);
             }
             else {
-                imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), itemKikaku.getStringValue("image") + ".png"));
+                imagePRcut.setImageBitmap(Commons.getAssetsImage(getContext().getResources(), itemKikaku.getStringValue("image") + ".jpg"));
             }
             TextView textName = (TextView) convertView.findViewById(R.id.textGroupName);
             textName.setText(itemKikaku.getStringValue("name"));
